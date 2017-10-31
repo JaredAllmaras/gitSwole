@@ -14,20 +14,12 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var tabBarController: MainTabBarController?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // initialize Firebase
         FirebaseApp.configure()
-        
-        //setup for tab bar controller
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        
-        tabBarController = MainTabBarController()
-        window?.rootViewController = tabBarController
         
         return true
     }
