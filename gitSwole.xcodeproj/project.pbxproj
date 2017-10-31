@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		64B0BFC3851F1523E4E79D65 /* Pods_gitSwole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E953D4272458E5B1674B8B /* Pods_gitSwole.framework */; };
+<<<<<<< HEAD
 		8C0107451FA8F7D5005AC512 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0107441FA8F7D5005AC512 /* SettingsViewController.swift */; };
 		8C0107471FA8F851005AC512 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0107461FA8F851005AC512 /* MainTabBarController.swift */; };
 		C4142FD21FA927E100F3173E /* MealPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FCC1FA927E000F3173E /* MealPlanVC.swift */; };
@@ -17,6 +18,8 @@
 		C4142FD61FA927E100F3173E /* WorkoutsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FD01FA927E100F3173E /* WorkoutsTVC.swift */; };
 		C4142FD71FA927E100F3173E /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FD11FA927E100F3173E /* Meal.swift */; };
 		C4142FD91FA927F300F3173E /* NathanStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4142FD81FA927F300F3173E /* NathanStoryboard.storyboard */; };
+=======
+>>>>>>> cf3b64f3d34dd24e625f964f36202ef8ffb57624
 		E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8292B1FA2B0DB00522204 /* AppDelegate.swift */; };
 		E1C8292E1FA2B0DB00522204 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8292D1FA2B0DB00522204 /* ViewController.swift */; };
 		E1C829311FA2B0DB00522204 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C8292F1FA2B0DB00522204 /* Main.storyboard */; };
@@ -28,8 +31,6 @@
 
 /* Begin PBXFileReference section */
 		30F154C6F91BE2EE172DAF0D /* Pods-gitSwole.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gitSwole.release.xcconfig"; path = "Pods/Target Support Files/Pods-gitSwole/Pods-gitSwole.release.xcconfig"; sourceTree = "<group>"; };
-		8C0107441FA8F7D5005AC512 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		8C0107461FA8F851005AC512 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		B44AB520063DBC96F4502F9B /* Pods-gitSwole.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gitSwole.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gitSwole/Pods-gitSwole.debug.xcconfig"; sourceTree = "<group>"; };
 		C4142FCC1FA927E000F3173E /* MealPlanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealPlanVC.swift; path = "../../gitSwole 2/gitSwole/MealPlanVC.swift"; sourceTree = "<group>"; };
 		C4142FCD1FA927E100F3173E /* WorkoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutCell.swift; path = "../../gitSwole 2/gitSwole/WorkoutCell.swift"; sourceTree = "<group>"; };
@@ -101,8 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				E1C8292B1FA2B0DB00522204 /* AppDelegate.swift */,
-				8C0107461FA8F851005AC512 /* MainTabBarController.swift */,
-				8C0107441FA8F7D5005AC512 /* SettingsViewController.swift */,
 				E1C8292D1FA2B0DB00522204 /* ViewController.swift */,
 				E1C8292F1FA2B0DB00522204 /* Main.storyboard */,
 				C4142FD81FA927F300F3173E /* NathanStoryboard.storyboard */,
@@ -258,6 +257,7 @@
 				C4142FD61FA927E100F3173E /* WorkoutsTVC.swift in Sources */,
 				C4142FD31FA927E100F3173E /* WorkoutCell.swift in Sources */,
 				E1C8292E1FA2B0DB00522204 /* ViewController.swift in Sources */,
+<<<<<<< HEAD
 				C4142FD71FA927E100F3173E /* Meal.swift in Sources */,
 				C4142FD41FA927E100F3173E /* Workout.swift in Sources */,
 				C4142FD51FA927E100F3173E /* WorkoutDetailVC.swift in Sources */,
@@ -265,6 +265,9 @@
 				E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */,
 				C4142FD21FA927E100F3173E /* MealPlanVC.swift in Sources */,
 				8C0107451FA8F7D5005AC512 /* SettingsViewController.swift in Sources */,
+=======
+				E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */,
+>>>>>>> cf3b64f3d34dd24e625f964f36202ef8ffb57624
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
