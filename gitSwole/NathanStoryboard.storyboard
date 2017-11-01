@@ -92,7 +92,7 @@
         <!--Sign UpVC-->
         <scene sceneID="yh3-sO-yRP">
             <objects>
-                <viewController id="o9M-ww-j2c" customClass="SignUpVC" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpVC" id="o9M-ww-j2c" customClass="SignUpVC" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kuy-Pk-rK8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,6 +101,9 @@
                                 <rect key="frame" x="111" y="540" width="153" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUp:" destination="o9M-ww-j2c" eventType="touchUpInside" id="dWa-vg-PDd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3v-Kf-9MZ">
                                 <rect key="frame" x="71" y="92" width="232" height="33"/>
@@ -169,11 +172,20 @@
                                 <rect key="frame" x="111" y="578" width="153" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancel:" destination="o9M-ww-j2c" eventType="touchUpInside" id="kGK-le-rJO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="SGY-yD-cdZ"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="SLi-KU-3Z2" id="IlW-Ri-DIw"/>
+                        <outlet property="passwordTextField" destination="YvU-qh-LvG" id="ReE-MW-axk"/>
+                        <outlet property="secondPasswordTextField" destination="h5x-In-n6S" id="GpT-7u-H8V"/>
+                        <outlet property="usernameTextField" destination="jQP-dp-01a" id="Aoe-Ue-Gar"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="218-th-g6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

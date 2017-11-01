@@ -29,7 +29,9 @@ class LoginVC: UIViewController {
     @IBAction func signIn(_ sender: Any) {
         if validEmail(email: email.text!) && validPW(password: password.text!) {
             Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
-                
+                // return to home screen
+                print("User signed in successfully")
+                _ = self.navigationController?.popViewController(animated: true)
             }
         }
     }
@@ -45,12 +47,15 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func cancel(_ sender: Any) {
-        
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func register(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "NathanStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "signUpVC")
+        self.present(vc, animated: true, completion: nil)
     }
+    
     /*
     // MARK: - Navigation
 

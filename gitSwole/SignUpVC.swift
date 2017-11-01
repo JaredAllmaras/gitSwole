@@ -10,6 +10,10 @@ import UIKit
 
 class SignUpVC: UIViewController {
 
+    @IBOutlet weak var secondPasswordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,7 +23,11 @@ class SignUpVC: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-
+    @IBAction func signUp(_ sender: Any) {
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 
