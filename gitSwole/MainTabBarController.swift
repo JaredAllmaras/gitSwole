@@ -26,25 +26,45 @@ class MainTabBarController: UITabBarController {
     
     fileprivate func createTabs() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let NathanStoryboard = UIStoryboard(name: "NathanStoryboard",bundle: nil)
         
         //instantiate each view controller
         let settingsVC = storyboard.instantiateViewController(withIdentifier: "settingsVC") as? SettingsViewController
+        let MealPlanVC = NathanStoryboard.instantiateViewController(withIdentifier: "MealPlanVC") as? MealPlanVC
+        let WorkoutsTVC = NathanStoryboard.instantiateViewController(withIdentifier: "WorkoutsTVC") as? WorkoutsTVC
         
         
         //gets each tab's image (stored in Asets.xcassets)
         let settingsImage = UIImage(named: "SettingsIcon")
         
         //sets tab's attributes
+        WorkoutsTVC!.tabBarItem = UITabBarItem(
+            title: "Workouts",
+            image: nil,
+            tag: 2)
+        
+        MealPlanVC!.tabBarItem = UITabBarItem(
+            title: "Nutrition",
+            image: nil,
+            tag: 3)
+        
         settingsVC!.tabBarItem = UITabBarItem(
             title: "Settings",
             image: settingsImage,
             tag: 5)
         
+        
+        
         //Wrap view controllers in their own nav controllers
+        let WorkoutsNav = UINavigationController(rootViewController: WorkoutsTVC!)
+        
+        let MealPlanNav = UINavigationController(rootViewController: MealPlanVC!)
+        
         let settingsNav = UINavigationController(rootViewController: settingsVC!)
         
+        
         //Creates an array of controllers that make up the tab bar items.
-        let controllers:[UIViewController] = [settingsNav]
+        let controllers:[UIViewController] = [WorkoutsNav, MealPlanNav, settingsNav]
         self.viewControllers = controllers
         
     }

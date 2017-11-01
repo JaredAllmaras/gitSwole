@@ -10,6 +10,13 @@
 		64B0BFC3851F1523E4E79D65 /* Pods_gitSwole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E953D4272458E5B1674B8B /* Pods_gitSwole.framework */; };
 		8CDA501D1FA94CFD00CED50D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */; };
 		8CDA501E1FA94CFD00CED50D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */; };
+		C4142FDD1FA94ECD00F3173E /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FDA1FA94EC700F3173E /* Meal.swift */; };
+		C4142FDE1FA94ECD00F3173E /* NathanStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4142FDB1FA94EC700F3173E /* NathanStoryboard.storyboard */; };
+		C4142FDF1FA94ECD00F3173E /* MealPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FDC1FA94EC800F3173E /* MealPlanVC.swift */; };
+		C4142FE41FA94ED400F3173E /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FE01FA94ED200F3173E /* WorkoutCell.swift */; };
+		C4142FE51FA94ED400F3173E /* WorkoutsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FE11FA94ED200F3173E /* WorkoutsTVC.swift */; };
+		C4142FE61FA94ED400F3173E /* WorkoutDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FE21FA94ED300F3173E /* WorkoutDetailVC.swift */; };
+		C4142FE71FA94ED400F3173E /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FE31FA94ED300F3173E /* Workout.swift */; };
 		E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8292B1FA2B0DB00522204 /* AppDelegate.swift */; };
 		E1C8292E1FA2B0DB00522204 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8292D1FA2B0DB00522204 /* ViewController.swift */; };
 		E1C829311FA2B0DB00522204 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C8292F1FA2B0DB00522204 /* Main.storyboard */; };
@@ -24,6 +31,13 @@
 		8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B44AB520063DBC96F4502F9B /* Pods-gitSwole.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gitSwole.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gitSwole/Pods-gitSwole.debug.xcconfig"; sourceTree = "<group>"; };
+		C4142FDA1FA94EC700F3173E /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		C4142FDB1FA94EC700F3173E /* NathanStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NathanStoryboard.storyboard; sourceTree = "<group>"; };
+		C4142FDC1FA94EC800F3173E /* MealPlanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPlanVC.swift; sourceTree = "<group>"; };
+		C4142FE01FA94ED200F3173E /* WorkoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
+		C4142FE11FA94ED200F3173E /* WorkoutsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsTVC.swift; sourceTree = "<group>"; };
+		C4142FE21FA94ED300F3173E /* WorkoutDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDetailVC.swift; sourceTree = "<group>"; };
+		C4142FE31FA94ED300F3173E /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		E1C829281FA2B0DA00522204 /* gitSwole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gitSwole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C8292B1FA2B0DB00522204 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1C8292D1FA2B0DB00522204 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +100,13 @@
 		E1C8292A1FA2B0DA00522204 /* gitSwole */ = {
 			isa = PBXGroup;
 			children = (
+				C4142FE31FA94ED300F3173E /* Workout.swift */,
+				C4142FE01FA94ED200F3173E /* WorkoutCell.swift */,
+				C4142FE21FA94ED300F3173E /* WorkoutDetailVC.swift */,
+				C4142FE11FA94ED200F3173E /* WorkoutsTVC.swift */,
+				C4142FDA1FA94EC700F3173E /* Meal.swift */,
+				C4142FDC1FA94EC800F3173E /* MealPlanVC.swift */,
+				C4142FDB1FA94EC700F3173E /* NathanStoryboard.storyboard */,
 				8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */,
 				8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */,
 				E1C8292B1FA2B0DB00522204 /* AppDelegate.swift */,
@@ -166,6 +187,7 @@
 				E1C829411FA2B14500522204 /* GoogleService-Info.plist in Resources */,
 				E1C829361FA2B0DB00522204 /* Assets.xcassets in Resources */,
 				E1C829311FA2B0DB00522204 /* Main.storyboard in Resources */,
+				C4142FDE1FA94ECD00F3173E /* NathanStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,9 +256,15 @@
 			files = (
 				E1C829341FA2B0DB00522204 /* gitSwole.xcdatamodeld in Sources */,
 				E1C8292E1FA2B0DB00522204 /* ViewController.swift in Sources */,
+				C4142FE51FA94ED400F3173E /* WorkoutsTVC.swift in Sources */,
 				8CDA501D1FA94CFD00CED50D /* MainTabBarController.swift in Sources */,
 				8CDA501E1FA94CFD00CED50D /* SettingsViewController.swift in Sources */,
+				C4142FE61FA94ED400F3173E /* WorkoutDetailVC.swift in Sources */,
+				C4142FE71FA94ED400F3173E /* Workout.swift in Sources */,
+				C4142FDD1FA94ECD00F3173E /* Meal.swift in Sources */,
 				E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */,
+				C4142FDF1FA94ECD00F3173E /* MealPlanVC.swift in Sources */,
+				C4142FE41FA94ED400F3173E /* WorkoutCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
