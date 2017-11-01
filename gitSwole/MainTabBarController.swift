@@ -32,10 +32,7 @@ class MainTabBarController: UITabBarController {
         let settingsVC = storyboard.instantiateViewController(withIdentifier: "settingsVC") as? SettingsViewController
         let MealPlanVC = NathanStoryboard.instantiateViewController(withIdentifier: "MealPlanVC") as? MealPlanVC
         let WorkoutsTVC = NathanStoryboard.instantiateViewController(withIdentifier: "WorkoutsTVC") as? WorkoutsTVC
-        
-        
-        //gets each tab's image (stored in Asets.xcassets)
-        let settingsImage = UIImage(named: "SettingsIcon")
+        let ProgressVC = NathanStoryboard.instantiateViewController(withIdentifier: "ProgressVC") as? ProgressVC
         
         //sets tab's attributes
         WorkoutsTVC!.tabBarItem = UITabBarItem(
@@ -45,26 +42,31 @@ class MainTabBarController: UITabBarController {
         
         MealPlanVC!.tabBarItem = UITabBarItem(
             title: "Nutrition",
-            image: #imageLiteral(resourceName: "heartMonitorIcon"),
+            image: #imageLiteral(resourceName: "porkChopIcon"),
             tag: 3)
+        
+        ProgressVC!.tabBarItem = UITabBarItem(
+            title: "Progress",
+            image: #imageLiteral(resourceName: "heartMonitorIcon"),
+            tag: 4)
         
         settingsVC!.tabBarItem = UITabBarItem(
             title: "Settings",
-            image: settingsImage,
+            image: #imageLiteral(resourceName: "SettingsIcon"),
             tag: 5)
         
         
         
         //Wrap view controllers in their own nav controllers
         let WorkoutsNav = UINavigationController(rootViewController: WorkoutsTVC!)
-        
         let MealPlanNav = UINavigationController(rootViewController: MealPlanVC!)
-        
         let settingsNav = UINavigationController(rootViewController: settingsVC!)
+        let ProgressNav = UINavigationController(rootViewController: ProgressVC!)
+        let HomeNav = UINavigationController(rootViewController: HomeVC!)
         
         
         //Creates an array of controllers that make up the tab bar items.
-        let controllers:[UIViewController] = [WorkoutsNav, MealPlanNav, settingsNav]
+        let controllers:[UIViewController] = [HomeNav, WorkoutsNav, MealPlanNav, ProgressNav, settingsNav]
         self.viewControllers = controllers
         
     }

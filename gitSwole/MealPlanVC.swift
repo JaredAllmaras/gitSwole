@@ -39,6 +39,7 @@ class MealPlanVC: UIViewController {
         
         self.loadMeals()
         
+        self.NextMeal.text = "Next Meal: Breakfast - \(String(describing: self.Meals?[0].MealCalories!)) calories"
         self.FirstMealItem.text = Meals?[0].FirstMealItem
         self.SecondMealItem.text = Meals?[0].SecondMealItem
         self.ThirdMealItem.text = Meals?[0].ThirdMealItem
@@ -49,7 +50,7 @@ class MealPlanVC: UIViewController {
     @IBAction func changeMeal(_ sender: UISegmentedControl) {
         self.currentMeal = Meals?[sender.selectedSegmentIndex]
         
-        self.NextMeal.text = "Next Meal: \(String(describing: sender.titleForSegment(at: sender.selectedSegmentIndex))) - \(String(describing:self.currentMeal?.MealCalories)) calories"
+        self.NextMeal.text = "Next Meal: \(String(describing: sender.titleForSegment(at: sender.selectedSegmentIndex)!)) - \(String(describing:self.currentMeal?.MealCalories!)) calories"
         
         self.FirstMealItem.text = self.currentMeal?.FirstMealItem
         self.SecondMealItem.text = self.currentMeal?.SecondMealItem
