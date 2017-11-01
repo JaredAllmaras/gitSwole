@@ -33,8 +33,15 @@ class MainTabBarController: UITabBarController {
         let MealPlanVC = NathanStoryboard.instantiateViewController(withIdentifier: "MealPlanVC") as? MealPlanVC
         let WorkoutsTVC = NathanStoryboard.instantiateViewController(withIdentifier: "WorkoutsTVC") as? WorkoutsTVC
         let ProgressVC = NathanStoryboard.instantiateViewController(withIdentifier: "ProgressVC") as? ProgressVC
+        let HomeVC = NathanStoryboard.instantiateViewController(withIdentifier: "HomeVC") as? HomeVC
+        
         
         //sets tab's attributes
+        HomeVC!.tabBarItem = UITabBarItem(
+            title: "Home",
+            image: nil,
+            tag: 1)
+        
         WorkoutsTVC!.tabBarItem = UITabBarItem(
             title: "Workouts",
             image: #imageLiteral(resourceName: "weightIcon"),

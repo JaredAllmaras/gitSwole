@@ -1,5 +1,5 @@
 //
-//  SignUpVC.swift
+//  HomeVC.swift
 //  gitSwole
 //
 //  Created by Nathan Mosley on 10/31/17.
@@ -8,15 +8,16 @@
 
 import UIKit
 
-class SignUpVC: UIViewController {
+class HomeVC: UIViewController {
     
-    let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
+   let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = primaryBackground
 
+        self.view.backgroundColor = primaryBackground
+        
         // Do any additional setup after loading the view.
     }
 
