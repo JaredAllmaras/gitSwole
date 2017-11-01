@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeVC: UIViewController {
     
@@ -15,10 +16,7 @@ class HomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.view.backgroundColor = primaryBackground
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +24,15 @@ class HomeVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func logout(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            print("Successfully logged out")
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
