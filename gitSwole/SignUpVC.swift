@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpVC: UIViewController {
 
@@ -14,9 +15,9 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,10 +25,37 @@ class SignUpVC: UIViewController {
     }
     
     @IBAction func signUp(_ sender: Any) {
+        if validUsername(username: usernameTextField.text!) && validEmail(email: emailTextField.text!) && validPassword(password: passwordTextField.text!) {
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+                if error != nil {
+                    print("Firebase sign up was successful!")
+                    _ = self.navigationController?.popViewController(animated: true)
+                } else {
+                    print("Error signing up for Firebase")
+                    print(error!.localizedDescription)
+                }
+            })
+        }
+    }
+    
+    private func validUsername(username: String) -> Bool {
+        return true
+    }
+    
+    private func validEmail(email: String) -> Bool {
+        let regEx = "[A-Z0-9a-z._%+]+@[A-Za-z0-9.]+\\.[A-Za-z]{2,4}"
+        let validationStatus = NSPredicate(format:"SELF MATCHES %@", regEx)
+        return validationStatus.evaluate(with: email)
+    }
+    
+    private func validPassword(password: String) -> Bool {
+        return true
     }
     
     @IBAction func cancel(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
+    
     /*
     // MARK: - Navigation
 

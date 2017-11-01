@@ -29,9 +29,14 @@ class LoginVC: UIViewController {
     @IBAction func signIn(_ sender: Any) {
         if validEmail(email: email.text!) && validPW(password: password.text!) {
             Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
-                // return to home screen
-                print("User signed in successfully")
-                _ = self.navigationController?.popViewController(animated: true)
+                if error != nil {
+                    // return to home screen
+                    print("User signed in successfully")
+                    _ = self.navigationController?.popViewController(animated: true)
+                } else {
+                    print("Error signing in to Firebase")
+                    print(error!.localizedDescription)
+                }
             }
         }
     }
@@ -39,7 +44,7 @@ class LoginVC: UIViewController {
     private func validEmail(email: String) -> Bool {
         let regEx = "[A-Z0-9a-z._%+]+@[A-Za-z0-9.]+\\.[A-Za-z]{2,4}"
         let validationStatus = NSPredicate(format:"SELF MATCHES %@", regEx)
-        return (validationStatus.evaluate(with: email) == false)
+        return validationStatus.evaluate(with: email)
     }
     
     private func validPW(password: String) -> Bool {
