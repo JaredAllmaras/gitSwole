@@ -7,5 +7,6 @@ target 'gitSwole' do
 
   # Pods for gitSwole
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
 end
