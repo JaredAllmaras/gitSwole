@@ -10,12 +10,32 @@ import UIKit
 
 class ProgressVC: UIViewController {
 
+    @IBOutlet weak var goalWeight: UITextField!
+    @IBOutlet weak var currentWeight: UITextField!
+    
+    @IBOutlet weak var goalWeightLabel: UILabel!
+    @IBOutlet weak var currentWeightLabel: UILabel!
+    @IBOutlet weak var difference: UILabel!
+    @IBOutlet weak var lastUpdated: UILabel!
+    
+    @IBAction func saveGoal(_ sender: Any) {
+        if currentWeight.text != "" {
+            currentWeightLabel.text = currentWeight.text
+        }
+        if goalWeight.text != "" {
+            goalWeightLabel.text = goalWeight.text
+        }
+        /*
+        difference.text = Int(goalWeightLabel.text!) - Int(currentWeightLabel.text!)
+        */
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
