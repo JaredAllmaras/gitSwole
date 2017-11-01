@@ -30,7 +30,7 @@ class SignUpVC: UIViewController {
     @IBAction func signUp(_ sender: Any) {
         if validUsername(username: usernameTextField.text!) && validEmail(email: emailTextField.text!) && validPassword(password: passwordTextField.text!) {
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
-                if error != nil {
+                if error == nil {
                     print("Firebase sign up was successful!")
                     _ = self.navigationController?.popViewController(animated: true)
                 } else {
@@ -38,6 +38,8 @@ class SignUpVC: UIViewController {
                     print(error!.localizedDescription)
                 }
             })
+        } else {
+            print("Invalid username, email, or password")
         }
     }
     

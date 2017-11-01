@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 
 
 class LoginVC: UIViewController {
@@ -31,7 +31,7 @@ class LoginVC: UIViewController {
     @IBAction func signIn(_ sender: Any) {
         if validEmail(email: email.text!) && validPW(password: password.text!) {
             Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
-                if error != nil {
+                if error == nil {
                     // return to home screen
                     print("User signed in successfully")
                     _ = self.navigationController?.popViewController(animated: true)
@@ -40,6 +40,8 @@ class LoginVC: UIViewController {
                     print(error!.localizedDescription)
                 }
             }
+        } else {
+            print("Invalid Username or Password")
         }
     }
     
@@ -58,9 +60,9 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func register(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "NathanStoryboard", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "SignUpVC")
-        self.present(vc, animated: true, completion: nil)
+//        let storyboard = UIStoryboard(name: "NathanStoryboard", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "SignUpVC")
+//        self.present(vc, animated: true, completion: nil)
     }
     
     /*
