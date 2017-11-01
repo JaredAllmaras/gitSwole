@@ -389,7 +389,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceO-mx-YRq">
                                 <rect key="frame" x="16" y="76" width="343" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -447,8 +447,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caloric Goal: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kr-jf-8r3">
+                                <rect key="frame" x="136" y="370" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eaten: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT9-NG-VU0">
+                                <rect key="frame" x="161" y="415" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYF-4D-dmZ">
+                                <rect key="frame" x="143" y="462" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiF-z2-vCa">
+                                <rect key="frame" x="126" y="539" width="122" height="30"/>
+                                <state key="normal" title="Calorie Calculator"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Meal Plan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkV-Ec-mbW">
+                                <rect key="frame" x="92" y="58" width="191.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="NJi-ri-h3h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Meal: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OB-kF-dpi">
+                                <rect key="frame" x="135" y="106" width="105" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="m0w-dz-cWz">
-                                <rect key="frame" x="79" y="227" width="218" height="29"/>
+                                <rect key="frame" x="79" y="248" width="218" height="29"/>
                                 <segments>
                                     <segment title="Breakfast"/>
                                     <segment title="Lunch"/>
@@ -458,63 +495,26 @@
                                     <action selector="changeMeal:" destination="1Rk-7a-hk1" eventType="valueChanged" id="aL4-hY-mNB"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caloric Goal: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kr-jf-8r3">
-                                <rect key="frame" x="136" y="367" width="102" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eaten: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT9-NG-VU0">
-                                <rect key="frame" x="161" y="412" width="53" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYF-4D-dmZ">
-                                <rect key="frame" x="143" y="459" width="89" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiF-z2-vCa">
-                                <rect key="frame" x="126" y="536" width="122" height="30"/>
-                                <state key="normal" title="Calorie Calculator"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Meal Plan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkV-Ec-mbW">
-                                <rect key="frame" x="112" y="58" width="152" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="NJi-ri-h3h"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Meal: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OB-kF-dpi">
-                                <rect key="frame" x="145" y="106" width="86" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGE-ak-YRq">
-                                <rect key="frame" x="167" y="128" width="42" height="21"/>
+                                <rect key="frame" x="167" y="149" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hka-2r-EJ9">
-                                <rect key="frame" x="167" y="157" width="42" height="21"/>
+                                <rect key="frame" x="167" y="178" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hM9-yL-xAN">
-                                <rect key="frame" x="167" y="186" width="42" height="21"/>
+                                <rect key="frame" x="167" y="207" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ly-KN-hZO">
-                                <rect key="frame" x="132" y="279" width="111" height="30"/>
+                                <rect key="frame" x="132" y="300" width="111" height="30"/>
                                 <state key="normal" title="View Meal Plans"/>
                             </button>
                         </subviews>
@@ -526,7 +526,7 @@
                             <constraint firstItem="hM9-yL-xAN" firstAttribute="centerX" secondItem="XBd-At-kVV" secondAttribute="centerX" id="8Uf-x0-KPx"/>
                             <constraint firstItem="m0w-dz-cWz" firstAttribute="centerX" secondItem="XBd-At-kVV" secondAttribute="centerX" id="DeN-qq-M6q"/>
                             <constraint firstItem="IYF-4D-dmZ" firstAttribute="top" secondItem="rT9-NG-VU0" secondAttribute="bottom" constant="26" id="Dkg-hI-izo"/>
-                            <constraint firstItem="qGE-ak-YRq" firstAttribute="top" secondItem="0OB-kF-dpi" secondAttribute="bottom" constant="1" id="FYo-MG-8a0"/>
+                            <constraint firstItem="qGE-ak-YRq" firstAttribute="top" secondItem="0OB-kF-dpi" secondAttribute="bottom" constant="19" id="FYo-MG-8a0"/>
                             <constraint firstItem="eiF-z2-vCa" firstAttribute="centerX" secondItem="XBd-At-kVV" secondAttribute="centerX" id="Fr6-yM-Uda"/>
                             <constraint firstItem="rT9-NG-VU0" firstAttribute="top" secondItem="3kr-jf-8r3" secondAttribute="bottom" constant="24" id="Kn8-gu-jSY"/>
                             <constraint firstItem="0OB-kF-dpi" firstAttribute="centerX" secondItem="XBd-At-kVV" secondAttribute="centerX" id="ND5-TX-jzg"/>
@@ -539,7 +539,7 @@
                             <constraint firstItem="m0w-dz-cWz" firstAttribute="top" secondItem="hM9-yL-xAN" secondAttribute="bottom" constant="20" id="dbM-Xl-pqj"/>
                             <constraint firstItem="0OB-kF-dpi" firstAttribute="top" secondItem="YkV-Ec-mbW" secondAttribute="bottom" constant="27" id="f4i-fm-0gn"/>
                             <constraint firstItem="7ly-KN-hZO" firstAttribute="centerX" secondItem="XBd-At-kVV" secondAttribute="centerX" id="kEH-qK-BXf"/>
-                            <constraint firstItem="3kr-jf-8r3" firstAttribute="top" secondItem="7ly-KN-hZO" secondAttribute="bottom" constant="58" id="uAB-Cv-M4e"/>
+                            <constraint firstItem="3kr-jf-8r3" firstAttribute="top" secondItem="7ly-KN-hZO" secondAttribute="bottom" constant="40" id="uAB-Cv-M4e"/>
                             <constraint firstItem="eiF-z2-vCa" firstAttribute="top" secondItem="IYF-4D-dmZ" secondAttribute="bottom" constant="56" id="uX9-Jv-w6M"/>
                             <constraint firstItem="qGE-ak-YRq" firstAttribute="centerX" secondItem="XBd-At-kVV" secondAttribute="centerX" id="xbI-rG-T7s"/>
                         </constraints>
