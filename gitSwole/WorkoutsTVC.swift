@@ -10,9 +10,8 @@ import UIKit
 
 class WorkoutsTVC: UITableViewController {
     
-  var Workouts:[Workout]?
-  
-    
+    var Workouts:[Workout]?
+    let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
     
     func loadWorkouts() {
         
@@ -24,6 +23,8 @@ class WorkoutsTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.backgroundColor = primaryBackground
         
         self.loadWorkouts()
 
@@ -56,6 +57,7 @@ class WorkoutsTVC: UITableViewController {
         let currentWorkout = self.Workouts?[indexPath.row]
 
         cell.WorkoutName.text = currentWorkout?.Name
+        cell.backgroundColor = self.primaryBackground
         
         return cell
     }

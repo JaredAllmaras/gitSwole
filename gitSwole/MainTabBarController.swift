@@ -40,12 +40,12 @@ class MainTabBarController: UITabBarController {
         //sets tab's attributes
         WorkoutsTVC!.tabBarItem = UITabBarItem(
             title: "Workouts",
-            image: nil,
+            image: #imageLiteral(resourceName: "weightIcon"),
             tag: 2)
         
         MealPlanVC!.tabBarItem = UITabBarItem(
             title: "Nutrition",
-            image: nil,
+            image: #imageLiteral(resourceName: "heartMonitorIcon"),
             tag: 3)
         
         settingsVC!.tabBarItem = UITabBarItem(

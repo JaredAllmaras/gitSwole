@@ -10,6 +10,8 @@ import UIKit
 
 class MealPlanVC: UIViewController {
     
+    let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
+    
     var currentMeal:Meal?
     var Meals:[Meal]?
 
@@ -29,10 +31,18 @@ class MealPlanVC: UIViewController {
         ]
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = primaryBackground
+        
         self.loadMeals()
+        
+        self.FirstMealItem.text = Meals?[0].FirstMealItem
+        self.SecondMealItem.text = Meals?[0].SecondMealItem
+        self.ThirdMealItem.text = Meals?[0].ThirdMealItem
+        
         
     }
 
