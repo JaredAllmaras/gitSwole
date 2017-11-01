@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import Firebase
+
 
 class LoginVC: UIViewController {
     
     let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
 
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.view.backgroundColor = primaryBackground
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +28,41 @@ class LoginVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func signIn(_ sender: Any) {
+        if validEmail(email: email.text!) && validPW(password: password.text!) {
+            Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
+                if error != nil {
+                    // return to home screen
+                    print("User signed in successfully")
+                    _ = self.navigationController?.popViewController(animated: true)
+                } else {
+                    print("Error signing in to Firebase")
+                    print(error!.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    private func validEmail(email: String) -> Bool {
+        let regEx = "[A-Z0-9a-z._%+]+@[A-Za-z0-9.]+\\.[A-Za-z]{2,4}"
+        let validationStatus = NSPredicate(format:"SELF MATCHES %@", regEx)
+        return validationStatus.evaluate(with: email)
+    }
+    
+    private func validPW(password: String) -> Bool {
+        return password != ""
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func register(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "NathanStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SignUpVC")
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

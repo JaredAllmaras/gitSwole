@@ -119,16 +119,23 @@
                                     <constraint firstAttribute="height" constant="30" id="aeu-ZK-LAz"/>
                                 </constraints>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signIn:" destination="vrq-1c-ZYJ" eventType="touchUpInside" id="2WB-VR-upb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gc6-Xi-mCm">
                                 <rect key="frame" x="94" y="356" width="188" height="30"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancel:" destination="vrq-1c-ZYJ" eventType="touchUpInside" id="qw5-dt-Cdd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE1-JG-RP2">
                                 <rect key="frame" x="94" y="529" width="188" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <segue destination="o9M-ww-j2c" kind="show" id="GNc-w2-NvZ"/>
+                                    <action selector="register:" destination="vrq-1c-ZYJ" eventType="touchUpInside" id="rL2-CM-FND"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -168,6 +175,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GDP-RE-hhl"/>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="TEj-LX-XVW" id="HUh-8B-CUU"/>
+                        <outlet property="password" destination="hdy-fx-ilE" id="jRL-LB-Vs8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKO-4b-SgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -184,6 +195,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbs-dV-zQj">
                                 <rect key="frame" x="111" y="540" width="153" height="30"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUp:" destination="o9M-ww-j2c" eventType="touchUpInside" id="dWa-vg-PDd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3v-Kf-9MZ">
                                 <rect key="frame" x="71" y="92" width="232" height="33"/>
@@ -242,6 +256,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh3-c4-Ggd">
                                 <rect key="frame" x="111" y="578" width="153" height="30"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancel:" destination="o9M-ww-j2c" eventType="touchUpInside" id="kGK-le-rJO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -293,6 +310,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SGY-yD-cdZ"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="SLi-KU-3Z2" id="IlW-Ri-DIw"/>
+                        <outlet property="passwordTextField" destination="YvU-qh-LvG" id="ReE-MW-axk"/>
+                        <outlet property="secondPasswordTextField" destination="h5x-In-n6S" id="GpT-7u-H8V"/>
+                        <outlet property="usernameTextField" destination="jQP-dp-01a" id="Aoe-Ue-Gar"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="218-th-g6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
