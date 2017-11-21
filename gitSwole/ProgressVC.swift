@@ -41,6 +41,18 @@ class ProgressVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Code for keyboard dismissal when user touches outside textFields
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // 'First Responder' is the same as 'input focus'.
+        // We are removing input focus from the text field.
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 
     /*
     // MARK: - Navigation

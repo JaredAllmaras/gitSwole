@@ -61,6 +61,18 @@ class SignUpVC: UIViewController {
         _ = self.navigationController?.popViewController(animated: true)
     }
     
+    //Code for keyboard dismissal when user touches outside textField
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // 'First Responder' is the same as 'input focus'.
+        // We are removing input focus from the text field.
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     /*
     // MARK: - Navigation
 
