@@ -32,13 +32,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YD7-qX-ina">
+                        <!--    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YD7-qX-ina">
                                 <rect key="frame" x="92" y="441" width="190" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login with Spotify"/>
                                 <connections>
-                                    <action selector="loginBtnPressed:" destination="mdu-Ri-XsD" eventType="touchUpInside" id="RFl-bA-v7C"/>
+                                    <action selector="loginBtnPressed:" destination="mdu-Ri-XsD" eventType="touchUpInside" id="RFl-bA-v7C"/> -->
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cd9-cM-z18">
                                 <rect key="frame" x="304" y="55" width="48" height="30"/>
                                 <state key="normal" title="Logout"/>
@@ -473,7 +472,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lb-Zy-1Da" customClass="CheckBox" customModule="gitSwole" customModuleProvider="target">
                                 <rect key="frame" x="16" y="171" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<<<<<<< HEAD
                                 <state key="normal" image="icons8-unchecked-checkbox-50"/>
                                 <state key="selected" image="icons8-checked-checkbox-50"/>
                             </button>
@@ -495,21 +493,19 @@
                                 <state key="normal" image="icons8-unchecked-checkbox-50"/>
                                 <state key="selected" image="icons8-checked-checkbox-50"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPR-tx-piG" customClass="CheckBox" customModule="gitSwole" customModuleProvider="target">
+                           <!--  <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPR-tx-piG" customClass="CheckBox" customModule="gitSwole" customModuleProvider="target">
                                 <rect key="frame" x="16" y="214" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icons8-unchecked-checkbox-50"/>
                                 <state key="selected" image="icons8-checked-checkbox-50"/>
-=======
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                            </label>
+                            </label> -->
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtZ-nD-2MS">
                                 <rect key="frame" x="104" y="542" width="167" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start Workout"/>
->>>>>>> b8b71216baa76e78b3cef6a5107e3c79e9e01131
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
