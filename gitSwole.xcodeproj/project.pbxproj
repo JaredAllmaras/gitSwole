@@ -32,6 +32,7 @@
 		C4C048531FC4EB510061473A /* MealPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C048521FC4EB510061473A /* MealPlanTableViewCell.swift */; };
 		C4C048591FC4EF9E0061473A /* MealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C048581FC4EF9E0061473A /* MealPlan.swift */; };
 		C4C0485B1FC4F9E60061473A /* MealPlanDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */; };
+		C4C0485D1FC51BFC0061473A /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0485C1FC51BFC0061473A /* CheckBox.swift */; };
 		E17AAB1B1FC4D333005247C7 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAB1A1FC4D333005247C7 /* DataSource.swift */; };
 		E17AAB1D1FC4DA66005247C7 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAB1C1FC4DA66005247C7 /* Authentication.swift */; };
 		E17AAB1F1FC4EFC5005247C7 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAB1E1FC4EFC5005247C7 /* LocalDataSource.swift */; };
@@ -74,6 +75,7 @@
 		C4C048571FC4EF470061473A /* gitSwole-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "gitSwole-Bridging-Header.h"; path = "gitSwole/gitSwole-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4C048581FC4EF9E0061473A /* MealPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlan.swift; sourceTree = "<group>"; };
 		C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanDetailVC.swift; sourceTree = "<group>"; };
+		C4C0485C1FC51BFC0061473A /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		E17AAB1A1FC4D333005247C7 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		E17AAB1C1FC4DA66005247C7 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		E17AAB1E1FC4EFC5005247C7 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				8CDF7AD61FC4E3E100FB397C /* WorkoutVC.swift */,
 				C4C048581FC4EF9E0061473A /* MealPlan.swift */,
 				C4142FDB1FA94EC700F3173E /* NathanStoryboard.storyboard */,
+				C4C0485C1FC51BFC0061473A /* CheckBox.swift */,
 				C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */,
 				C4C048521FC4EB510061473A /* MealPlanTableViewCell.swift */,
 				C4C048501FC4EA7A0061473A /* MealPlansTableViewController.swift */,
@@ -346,6 +349,7 @@
 				8CDF7AF01FC5126700FB397C /* BridgeViewController.m in Sources */,
 				8CDF7AD71FC4E3E100FB397C /* WorkoutVC.swift in Sources */,
 				C4C048591FC4EF9E0061473A /* MealPlan.swift in Sources */,
+				C4C0485D1FC51BFC0061473A /* CheckBox.swift in Sources */,
 				C4C048511FC4EA7A0061473A /* MealPlansTableViewController.swift in Sources */,
 				C4142FE41FA94ED400F3173E /* WorkoutCell.swift in Sources */,
 			);
