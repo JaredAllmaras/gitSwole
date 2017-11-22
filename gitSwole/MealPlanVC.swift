@@ -13,7 +13,8 @@ class MealPlanVC: UIViewController {
     let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
     
     var currentMeal:Meal?
-    var Meals:[Meal]?
+    var currentMealPlan:Int = 0
+    var MealPlans:[MealPlan]?
 
     @IBOutlet weak var NextMeal: UILabel!
     @IBOutlet weak var FirstMealItem: UILabel!
@@ -24,11 +25,17 @@ class MealPlanVC: UIViewController {
     @IBOutlet weak var CaloriesEaten: UILabel!    
     @IBOutlet weak var CaloriesRemaining: UILabel!
     
-    func loadMeals(){
-        Meals = [Meal(first: "Scrambled Whole Egg - 3 Large", second: "Oatmeal bowl w/ yogurt - 1 cup", third: "Whole milk - 16 oz.", calories: 809),
-                 Meal(first:"Chicken Breast - 6oz.", second:"Steamed White Rice - 1 cup", third:"Broccoli - 1 cup", calories: 445),
-                 Meal(first:"Steak - 8 oz.", second:"Sweet Potato - 10 oz.", third:"Asparagus - 1 cup", calories: 845)
-        ]
+    func loadMealPlans(){
+        MealPlans = [
+            MealPlan(name: "Bulking Meal Plan 1", meals: [
+                Meal(first: "Scrambled Whole Egg - 3 Large", second: "Oatmeal bowl w/ yogurt - 1 cup", third: "Whole milk - 16 oz.", calories: 809),
+                Meal(first:"Chicken Breast - 6oz.", second:"Steamed White Rice - 1 cup", third:"Broccoli - 1 cup", calories: 445),
+                Meal(first:"Steak - 8 oz.", second:"Sweet Potato - 10 oz.", third:"Asparagus - 1 cup", calories: 845)]),
+            MealPlan(name: "Cutting Meal Plan 1", meals:[
+                Meal(first: "Bagel with 2 Tbsp. peanut butter", second: "Egg whites - 6 large", third: "Chicken breast - 6oz.", calories: 714),
+                Meal(first: "Green Vegetables - 1 cup", second: "Red snapper - 8oz.", third: "White kidney beans - 1/2 cup", calories: 591),
+                Meal(first: "Tuna sandwich - 6oz.", second: "Cooked quinoa - 1/2 cup", third: "Whey protein shake - 40g", calories: 701)])
+            ]
     }
     
     
@@ -37,18 +44,18 @@ class MealPlanVC: UIViewController {
 
         self.view.backgroundColor = primaryBackground
         
-        self.loadMeals()
+        self.loadMealPlans()
         
-        self.NextMeal.text = "Next Meal: Breakfast - \(String(describing: (self.Meals?[0].MealCalories)!)) calories"
-        self.FirstMealItem.text = Meals?[0].FirstMealItem
-        self.SecondMealItem.text = Meals?[0].SecondMealItem
-        self.ThirdMealItem.text = Meals?[0].ThirdMealItem
+        self.NextMeal.text = "Next Meal: Breakfast - \(String(describing: (self.MealPlans?[currentMealPlan].Meals?[0].MealCalories)!)) calories"
+        self.FirstMealItem.text = MealPlans?[currentMealPlan].Meals?[0].FirstMealItem
+        self.SecondMealItem.text = MealPlans?[currentMealPlan].Meals?[0].SecondMealItem
+        self.ThirdMealItem.text = MealPlans?[currentMealPlan].Meals?[0].ThirdMealItem
         
         
     }
 
     @IBAction func changeMeal(_ sender: UISegmentedControl) {
-        self.currentMeal = Meals?[sender.selectedSegmentIndex]
+        self.currentMeal = MealPlans?[currentMealPlan].Meals?[sender.selectedSegmentIndex]
         
         self.NextMeal.text = "Next Meal: \(String(describing: sender.titleForSegment(at: sender.selectedSegmentIndex)!)) - \(String(describing: (self.currentMeal?.MealCalories)!)) calories"
         
@@ -64,14 +71,16 @@ class MealPlanVC: UIViewController {
     }
     
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowDetail" {
+            if let dsvc = segue.destination as? MealPlansTableViewController {
+                dsvc.MealPlans = self.MealPlans
+            }
+        }
     }
-    */
-
+    
 }

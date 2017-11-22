@@ -21,6 +21,10 @@
 		C4142FEB1FA959D600F3173E /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FEA1FA959D600F3173E /* SignUpVC.swift */; };
 		C4142FED1FA96A2100F3173E /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FEC1FA96A2100F3173E /* ProgressVC.swift */; };
 		C4142FEF1FA96C3400F3173E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FEE1FA96C3400F3173E /* HomeVC.swift */; };
+		C4C048511FC4EA7A0061473A /* MealPlansTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C048501FC4EA7A0061473A /* MealPlansTableViewController.swift */; };
+		C4C048531FC4EB510061473A /* MealPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C048521FC4EB510061473A /* MealPlanTableViewCell.swift */; };
+		C4C048591FC4EF9E0061473A /* MealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C048581FC4EF9E0061473A /* MealPlan.swift */; };
+		C4C0485B1FC4F9E60061473A /* MealPlanDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */; };
 		E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8292B1FA2B0DB00522204 /* AppDelegate.swift */; };
 		E1C8292E1FA2B0DB00522204 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8292D1FA2B0DB00522204 /* ViewController.swift */; };
 		E1C829311FA2B0DB00522204 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C8292F1FA2B0DB00522204 /* Main.storyboard */; };
@@ -46,6 +50,11 @@
 		C4142FEA1FA959D600F3173E /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		C4142FEC1FA96A2100F3173E /* ProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
 		C4142FEE1FA96C3400F3173E /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		C4C048501FC4EA7A0061473A /* MealPlansTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlansTableViewController.swift; sourceTree = "<group>"; };
+		C4C048521FC4EB510061473A /* MealPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanTableViewCell.swift; sourceTree = "<group>"; };
+		C4C048571FC4EF470061473A /* gitSwole-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "gitSwole-Bridging-Header.h"; path = "gitSwole/gitSwole-Bridging-Header.h"; sourceTree = "<group>"; };
+		C4C048581FC4EF9E0061473A /* MealPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlan.swift; sourceTree = "<group>"; };
+		C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanDetailVC.swift; sourceTree = "<group>"; };
 		E1C829281FA2B0DA00522204 /* gitSwole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gitSwole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C8292B1FA2B0DB00522204 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1C8292D1FA2B0DB00522204 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +99,7 @@
 		E1C8291F1FA2B0DA00522204 = {
 			isa = PBXGroup;
 			children = (
+				C4C048571FC4EF470061473A /* gitSwole-Bridging-Header.h */,
 				E1C8292A1FA2B0DA00522204 /* gitSwole */,
 				E1C829291FA2B0DA00522204 /* Products */,
 				4AE9C0C7F5B2D96D96F6797C /* Pods */,
@@ -114,7 +124,11 @@
 				C4142FE11FA94ED200F3173E /* WorkoutsTVC.swift */,
 				C4142FDA1FA94EC700F3173E /* Meal.swift */,
 				C4142FDC1FA94EC800F3173E /* MealPlanVC.swift */,
+				C4C048581FC4EF9E0061473A /* MealPlan.swift */,
 				C4142FDB1FA94EC700F3173E /* NathanStoryboard.storyboard */,
+				C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */,
+				C4C048521FC4EB510061473A /* MealPlanTableViewCell.swift */,
+				C4C048501FC4EA7A0061473A /* MealPlansTableViewController.swift */,
 				C4142FEE1FA96C3400F3173E /* HomeVC.swift */,
 				C4142FE81FA9599900F3173E /* LoginVC.swift */,
 				C4142FEA1FA959D600F3173E /* SignUpVC.swift */,
@@ -168,6 +182,7 @@
 				TargetAttributes = {
 					E1C829271FA2B0DA00522204 = {
 						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -266,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4C048531FC4EB510061473A /* MealPlanTableViewCell.swift in Sources */,
 				E1C829341FA2B0DB00522204 /* gitSwole.xcdatamodeld in Sources */,
 				E1C8292E1FA2B0DB00522204 /* ViewController.swift in Sources */,
 				C4142FE91FA9599900F3173E /* LoginVC.swift in Sources */,
@@ -278,8 +294,11 @@
 				C4142FE71FA94ED400F3173E /* Workout.swift in Sources */,
 				C4142FDD1FA94ECD00F3173E /* Meal.swift in Sources */,
 				E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */,
+				C4C0485B1FC4F9E60061473A /* MealPlanDetailVC.swift in Sources */,
 				C4142FEB1FA959D600F3173E /* SignUpVC.swift in Sources */,
 				C4142FDF1FA94ECD00F3173E /* MealPlanVC.swift in Sources */,
+				C4C048591FC4EF9E0061473A /* MealPlan.swift in Sources */,
+				C4C048511FC4EA7A0061473A /* MealPlansTableViewController.swift in Sources */,
 				C4142FE41FA94ED400F3173E /* WorkoutCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,11 +437,14 @@
 			baseConfigurationReference = B44AB520063DBC96F4502F9B /* Pods-gitSwole.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = gitSwole/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gitSwoleLLC.gitSwole;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "gitSwole/gitSwole-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -433,11 +455,13 @@
 			baseConfigurationReference = 30F154C6F91BE2EE172DAF0D /* Pods-gitSwole.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = gitSwole/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gitSwoleLLC.gitSwole;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "gitSwole/gitSwole-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
