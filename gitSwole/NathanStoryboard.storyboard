@@ -46,6 +46,14 @@
                                     <segue destination="o9M-ww-j2c" kind="show" id="kT8-S3-hw7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hx2-pn-Xpk">
+                                <rect key="frame" x="172" y="263" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Test"/>
+                                <connections>
+                                    <action selector="testButtonAction:" destination="mdu-Ri-XsD" eventType="touchUpInside" id="58Q-0I-UHg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -749,6 +757,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GNc-w2-NvZ"/>
+        <segue reference="kT8-S3-hw7"/>
     </inferredMetricsTieBreakers>
 </document>

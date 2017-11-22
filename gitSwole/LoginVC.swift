@@ -29,19 +29,25 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func signIn(_ sender: Any) {
-        if validEmail(email: email.text!) && validPW(password: password.text!) {
-            Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
-                if error == nil {
-                    // return to home screen
-                    print("User signed in successfully")
-                    _ = self.navigationController?.popViewController(animated: true)
-                } else {
-                    print("Error signing in to Firebase")
-                    print(error!.localizedDescription)
+        
+//        if user not signed in {
+//
+//        }
+        if !DataSource.dataSource.signedIn() {
+            if validEmail(email: email.text!) && validPW(password: password.text!) {
+                Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
+                    if error == nil {
+                        print("User signed in successfully")
+                        DataSource.dataSource.configure(user: user!)
+                        _ = self.navigationController?.popViewController(animated: true)
+                    } else {
+                        print("Error signing in to Firebase")
+                        print(error!.localizedDescription)
+                    }
                 }
+            } else {
+                print("Invalid Username or Password")
             }
-        } else {
-            print("Invalid Username or Password")
         }
     }
     

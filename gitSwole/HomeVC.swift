@@ -33,6 +33,10 @@ class HomeVC: UIViewController {
         }
     }
     
+    @IBAction func testButtonAction(_ sender: Any) {
+        DataSource.dataSource.test()
+    }
+    
     /*
     // MARK: - Navigation
 

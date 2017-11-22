@@ -18,20 +18,25 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     
+    private var dataSource:DataSource?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = primaryBackground
+        dataSource = DataSource()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    // Validate and add user to firebase user auth object
     @IBAction func signUp(_ sender: Any) {
         if validUsername(username: usernameTextField.text!) && validEmail(email: emailTextField.text!) && validPassword(password: passwordTextField.text!) {
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
                 if error == nil {
                     print("Firebase sign up was successful!")
+                    DataSource.dataSource.configure(user: user!)
                     _ = self.navigationController?.popViewController(animated: true)
                 } else {
                     print("Error signing up for Firebase")

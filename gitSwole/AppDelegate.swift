@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // initialize Firebase
         FirebaseApp.configure()
         
+        // initialize CoreData
+        LocalDataSource.dataSource.configure()
+        
         //setup for tab bar controller
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
