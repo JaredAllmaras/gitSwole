@@ -10,6 +10,13 @@
 		64B0BFC3851F1523E4E79D65 /* Pods_gitSwole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E953D4272458E5B1674B8B /* Pods_gitSwole.framework */; };
 		8CDA501D1FA94CFD00CED50D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */; };
 		8CDA501E1FA94CFD00CED50D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */; };
+		8CDF7AD71FC4E3E100FB397C /* WorkoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF7AD61FC4E3E100FB397C /* WorkoutVC.swift */; };
+		8CDF7AD91FC4FA3A00FB397C /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF7AD81FC4FA3A00FB397C /* SpotifyAuthentication.framework */; };
+		8CDF7ADD1FC4FC3B00FB397C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF7ADC1FC4FC0D00FB397C /* AVFoundation.framework */; };
+		8CDF7ADF1FC4FC5800FB397C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF7ADE1FC4FC4900FB397C /* SystemConfiguration.framework */; };
+		8CDF7AE51FC5010000FB397C /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF7AE41FC5010000FB397C /* SpotifyAudioPlayback.framework */; };
+		8CDF7AE71FC5011B00FB397C /* SpotifyMetadata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF7AE61FC5011B00FB397C /* SpotifyMetadata.framework */; };
+		8CDF7AF01FC5126700FB397C /* BridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF7AEF1FC5126700FB397C /* BridgeViewController.m */; };
 		C4142FDD1FA94ECD00F3173E /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FDA1FA94EC700F3173E /* Meal.swift */; };
 		C4142FDE1FA94ECD00F3173E /* NathanStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4142FDB1FA94EC700F3173E /* NathanStoryboard.storyboard */; };
 		C4142FDF1FA94ECD00F3173E /* MealPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FDC1FA94EC800F3173E /* MealPlanVC.swift */; };
@@ -42,6 +49,15 @@
 		30F154C6F91BE2EE172DAF0D /* Pods-gitSwole.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gitSwole.release.xcconfig"; path = "Pods/Target Support Files/Pods-gitSwole/Pods-gitSwole.release.xcconfig"; sourceTree = "<group>"; };
 		8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8CDF7AD61FC4E3E100FB397C /* WorkoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutVC.swift; sourceTree = "<group>"; };
+		8CDF7AD81FC4FA3A00FB397C /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
+		8CDF7ADC1FC4FC0D00FB397C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8CDF7ADE1FC4FC4900FB397C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8CDF7AE41FC5010000FB397C /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
+		8CDF7AE61FC5011B00FB397C /* SpotifyMetadata.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyMetadata.framework; sourceTree = "<group>"; };
+		8CDF7AEE1FC5126700FB397C /* BridgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeViewController.h; sourceTree = "<group>"; };
+		8CDF7AEF1FC5126700FB397C /* BridgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BridgeViewController.m; sourceTree = "<group>"; };
+		8CDF7AF11FC5130A00FB397C /* gitswole-Bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gitswole-Bridging-header.h"; sourceTree = "<group>"; };
 		B44AB520063DBC96F4502F9B /* Pods-gitSwole.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gitSwole.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gitSwole/Pods-gitSwole.debug.xcconfig"; sourceTree = "<group>"; };
 		C4142FDA1FA94EC700F3173E /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		C4142FDB1FA94EC700F3173E /* NathanStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NathanStoryboard.storyboard; sourceTree = "<group>"; };
@@ -80,7 +96,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CDF7ADF1FC4FC5800FB397C /* SystemConfiguration.framework in Frameworks */,
+				8CDF7ADD1FC4FC3B00FB397C /* AVFoundation.framework in Frameworks */,
 				64B0BFC3851F1523E4E79D65 /* Pods_gitSwole.framework in Frameworks */,
+				8CDF7AE71FC5011B00FB397C /* SpotifyMetadata.framework in Frameworks */,
+				8CDF7AD91FC4FA3A00FB397C /* SpotifyAuthentication.framework in Frameworks */,
+				8CDF7AE51FC5010000FB397C /* SpotifyAudioPlayback.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +120,11 @@
 		92F5E9DD933FBEE869D09CE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CDF7AE61FC5011B00FB397C /* SpotifyMetadata.framework */,
+				8CDF7AE41FC5010000FB397C /* SpotifyAudioPlayback.framework */,
+				8CDF7ADE1FC4FC4900FB397C /* SystemConfiguration.framework */,
+				8CDF7ADC1FC4FC0D00FB397C /* AVFoundation.framework */,
+				8CDF7AD81FC4FA3A00FB397C /* SpotifyAuthentication.framework */,
 				E2E953D4272458E5B1674B8B /* Pods_gitSwole.framework */,
 			);
 			name = Frameworks;
@@ -132,7 +158,11 @@
 				C4142FE11FA94ED200F3173E /* WorkoutsTVC.swift */,
 				C4142FDA1FA94EC700F3173E /* Meal.swift */,
 				C4142FDC1FA94EC800F3173E /* MealPlanVC.swift */,
+<<<<<<< HEAD
+				8CDF7AD61FC4E3E100FB397C /* WorkoutVC.swift */,
+=======
 				C4C048581FC4EF9E0061473A /* MealPlan.swift */,
+>>>>>>> 204bb49490b1b5f34e0d0b991bd63607396d66d2
 				C4142FDB1FA94EC700F3173E /* NathanStoryboard.storyboard */,
 				C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */,
 				C4C048521FC4EB510061473A /* MealPlanTableViewCell.swift */,
@@ -141,9 +171,14 @@
 				C4142FE81FA9599900F3173E /* LoginVC.swift */,
 				E16264021FC51E4700228C9E /* UserDataModel.swift */,
 				C4142FEA1FA959D600F3173E /* SignUpVC.swift */,
+<<<<<<< HEAD
+				8CDF7AEE1FC5126700FB397C /* BridgeViewController.h */,
+				8CDF7AEF1FC5126700FB397C /* BridgeViewController.m */,
+=======
 				E17AAB1C1FC4DA66005247C7 /* Authentication.swift */,
 				E17AAB1E1FC4EFC5005247C7 /* LocalDataSource.swift */,
 				E17AAB1A1FC4D333005247C7 /* DataSource.swift */,
+>>>>>>> 204bb49490b1b5f34e0d0b991bd63607396d66d2
 				C4142FEC1FA96A2100F3173E /* ProgressVC.swift */,
 				8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */,
 				8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */,
@@ -154,6 +189,7 @@
 				E1C829371FA2B0DB00522204 /* LaunchScreen.storyboard */,
 				E1C829401FA2B14500522204 /* GoogleService-Info.plist */,
 				E1C8293A1FA2B0DB00522204 /* Info.plist */,
+				8CDF7AF11FC5130A00FB397C /* gitswole-Bridging-header.h */,
 				E1C829321FA2B0DB00522204 /* gitSwole.xcdatamodeld */,
 			);
 			path = gitSwole;
@@ -317,8 +353,13 @@
 				C4C0485B1FC4F9E60061473A /* MealPlanDetailVC.swift in Sources */,
 				C4142FEB1FA959D600F3173E /* SignUpVC.swift in Sources */,
 				C4142FDF1FA94ECD00F3173E /* MealPlanVC.swift in Sources */,
+<<<<<<< HEAD
+				8CDF7AF01FC5126700FB397C /* BridgeViewController.m in Sources */,
+				8CDF7AD71FC4E3E100FB397C /* WorkoutVC.swift in Sources */,
+=======
 				C4C048591FC4EF9E0061473A /* MealPlan.swift in Sources */,
 				C4C048511FC4EA7A0061473A /* MealPlansTableViewController.swift in Sources */,
+>>>>>>> 204bb49490b1b5f34e0d0b991bd63607396d66d2
 				C4142FE41FA94ED400F3173E /* WorkoutCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,6 +500,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = gitSwole/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gitSwoleLLC.gitSwole;
@@ -477,6 +522,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = gitSwole/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gitSwoleLLC.gitSwole;
