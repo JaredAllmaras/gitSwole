@@ -11,20 +11,12 @@ import Foundation
 class Workout{
     
     var Name:String?
-    var FirstExercise:String?
-    var SecondExercise:String?
-    var ThirdExercise:String?
-    var FourthExercise:String?
-    var FifthExercise:String?
-    var SixthExercise:String?
+    var Exercises:[String]?
     
-    init(name:String, first:String, second:String, third:String, fourth:String)
+    init(name:String, exercises:[String])
     {
         self.Name = name
-        self.FirstExercise = first
-        self.SecondExercise = second
-        self.ThirdExercise = third
-        self.FourthExercise = fourth
+        self.Exercises = exercises
     }
     
     

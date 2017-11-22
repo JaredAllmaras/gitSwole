@@ -393,6 +393,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exercise 5:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMh-GZ-vqf">
+                                <rect key="frame" x="53" y="300" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exercise 6:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAH-3j-5c4">
+                                <rect key="frame" x="53" y="340" width="84" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyO-6v-RTa">
+                                <rect key="frame" x="144" y="300" width="215" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7T-PX-uPk">
+                                <rect key="frame" x="144" y="340" width="215" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -428,9 +456,11 @@
                         <viewLayoutGuide key="safeArea" id="4nV-Sm-iMl"/>
                     </view>
                     <connections>
+                        <outlet property="FifthExercise" destination="OyO-6v-RTa" id="ADA-bM-IyS"/>
                         <outlet property="FirstExercise" destination="Eci-GR-PBc" id="2Wj-ib-JVj"/>
                         <outlet property="FourthExercise" destination="z1c-rg-d3c" id="OKi-2y-V36"/>
                         <outlet property="SecondExercise" destination="UTJ-Wz-rQd" id="Aba-vM-OmX"/>
+                        <outlet property="SixthExercise" destination="Y7T-PX-uPk" id="MGl-B7-nx0"/>
                         <outlet property="ThirdExercise" destination="nZQ-QK-pjw" id="ADw-Ps-wty"/>
                         <outlet property="WorkoutName" destination="ceO-mx-YRq" id="Xde-Ne-k66"/>
                     </connections>
@@ -699,6 +729,9 @@
                                 <rect key="frame" x="101" y="573" width="172" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set as Current Meal Plan"/>
+                                <connections>
+                                    <action selector="setCurrentMealPlan:" destination="Aa3-sP-IYc" eventType="touchUpInside" id="1Kz-Yv-zIv"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meal Plan Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Oy-xL-dng">
                                 <rect key="frame" x="16" y="55" width="343" height="59"/>

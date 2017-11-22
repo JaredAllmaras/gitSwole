@@ -14,6 +14,9 @@ class MealPlanDetailVC: UIViewController {
     
     let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
     
+    @IBAction func setCurrentMealPlan(_ sender: Any) {
+        
+    }
     @IBOutlet weak var BreakfastCalories: UILabel!
     @IBOutlet weak var LunchCalories: UILabel!
     @IBOutlet weak var DinnerCalories: UILabel!

@@ -34,8 +34,16 @@ class MealPlanVC: UIViewController {
             MealPlan(name: "Cutting Meal Plan 1", meals:[
                 Meal(first: "Bagel with 2 Tbsp. peanut butter", second: "Egg whites - 6 large", third: "Chicken breast - 6oz.", calories: 714),
                 Meal(first: "Green Vegetables - 1 cup", second: "Red snapper - 8oz.", third: "White kidney beans - 1/2 cup", calories: 591),
-                Meal(first: "Tuna sandwich - 6oz.", second: "Cooked quinoa - 1/2 cup", third: "Whey protein shake - 40g", calories: 701)])
-            ]
+                Meal(first: "Tuna sandwich - 6oz.", second: "Cooked quinoa - 1/2 cup", third: "Whey protein shake - 40g", calories: 701)]),
+            MealPlan(name: "Cutting Meal Plan 2", meals:[
+                Meal(first: "Oatmeal - 1/2 Cup", second: "Strawberries - 1 cup", third: "Egg whites - 6 large", calories: 251),
+                Meal(first: "Brown Rice - 1 cup", second: "Green vegetables - 1 cup", third: "Chicken Breast - 8oz.", calories: 737),
+                Meal(first: "Lean steak - 6oz.", second:"Whey Protein shake - 40g", third: "Cooked Vegetables - 1 cup", calories: 656)]),
+            MealPlan(name: "Cutting Meal Plan 3", meals:[
+                Meal(first: "Scrambled Egg Whites - 4 large", second: "Whole wheat toast - 2 slices", third: "Greek Yogurt - 1 cup", calories: 428),
+                Meal(first: "Lean Ground Beef - 6oz.", second: "Cauliflower - 1/2 cup", third: "Brown Rice - 1 cup", calories: 471),
+                Meal(first: "Tuna Steak - 6oz.", second:"Sweet Potatoes - 2 cup", third: "Broccoli and Asparagus - 1 cup", calories: 607)])
+                ]
     }
     
     
