@@ -31,19 +31,19 @@ class WorkoutDetailVC: UIViewController {
         var Labels = [self.FirstExercise, self.SecondExercise, self.ThirdExercise, self.FourthExercise, self.FifthExercise, self.SixthExercise]
         self.view.backgroundColor = primaryBackground
         
-        self.FirstExercise?.isEnabled = false
-        self.SecondExercise?.isEnabled = false
-        self.ThirdExercise?.isEnabled = false
-        self.FourthExercise?.isEnabled = false
-        self.FifthExercise?.isEnabled = false
-        self.SixthExercise?.isEnabled = false
+        self.FirstExercise?.isHidden = false
+        self.SecondExercise?.isHidden = false
+        self.ThirdExercise?.isHidden = false
+        self.FourthExercise?.isHidden = false
+        self.FifthExercise?.isHidden = false
+        self.SixthExercise?.isHidden = false
         
         WorkoutName.text = Workout?.Name
         
         for i in 0...(((self.Workout?.Exercises)?.count)!-1) {
             let currentLabel = Labels[i]
-            currentLabel?.text = (self.Workout?.Exercises)?[i]
-            currentLabel?.isEnabled = true
+            currentLabel?.text = ("Exercise \(String(describing: i)): \(String(describing: (self.Workout?.Exercises)?[i]))")
+            currentLabel?.isHidden = true
         }
         
         // Do any additional setup after loading the view.
