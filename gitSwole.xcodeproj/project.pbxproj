@@ -32,6 +32,7 @@
 		C4C048531FC4EB510061473A /* MealPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C048521FC4EB510061473A /* MealPlanTableViewCell.swift */; };
 		C4C048591FC4EF9E0061473A /* MealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C048581FC4EF9E0061473A /* MealPlan.swift */; };
 		C4C0485B1FC4F9E60061473A /* MealPlanDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */; };
+		E16264031FC51E4700228C9E /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16264021FC51E4700228C9E /* UserDataModel.swift */; };
 		C4C0485D1FC51BFC0061473A /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0485C1FC51BFC0061473A /* CheckBox.swift */; };
 		E17AAB1B1FC4D333005247C7 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAB1A1FC4D333005247C7 /* DataSource.swift */; };
 		E17AAB1D1FC4DA66005247C7 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAB1C1FC4DA66005247C7 /* Authentication.swift */; };
@@ -75,6 +76,7 @@
 		C4C048571FC4EF470061473A /* gitSwole-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "gitSwole-Bridging-Header.h"; path = "gitSwole/gitSwole-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4C048581FC4EF9E0061473A /* MealPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlan.swift; sourceTree = "<group>"; };
 		C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanDetailVC.swift; sourceTree = "<group>"; };
+		E16264021FC51E4700228C9E /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		C4C0485C1FC51BFC0061473A /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		E17AAB1A1FC4D333005247C7 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		E17AAB1C1FC4DA66005247C7 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				C4C048501FC4EA7A0061473A /* MealPlansTableViewController.swift */,
 				C4142FEE1FA96C3400F3173E /* HomeVC.swift */,
 				C4142FE81FA9599900F3173E /* LoginVC.swift */,
+				E16264021FC51E4700228C9E /* UserDataModel.swift */,
 				C4142FE21FA94ED300F3173E /* WorkoutDetailVC.swift */,
 				C4142FEA1FA959D600F3173E /* SignUpVC.swift */,
 				8CDF7AEE1FC5126700FB397C /* BridgeViewController.h */,
@@ -341,6 +344,7 @@
 				8CDA501E1FA94CFD00CED50D /* SettingsViewController.swift in Sources */,
 				C4142FE61FA94ED400F3173E /* WorkoutDetailVC.swift in Sources */,
 				C4142FE71FA94ED400F3173E /* Workout.swift in Sources */,
+				E16264031FC51E4700228C9E /* UserDataModel.swift in Sources */,
 				C4142FDD1FA94ECD00F3173E /* Meal.swift in Sources */,
 				E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */,
 				C4C0485B1FC4F9E60061473A /* MealPlanDetailVC.swift in Sources */,

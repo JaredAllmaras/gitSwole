@@ -17,7 +17,6 @@ class LoginVC: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = primaryBackground

@@ -37,6 +37,7 @@ class SignUpVC: UIViewController {
                 if error == nil {
                     print("Firebase sign up was successful!")
                     DataSource.dataSource.configure(user: user!)
+                    DataSource.dataSource.addUser(user!, self.usernameTextField.text!)
                     _ = self.navigationController?.popViewController(animated: true)
                 } else {
                     print("Error signing up for Firebase")
