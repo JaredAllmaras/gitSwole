@@ -9,6 +9,7 @@
 import UIKit
 import SafariServices
 import AVFoundation
+import FirebaseAuth
 
 class HomeVC: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate {
     
@@ -23,9 +24,7 @@ class HomeVC: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlay
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.view.backgroundColor = primaryBackground
-        
         
         setup()
         NotificationCenter.default.addObserver(self, selector: #selector(HomeVC.updateAfterFirstLogin), name: NSNotification.Name(rawValue: "loginSuccessfull"), object: nil)
@@ -60,7 +59,6 @@ class HomeVC: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlay
         // Dispose of any resources that can be recreated.
     }
     
-    
     func setup() {
         SPTAuth.defaultInstance().clientID = "c32c4b25afb545a9824c43ac88a32247"
         SPTAuth.defaultInstance().redirectURL = URL(string: "gitswole://returnAfterLogin")
@@ -84,6 +82,18 @@ class HomeVC: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlay
                 // To do - build in error handling
             }
         }
+
+    @IBAction func logout(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            print("Successfully logged out")
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
+    @IBAction func testButtonAction(_ sender: Any) {
+        DataSource.dataSource.test()
     }
     
     /*

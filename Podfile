@@ -9,5 +9,6 @@ target 'gitSwole' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod try Spotify-iOS-SDK
+  pod 'Firebase/Database'
 
 end

@@ -18,20 +18,25 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     
+    private var dataSource:DataSource?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = primaryBackground
+        dataSource = DataSource()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    // Validate and add user to firebase user auth object
     @IBAction func signUp(_ sender: Any) {
         if validUsername(username: usernameTextField.text!) && validEmail(email: emailTextField.text!) && validPassword(password: passwordTextField.text!) {
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
                 if error == nil {
                     print("Firebase sign up was successful!")
+                    DataSource.dataSource.configure(user: user!)
                     _ = self.navigationController?.popViewController(animated: true)
                 } else {
                     print("Error signing up for Firebase")
@@ -44,7 +49,7 @@ class SignUpVC: UIViewController {
     }
     
     private func validUsername(username: String) -> Bool {
-        return true
+        return username != ""
     }
     
     private func validEmail(email: String) -> Bool {
@@ -54,13 +59,21 @@ class SignUpVC: UIViewController {
     }
     
     private func validPassword(password: String) -> Bool {
-        return true
+        return password != "" && password == secondPasswordTextField.text!
     }
     
     @IBAction func cancel(_ sender: Any) {
         _ = self.navigationController?.popViewController(animated: true)
     }
     
+    // This method is called when the user touches the Return key on the
+    // keyboard. The 'textField' passed in is a pointer to the textField
+    // the cursor was in at the time they touched the Return key on the
+    // keyboard.
+    //
+    // From the Apple documentation: Asks the delegate if the text field
+    // should process the pressing of the return button.
+    //
     //Code for keyboard dismissal when user touches outside textField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // 'First Responder' is the same as 'input focus'.
@@ -69,6 +82,8 @@ class SignUpVC: UIViewController {
         return true
     }
     
+    // Called when the user touches on the main view (outside the UITextField).
+    //
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

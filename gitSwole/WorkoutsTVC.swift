@@ -23,7 +23,6 @@ class WorkoutsTVC: UITableViewController {
                     fourth: "Pec Deck - 4 x 10")
 
         ]
-        
     }
     
     override func viewDidLoad() {
