@@ -16,27 +16,19 @@ class DataSource {
     
     private let dbref: DatabaseReference!
     private var user: FirebaseAuth.User?
+    private var uid: DatabaseReference!
     
     init() {
         dbref = Database.database().reference()
         user = nil
+        uid = nil
     }
     
     func addUser(_ user: FirebaseAuth.User, _ username: String) {
         if signedIn() {
-
-            let newUserRef = dbref.child("users").childByAutoId()
-            let userDataModel = UserDataModel(username)
-            newUserRef.setValue(userDataModel)
-            
-//            let _ = user.getIDToken(completion: { (id, error) in
-//                if error == nil {
-//                    let keyValue:[String:UserDataModel] = [id!: userDataModel]
-//                    self.dbref.child("users").setValue(keyValue)
-//                } else {
-//                    print("Error: Failed to fetch User ID")
-//                }
-//            })
+            uid = dbref.child("users").childByAutoId()
+            let userDataModel = ["username": username]
+            uid.setValue(userDataModel)
         } else {
             print("Not logged in")
         }
@@ -49,6 +41,18 @@ class DataSource {
     func signedIn() -> Bool {
         return user != nil
     }
+    
+    // goal weight, current weight, current meal plan
+    func addCurrentMealPlan(_ mealPlan:Int) {
+        if signedIn() {
+            uid.setValue(["mealPlan": mealPlan])
+            uid.up
+        } else {
+            print("Not signed in")
+        }
+    }
+    
+    func addGoalWeight
     
     func test() {
         if signedIn() {

@@ -82,6 +82,7 @@ class HomeVC: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlay
                 // To do - build in error handling
             }
         }
+    }
 
     @IBAction func logout(_ sender: Any) {
         do {

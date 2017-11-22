@@ -33,6 +33,7 @@
 		C4C048591FC4EF9E0061473A /* MealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C048581FC4EF9E0061473A /* MealPlan.swift */; };
 		C4C0485B1FC4F9E60061473A /* MealPlanDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */; };
 		E16264031FC51E4700228C9E /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16264021FC51E4700228C9E /* UserDataModel.swift */; };
+		C4C0485D1FC51BFC0061473A /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0485C1FC51BFC0061473A /* CheckBox.swift */; };
 		E17AAB1B1FC4D333005247C7 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAB1A1FC4D333005247C7 /* DataSource.swift */; };
 		E17AAB1D1FC4DA66005247C7 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAB1C1FC4DA66005247C7 /* Authentication.swift */; };
 		E17AAB1F1FC4EFC5005247C7 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAB1E1FC4EFC5005247C7 /* LocalDataSource.swift */; };
@@ -76,6 +77,7 @@
 		C4C048581FC4EF9E0061473A /* MealPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlan.swift; sourceTree = "<group>"; };
 		C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanDetailVC.swift; sourceTree = "<group>"; };
 		E16264021FC51E4700228C9E /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		C4C0485C1FC51BFC0061473A /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		E17AAB1A1FC4D333005247C7 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		E17AAB1C1FC4DA66005247C7 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		E17AAB1E1FC4EFC5005247C7 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
@@ -154,31 +156,26 @@
 			children = (
 				C4142FE31FA94ED300F3173E /* Workout.swift */,
 				C4142FE01FA94ED200F3173E /* WorkoutCell.swift */,
-				C4142FE21FA94ED300F3173E /* WorkoutDetailVC.swift */,
 				C4142FE11FA94ED200F3173E /* WorkoutsTVC.swift */,
 				C4142FDA1FA94EC700F3173E /* Meal.swift */,
 				C4142FDC1FA94EC800F3173E /* MealPlanVC.swift */,
-<<<<<<< HEAD
 				8CDF7AD61FC4E3E100FB397C /* WorkoutVC.swift */,
-=======
 				C4C048581FC4EF9E0061473A /* MealPlan.swift */,
->>>>>>> 204bb49490b1b5f34e0d0b991bd63607396d66d2
 				C4142FDB1FA94EC700F3173E /* NathanStoryboard.storyboard */,
+				C4C0485C1FC51BFC0061473A /* CheckBox.swift */,
 				C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */,
 				C4C048521FC4EB510061473A /* MealPlanTableViewCell.swift */,
 				C4C048501FC4EA7A0061473A /* MealPlansTableViewController.swift */,
 				C4142FEE1FA96C3400F3173E /* HomeVC.swift */,
 				C4142FE81FA9599900F3173E /* LoginVC.swift */,
 				E16264021FC51E4700228C9E /* UserDataModel.swift */,
+				C4142FE21FA94ED300F3173E /* WorkoutDetailVC.swift */,
 				C4142FEA1FA959D600F3173E /* SignUpVC.swift */,
-<<<<<<< HEAD
 				8CDF7AEE1FC5126700FB397C /* BridgeViewController.h */,
 				8CDF7AEF1FC5126700FB397C /* BridgeViewController.m */,
-=======
 				E17AAB1C1FC4DA66005247C7 /* Authentication.swift */,
 				E17AAB1E1FC4EFC5005247C7 /* LocalDataSource.swift */,
 				E17AAB1A1FC4D333005247C7 /* DataSource.swift */,
->>>>>>> 204bb49490b1b5f34e0d0b991bd63607396d66d2
 				C4142FEC1FA96A2100F3173E /* ProgressVC.swift */,
 				8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */,
 				8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */,
@@ -353,13 +350,11 @@
 				C4C0485B1FC4F9E60061473A /* MealPlanDetailVC.swift in Sources */,
 				C4142FEB1FA959D600F3173E /* SignUpVC.swift in Sources */,
 				C4142FDF1FA94ECD00F3173E /* MealPlanVC.swift in Sources */,
-<<<<<<< HEAD
 				8CDF7AF01FC5126700FB397C /* BridgeViewController.m in Sources */,
 				8CDF7AD71FC4E3E100FB397C /* WorkoutVC.swift in Sources */,
-=======
 				C4C048591FC4EF9E0061473A /* MealPlan.swift in Sources */,
+				C4C0485D1FC51BFC0061473A /* CheckBox.swift in Sources */,
 				C4C048511FC4EA7A0061473A /* MealPlansTableViewController.swift in Sources */,
->>>>>>> 204bb49490b1b5f34e0d0b991bd63607396d66d2
 				C4142FE41FA94ED400F3173E /* WorkoutCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
