@@ -71,6 +71,7 @@ class ProgressVC: UIViewController {
     // From the Apple documentation: Asks the delegate if the text field
     // should process the pressing of the return button.
     //
+    //Code for keyboard dismissal when user touches outside textFields
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // 'First Responder' is the same as 'input focus'.
         // We are removing input focus from the text field.
