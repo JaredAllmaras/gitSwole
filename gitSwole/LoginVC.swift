@@ -17,7 +17,6 @@ class LoginVC: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = primaryBackground
@@ -85,18 +84,6 @@ class LoginVC: UIViewController {
     
     // Called when the user touches on the main view (outside the UITextField).
     //
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    //Code for keyboard dismissal when user touches outside textFields
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // 'First Responder' is the same as 'input focus'.
-        // We are removing input focus from the text field.
-        textField.resignFirstResponder()
-        return true
-    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

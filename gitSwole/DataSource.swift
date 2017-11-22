@@ -22,6 +22,26 @@ class DataSource {
         user = nil
     }
     
+    func addUser(_ user: FirebaseAuth.User, _ username: String) {
+        if signedIn() {
+
+            let newUserRef = dbref.child("users").childByAutoId()
+            let userDataModel = UserDataModel(username)
+            newUserRef.setValue(userDataModel)
+            
+//            let _ = user.getIDToken(completion: { (id, error) in
+//                if error == nil {
+//                    let keyValue:[String:UserDataModel] = [id!: userDataModel]
+//                    self.dbref.child("users").setValue(keyValue)
+//                } else {
+//                    print("Error: Failed to fetch User ID")
+//                }
+//            })
+        } else {
+            print("Not logged in")
+        }
+    }
+    
     func configure(user: FirebaseAuth.User) {
         self.user = user
     }
