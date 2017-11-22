@@ -6,7 +6,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,12 +31,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                        <!--    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YD7-qX-ina">
-                                <rect key="frame" x="92" y="441" width="190" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login with Spotify"/>
-                                <connections>
-                                    <action selector="loginBtnPressed:" destination="mdu-Ri-XsD" eventType="touchUpInside" id="RFl-bA-v7C"/> -->
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cd9-cM-z18">
                                 <rect key="frame" x="304" y="55" width="48" height="30"/>
                                 <state key="normal" title="Logout"/>
@@ -443,8 +436,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceO-mx-YRq">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36q-ER-nDd" customClass="CheckBox" customModule="gitSwole" customModuleProvider="target">
+                                <rect key="frame" x="16" y="214" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icons8-unchecked-checkbox-50"/>
+                                <state key="selected" image="icons8-checked-checkbox-50"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Workout Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceO-mx-YRq">
                                 <rect key="frame" x="16" y="76" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -470,7 +470,7 @@
                                 <state key="selected" image="icons8-checked-checkbox-50"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lb-Zy-1Da" customClass="CheckBox" customModule="gitSwole" customModuleProvider="target">
-                                <rect key="frame" x="16" y="171" width="28" height="28"/>
+                                <rect key="frame" x="16" y="174" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icons8-unchecked-checkbox-50"/>
                                 <state key="selected" image="icons8-checked-checkbox-50"/>
@@ -482,38 +482,24 @@
                                 <state key="selected" image="icons8-checked-checkbox-50"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVx-yQ-wMx" customClass="CheckBox" customModule="gitSwole" customModuleProvider="target">
-                                <rect key="frame" x="16" y="295" width="28" height="28"/>
+                                <rect key="frame" x="16" y="294" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icons8-unchecked-checkbox-50"/>
                                 <state key="selected" image="icons8-checked-checkbox-50"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sss-of-bgU" customClass="CheckBox" customModule="gitSwole" customModuleProvider="target">
-                                <rect key="frame" x="16" y="331" width="28" height="28"/>
+                                <rect key="frame" x="16" y="334" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icons8-unchecked-checkbox-50"/>
                                 <state key="selected" image="icons8-checked-checkbox-50"/>
                             </button>
-                           <!--  <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPR-tx-piG" customClass="CheckBox" customModule="gitSwole" customModuleProvider="target">
-                                <rect key="frame" x="16" y="214" width="28" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="icons8-unchecked-checkbox-50"/>
-                                <state key="selected" image="icons8-checked-checkbox-50"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label> -->
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtZ-nD-2MS">
-                                <rect key="frame" x="104" y="542" width="167" height="50"/>
+                                <rect key="frame" x="125" y="547" width="125" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start Workout"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ceO-mx-YRq" firstAttribute="top" secondItem="4nV-Sm-iMl" secondAttribute="top" constant="56" id="C6S-FO-53I"/>
-                            <constraint firstItem="ceO-mx-YRq" firstAttribute="leading" secondItem="ihN-8p-e6K" secondAttribute="leadingMargin" id="UG6-pc-qDy"/>
-                            <constraint firstItem="ceO-mx-YRq" firstAttribute="trailing" secondItem="ihN-8p-e6K" secondAttribute="trailingMargin" id="a6i-2q-oBY"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4nV-Sm-iMl"/>
                     </view>
                     <connections>

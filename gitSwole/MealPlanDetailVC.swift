@@ -10,7 +10,9 @@ import UIKit
 
 class MealPlanDetailVC: UIViewController {
 
+    var selectedMealPlanIdx:Int?
     var selectedMealPlan:MealPlan?
+    
     
     let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
     
@@ -38,9 +40,9 @@ class MealPlanDetailVC: UIViewController {
         
         self.view.backgroundColor = primaryBackground
         
-        self.BreakfastCalories.text = "Breakfast - \(String(describing: (self.selectedMealPlan?.Meals?[0].MealCalories)!))"
-        self.LunchCalories.text = "Breakfast - \(String(describing: (self.selectedMealPlan?.Meals?[1].MealCalories)!))"
-        self.DinnerCalories.text = "Breakfast - \(String(describing: (self.selectedMealPlan?.Meals?[2].MealCalories)!))"
+        self.BreakfastCalories.text = "Breakfast - \(String(describing: (self.selectedMealPlan?.Meals?[0].MealCalories)!)) calories"
+        self.LunchCalories.text = "Lunch - \(String(describing: (self.selectedMealPlan?.Meals?[1].MealCalories)!)) calories"
+        self.DinnerCalories.text = "Dinner - \(String(describing: (self.selectedMealPlan?.Meals?[2].MealCalories)!)) calories"
         
         self.BreakfastFirst.text = self.selectedMealPlan?.Meals?[0].FirstMealItem
         self.BreakfastSecond.text = self.selectedMealPlan?.Meals?[0].SecondMealItem

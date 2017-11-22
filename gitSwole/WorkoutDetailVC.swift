@@ -24,26 +24,25 @@ class WorkoutDetailVC: UIViewController {
     @IBOutlet weak var SixthExercise: UILabel!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         var Labels = [self.FirstExercise, self.SecondExercise, self.ThirdExercise, self.FourthExercise, self.FifthExercise, self.SixthExercise]
         self.view.backgroundColor = primaryBackground
         
-        self.FirstExercise?.isHidden = false
-        self.SecondExercise?.isHidden = false
-        self.ThirdExercise?.isHidden = false
-        self.FourthExercise?.isHidden = false
-        self.FifthExercise?.isHidden = false
-        self.SixthExercise?.isHidden = false
+        self.FirstExercise?.isHidden = true
+        self.SecondExercise?.isHidden = true
+        self.ThirdExercise?.isHidden = true
+        self.FourthExercise?.isHidden = true
+        self.FifthExercise?.isHidden = true
+        self.SixthExercise?.isHidden = true
         
         WorkoutName.text = Workout?.Name
         
         for i in 0...(((self.Workout?.Exercises)?.count)!-1) {
             let currentLabel = Labels[i]
-            currentLabel?.text = ("Exercise \(String(describing: i)): \(String(describing: (self.Workout?.Exercises)?[i]))")
-            currentLabel?.isHidden = true
+            currentLabel?.text = ("Exercise \(String(describing: i + 1)): \((String(describing: (self.Workout?.Exercises)?[i])))")
+            currentLabel?.isHidden = false
         }
         
         // Do any additional setup after loading the view.
