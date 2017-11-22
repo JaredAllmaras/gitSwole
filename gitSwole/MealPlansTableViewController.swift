@@ -1,35 +1,23 @@
 //
-//  WorkoutsTVC.swift
+//  MealPlansTableViewController.swift
 //  gitSwole
 //
-//  Created by Nathan Mosley on 10/31/17.
+//  Created by Nathan Mosley on 11/21/17.
 //  Copyright © 2017 gitSwoleLLC. All rights reserved.
 //
 
 import UIKit
 
-class WorkoutsTVC: UITableViewController {
+class MealPlansTableViewController: UITableViewController {
     
-    var Workouts:[Workout]?
     let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
     
-    func loadWorkouts() {
-        
-        self.Workouts = [
-            Workout(name:"Chest", exercises:["Bench Press - 4x10", "Incline Dumbell Press - 3x12", "Dumbell Flyes - 3x12", "Pec Deck - 4x10"]),
-            Workout(name: "Back", exercises:["Deadlift - 5x5", "T-bar Row - 4x8", "Pullups - 4x10", "Lat Pulldown - 3x10", "Seated Cable Row - 3x10", "Shrug - 4x10"]),
-            Workout(name: "Legs", exercises:["Squat - 5x5", "Standing Calf Raise - 8x10", "Seated Calf Machine - 4x15", "Leg Press - 4x8", "Leg Extensions - 4x10", "Leg Curls - 4x10"]),
-            Workout(name: "Arms", exercises: ["Weighted Dips - 4x8", "Overhead Tricep Ext. - 4x8", "Tricep Pushdown - 3x12", "Barbell Curl - 4x6", "Dumbbell Curl - 4x8", "Hammer Curl - 3x12"]),
-            Workout(name: "Shoulders", exercises:["Overhead Press - 4x8", "Dumbbell Shoulder Press - 3x8", "Lateral Raises - 3x10", "Cable Raises - 3x12", "Facepulls - 3x10", "Reverse Flyes - 3x12"])
-            ]
-    }
-    
+    var MealPlans:[MealPlan]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.backgroundColor = primaryBackground
-        
-        self.loadWorkouts()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -52,16 +40,16 @@ class WorkoutsTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (Workouts?.count)!
+        return (MealPlans?.count)!
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! WorkoutCell
-        let currentWorkout = self.Workouts?[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MealPlanCell", for: indexPath) as! MealPlanTableViewCell
+        cell.MealPlanName.text = self.MealPlans?[indexPath.row].Name
+        cell.backgroundColor = primaryBackground
 
-        cell.WorkoutName.text = currentWorkout?.Name
-        cell.backgroundColor = self.primaryBackground
-        
+        // Configure the cell...
+
         return cell
     }
 
@@ -100,17 +88,16 @@ class WorkoutsTVC: UITableViewController {
     }
     */
 
-
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetail" {
-            if let dsvc = segue.destination as? WorkoutDetailVC {
+            if let dsvc = segue.destination as? MealPlanDetailVC {
                 let selectedIndex = tableView.indexPathForSelectedRow
-                dsvc.Workout = self.Workouts?[(selectedIndex?.row)!]
+                dsvc.selectedMealPlan = (self.MealPlans?[(selectedIndex?.row)!])!
             }
+        }
     }
 
-    }
 }
