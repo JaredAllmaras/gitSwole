@@ -15,8 +15,13 @@ class WorkoutsTVC: UITableViewController {
     
     func loadWorkouts() {
         
-        self.Workouts = [Workout(name:"Chest", first:"Bench Press - 4 x 10", second:"Incline Dumbell Press - 3 x 12", third: "Decline dumbell flies - 3 x 12", fourth: "Pec Deck - 4 x 10")
-        
+        self.Workouts = [
+            Workout(name:"Chest",
+                    first:"Bench Press - 4 x 10",
+                    second:"Incline Dumbell Press - 3 x 12",
+                    third: "Decline dumbell flies - 3 x 12",
+                    fourth: "Pec Deck - 4 x 10")
+
         ]
         
     }

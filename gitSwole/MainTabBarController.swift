@@ -39,7 +39,7 @@ class MainTabBarController: UITabBarController {
         //sets tab's attributes
         HomeVC!.tabBarItem = UITabBarItem(
             title: "Home",
-            image: nil,
+            image: #imageLiteral(resourceName: "houseIcon"),
             tag: 1)
         
         WorkoutsTVC!.tabBarItem = UITabBarItem(
