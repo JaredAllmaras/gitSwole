@@ -136,6 +136,71 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E14CD3A91FC6F71100D89BA1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E1C8292D1FA2B0DB00522204 /* ViewController.swift */,
+				C4142FE21FA94ED300F3173E /* WorkoutDetailVC.swift */,
+				C4142FEA1FA959D600F3173E /* SignUpVC.swift */,
+				C4142FE81FA9599900F3173E /* LoginVC.swift */,
+				E175C48B1FC65D760089E72E /* LoadingViewController.swift */,
+				C4142FEE1FA96C3400F3173E /* HomeVC.swift */,
+				8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */,
+				C4C048501FC4EA7A0061473A /* MealPlansTableViewController.swift */,
+				C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */,
+				8CDF7AD61FC4E3E100FB397C /* WorkoutVC.swift */,
+				C4142FEC1FA96A2100F3173E /* ProgressVC.swift */,
+				C4142FE11FA94ED200F3173E /* WorkoutsTVC.swift */,
+				C4142FDC1FA94EC800F3173E /* MealPlanVC.swift */,
+				8CDF7AEE1FC5126700FB397C /* BridgeViewController.h */,
+				8CDF7AEF1FC5126700FB397C /* BridgeViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E14CD3AA1FC6F73900D89BA1 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				E16264021FC51E4700228C9E /* UserDataModel.swift */,
+				C4C048581FC4EF9E0061473A /* MealPlan.swift */,
+				C4142FDA1FA94EC700F3173E /* Meal.swift */,
+				C4142FE31FA94ED300F3173E /* Workout.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		E14CD3AB1FC6F7F600D89BA1 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E1C8292F1FA2B0DB00522204 /* Main.storyboard */,
+				C4142FDB1FA94EC700F3173E /* NathanStoryboard.storyboard */,
+				E175C4871FC65A3F0089E72E /* NickStoryboard.storyboard */,
+				E1C829371FA2B0DB00522204 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E14CD3AC1FC6F82D00D89BA1 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				C4142FE01FA94ED200F3173E /* WorkoutCell.swift */,
+				C4C0485C1FC51BFC0061473A /* CheckBox.swift */,
+				C4C048521FC4EB510061473A /* MealPlanTableViewCell.swift */,
+				8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		E14CD3AD1FC6F86C00D89BA1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E17AAB1A1FC4D333005247C7 /* DataSource.swift */,
+				E17AAB1E1FC4EFC5005247C7 /* LocalDataSource.swift */,
+				E175C4851FC60A9F0089E72E /* AuthUser.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		E1C8291F1FA2B0DA00522204 = {
 			isa = PBXGroup;
 			children = (
@@ -158,37 +223,12 @@
 		E1C8292A1FA2B0DA00522204 /* gitSwole */ = {
 			isa = PBXGroup;
 			children = (
-				C4142FE31FA94ED300F3173E /* Workout.swift */,
-				C4142FE01FA94ED200F3173E /* WorkoutCell.swift */,
-				C4142FE11FA94ED200F3173E /* WorkoutsTVC.swift */,
-				C4142FDA1FA94EC700F3173E /* Meal.swift */,
-				C4142FDC1FA94EC800F3173E /* MealPlanVC.swift */,
-				8CDF7AD61FC4E3E100FB397C /* WorkoutVC.swift */,
-				C4C048581FC4EF9E0061473A /* MealPlan.swift */,
-				C4C0485C1FC51BFC0061473A /* CheckBox.swift */,
-				C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */,
-				C4C048521FC4EB510061473A /* MealPlanTableViewCell.swift */,
-				C4C048501FC4EA7A0061473A /* MealPlansTableViewController.swift */,
-				C4142FEE1FA96C3400F3173E /* HomeVC.swift */,
-				E16264021FC51E4700228C9E /* UserDataModel.swift */,
-				C4142FE21FA94ED300F3173E /* WorkoutDetailVC.swift */,
-				8CDF7AEE1FC5126700FB397C /* BridgeViewController.h */,
-				8CDF7AEF1FC5126700FB397C /* BridgeViewController.m */,
-				C4142FEC1FA96A2100F3173E /* ProgressVC.swift */,
-				8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */,
-				8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */,
+				E14CD3AD1FC6F86C00D89BA1 /* Services */,
+				E14CD3AC1FC6F82D00D89BA1 /* UIComponents */,
+				E14CD3AB1FC6F7F600D89BA1 /* Storyboards */,
+				E14CD3AA1FC6F73900D89BA1 /* DataModels */,
+				E14CD3A91FC6F71100D89BA1 /* ViewControllers */,
 				E1C8292B1FA2B0DB00522204 /* AppDelegate.swift */,
-				E1C8292D1FA2B0DB00522204 /* ViewController.swift */,
-				C4142FE81FA9599900F3173E /* LoginVC.swift */,
-				C4142FEA1FA959D600F3173E /* SignUpVC.swift */,
-				E175C48B1FC65D760089E72E /* LoadingViewController.swift */,
-				E17AAB1A1FC4D333005247C7 /* DataSource.swift */,
-				E17AAB1E1FC4EFC5005247C7 /* LocalDataSource.swift */,
-				E175C4851FC60A9F0089E72E /* AuthUser.swift */,
-				E1C8292F1FA2B0DB00522204 /* Main.storyboard */,
-				C4142FDB1FA94EC700F3173E /* NathanStoryboard.storyboard */,
-				E175C4871FC65A3F0089E72E /* NickStoryboard.storyboard */,
-				E1C829371FA2B0DB00522204 /* LaunchScreen.storyboard */,
 				E1C829351FA2B0DB00522204 /* Assets.xcassets */,
 				E1C829401FA2B14500522204 /* GoogleService-Info.plist */,
 				E1C8293A1FA2B0DB00522204 /* Info.plist */,
