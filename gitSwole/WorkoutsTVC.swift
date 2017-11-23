@@ -16,11 +16,11 @@ class WorkoutsTVC: UITableViewController {
     func loadWorkouts() {
         
         self.Workouts = [
-            Workout(name:"Chest", exercises:["Bench Press - 4x10", "Incline Dumbell Press - 3x12", "Dumbell Flyes - 3x12", "Pec Deck - 4x10"]),
+            Workout(name:"Chest", exercises:["Bench Press - 4x10", "Incline Press - 3x12", "Dumbell Flyes - 3x12", "Pec Deck - 4x10"]),
             Workout(name: "Back", exercises:["Deadlift - 5x5", "T-bar Row - 4x8", "Pullups - 4x10", "Lat Pulldown - 3x10", "Seated Cable Row - 3x10", "Shrug - 4x10"]),
             Workout(name: "Legs", exercises:["Squat - 5x5", "Standing Calf Raise - 8x10", "Seated Calf Machine - 4x15", "Leg Press - 4x8", "Leg Extensions - 4x10", "Leg Curls - 4x10"]),
             Workout(name: "Arms", exercises: ["Weighted Dips - 4x8", "Overhead Tricep Ext. - 4x8", "Tricep Pushdown - 3x12", "Barbell Curl - 4x6", "Dumbbell Curl - 4x8", "Hammer Curl - 3x12"]),
-            Workout(name: "Shoulders", exercises:["Overhead Press - 4x8", "Dumbbell Shoulder Press - 3x8", "Lateral Raises - 3x10", "Cable Raises - 3x12", "Facepulls - 3x10", "Reverse Flyes - 3x12"])
+            Workout(name: "Shoulders", exercises:["Overhead Press - 4x8", "Dbell Shoulder Press - 3x8", "Lateral Raises - 3x10", "Cable Raises - 3x12", "Facepulls - 3x10", "Reverse Flyes - 3x12"])
         ]
     }
     

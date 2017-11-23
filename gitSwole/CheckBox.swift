@@ -12,8 +12,9 @@ import UIKit
 
 class CheckBox: UIButton {
     // Images
-    var checkedImage = UIImage(named: "ic_check_box")
-    var uncheckedImage = UIImage(named: "ic_check_box_outline_blank")
+    var checkedImage = UIImage(named: "icons8-checked-checkbox-50")
+    var uncheckedImage = UIImage(named: "icons8-unchecked-checkbox-50")
+    
     
     // Bool property
     var isChecked: Bool = false {
@@ -29,12 +30,12 @@ class CheckBox: UIButton {
     override func awakeFromNib() {
         self.addTarget(self, action:#selector(buttonClicked(sender:)), for: UIControlEvents.touchUpInside)
         self.isChecked = false
+        self.isHidden = true
     }
     
     @objc func buttonClicked(sender: UIButton) {
         if sender == self {
             isChecked = !isChecked
-            print ("Click")
         }
     }
 }

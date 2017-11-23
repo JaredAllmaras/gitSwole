@@ -95,7 +95,9 @@ class MealPlansTableViewController: UITableViewController {
         if segue.identifier == "ShowDetail" {
             if let dsvc = segue.destination as? MealPlanDetailVC {
                 let selectedIndex = tableView.indexPathForSelectedRow
-                dsvc.selectedMealPlan = (self.MealPlans?[(selectedIndex?.row)!])!
+                dsvc.selectedMealPlanIdx = (selectedIndex?.row)
+                let selectedMealPlan = self.MealPlans?[(selectedIndex?.row)!]
+                dsvc.selectedMealPlan = selectedMealPlan
             }
         }
     }
