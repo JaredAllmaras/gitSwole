@@ -63,7 +63,7 @@ class MealPlanDetailVC: UIViewController {
     }
     
     @IBAction func setCurrentMealPlan(_ sender: Any) {
-        DataSource.dataSource.addCurrentMealPlan()
+        DataSource.dataSource.addCurrentMealPlan(0)
     }
     
 

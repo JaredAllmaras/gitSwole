@@ -46,13 +46,13 @@ class DataSource {
     func addCurrentMealPlan(_ mealPlan:Int) {
         if signedIn() {
             uid.setValue(["mealPlan": mealPlan])
-            uid.up
+            //uid.up
         } else {
             print("Not signed in")
         }
     }
     
-    func addGoalWeight
+    func addGoalWeight(){}
     
     func test() {
         if signedIn() {
