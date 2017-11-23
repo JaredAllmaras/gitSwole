@@ -61,7 +61,11 @@ class MealPlanDetailVC: UIViewController {
     }
     
     @IBAction func setCurrentMealPlan(_ sender: Any) {
-        // DataSource.dataSource.addCurrentMealPlan()
+        let mealPlan = ["breakfast": ["first": BreakfastFirst.text!, "second": BreakfastSecond.text!, "third": BreakfastThird.text!],
+                        "lunch": ["first": LunchFirst.text!, "second": LunchSecond.text!, "third": LunchThird.text!],
+                        "dinner": ["first": DinnerFirst.text!, "second": DinnerSecond.text!, "third": DinnerThird.text!]]
+        
+        DataSource.dataSource.setCurrentMealPlan(mealPlan)
     }
     
 

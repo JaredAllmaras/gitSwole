@@ -44,16 +44,21 @@ class LocalDataSource {
 //        })
     }
     
-    func getUser() -> String? {
-//        let usersFetch:NSFetchRequest<User> = NSFetchRequest(entityName: "User")
-//        usersFetch.predicate = NSPredicate(format: "", )
-//        
-//        do {
-//            let fetchedUsers = try viewContext?.fetch(usersFetch)
-//        } catch {
-//            print("Error: Unable to fetch User from CoreData")
-//            return nil
-//        }
-        return nil
+    func getUserID() -> String? {
+        let userFetchRequest = NSFetchRequest<User>(entityName: "User")
+        let fbID = AuthUser.user.getUserFBID()
+        guard fbID != nil else {
+            print("Error: fbID is nil")
+            return nil
+        }
+        userFetchRequest.predicate = NSPredicate(format: "fbID == %@", fbID!)
+    
+        do {
+            let fetchedUsers = try viewContext?.fetch(userFetchRequest)
+            return fetchedUsers?.first?.id
+        } catch {
+            print("Error: Unable to fetch User from CoreData")
+            return nil
+        }
     }
 }

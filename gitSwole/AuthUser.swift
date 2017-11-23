@@ -66,6 +66,7 @@ class AuthUser {
                     if error == nil {
                         print("Sign in was successful")
                         self.userID = uid
+                        DataSource.dataSource.signIn()
                     } else {
                         print("Error signing in")
                         print(error!.localizedDescription)
@@ -73,6 +74,15 @@ class AuthUser {
                 })
             }
         })
+    }
+    
+    func getUserFBID() -> String? {
+        guard signedIn() else {
+            print("Error: Trying to retrieve FBID when not signed in")
+            return nil
+        }
+        
+        return userID
     }
     
     private func signedIn() -> Bool {

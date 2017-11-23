@@ -26,6 +26,9 @@ class MealPlanVC: UIViewController {
     @IBOutlet weak var CaloriesRemaining: UILabel!
     
     func loadMealPlans(){
+        
+        
+        
         MealPlans = [
             MealPlan(name: "Bulking Meal Plan 1", meals: [
                 Meal(first: "Scrambled Whole Egg - 3 Large", second: "Oatmeal bowl w/ yogurt - 1 cup", third: "Whole milk - 16 oz.", calories: 809),
@@ -55,9 +58,12 @@ class MealPlanVC: UIViewController {
         self.loadMealPlans()
         
         self.NextMeal.text = "Next Meal: Breakfast - \(String(describing: (self.MealPlans?[currentMealPlan].Meals?[0].MealCalories)!)) calories"
-        self.FirstMealItem.text = MealPlans?[currentMealPlan].Meals?[0].FirstMealItem
-        self.SecondMealItem.text = MealPlans?[currentMealPlan].Meals?[0].SecondMealItem
-        self.ThirdMealItem.text = MealPlans?[currentMealPlan].Meals?[0].ThirdMealItem
+        
+        DataSource.dataSource.listenToCurrentMeal(FirstMealItem, SecondMealItem, ThirdMealItem)
+        
+//        self.FirstMealItem.text = MealPlans?[currentMealPlan].Meals?[0].FirstMealItem
+//        self.SecondMealItem.text = MealPlans?[currentMealPlan].Meals?[0].SecondMealItem
+//        self.ThirdMealItem.text = MealPlans?[currentMealPlan].Meals?[0].ThirdMealItem
         
         
     }
