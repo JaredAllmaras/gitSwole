@@ -15,6 +15,8 @@ class MealPlanVC: UIViewController {
     var currentMeal:Meal?
     var currentMealPlan:Int = 0
     var MealPlans:[MealPlan]?
+    
+    private var curMealPlan:MealPlan?
 
     @IBOutlet weak var NextMeal: UILabel!
     @IBOutlet weak var FirstMealItem: UILabel!
@@ -26,8 +28,6 @@ class MealPlanVC: UIViewController {
     @IBOutlet weak var CaloriesRemaining: UILabel!
     
     func loadMealPlans(){
-        
-        
         
         MealPlans = [
             MealPlan(name: "Bulking Meal Plan 1", meals: [
@@ -49,17 +49,22 @@ class MealPlanVC: UIViewController {
                 ]
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        DataSource.dataSource.listenToCurrentMeal(FirstMealItem, SecondMealItem, ThirdMealItem)
+//        curMealPlan = MealPlan(name: "MealPlan", meals: [])
+//        DataSource.dataSource.listenForMealPlan(curMealPlan!)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.view.backgroundColor = primaryBackground
         
         self.loadMealPlans()
         
         self.NextMeal.text = "Next Meal: Breakfast - \(String(describing: (self.MealPlans?[currentMealPlan].Meals?[0].MealCalories)!)) calories"
         
-        DataSource.dataSource.listenToCurrentMeal(FirstMealItem, SecondMealItem, ThirdMealItem)
+//        DataSource.dataSource.listenToCurrentMeal(FirstMealItem, SecondMealItem, ThirdMealItem)
         
 //        self.FirstMealItem.text = MealPlans?[currentMealPlan].Meals?[0].FirstMealItem
 //        self.SecondMealItem.text = MealPlans?[currentMealPlan].Meals?[0].SecondMealItem

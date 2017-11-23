@@ -77,6 +77,26 @@ class DataSource {
             thridMealLabel.text = snapshot.childSnapshot(forPath: "third").value as? String
         })
     }
+    
+    func listenForMealPlan(_ mealPlan:MealPlan) {
+        userDBRef?.child("currentMealPlan").observe(DataEventType.value, with: { (snapshot) in
+            let breakfastFirst = snapshot.childSnapshot(forPath: "breakfast").childSnapshot(forPath: "first").value as? String
+            let breakfastSecond = snapshot.childSnapshot(forPath: "breakfast").childSnapshot(forPath: "second").value as? String
+            let breakfastThird = snapshot.childSnapshot(forPath: "breakfast").childSnapshot(forPath: "third").value as? String
+            let lunchFirst = snapshot.childSnapshot(forPath: "lunch").childSnapshot(forPath: "first").value as? String
+            let lunchSecond = snapshot.childSnapshot(forPath: "lunch").childSnapshot(forPath: "second").value as? String
+            let lunchThird = snapshot.childSnapshot(forPath: "lunch").childSnapshot(forPath: "third").value as? String
+            let dinnerFirst = snapshot.childSnapshot(forPath: "dinner").childSnapshot(forPath: "first").value as? String
+            let dinnerSecond = snapshot.childSnapshot(forPath: "dinner").childSnapshot(forPath: "second").value as? String
+            let dinnerThird = snapshot.childSnapshot(forPath: "dinner").childSnapshot(forPath: "third").value as? String
+            
+            mealPlan.Meals = [
+                Meal(first: breakfastFirst!, second: breakfastSecond!, third: breakfastThird!, calories: 500),
+                Meal(first: lunchFirst!, second: lunchSecond!, third: lunchThird!, calories: 500),
+                Meal(first: dinnerFirst!, second: dinnerSecond!, third: dinnerThird!, calories: 500),
+            ]
+        })
+    }
 
 //
 //    // goal weight, current weight, current meal plan
