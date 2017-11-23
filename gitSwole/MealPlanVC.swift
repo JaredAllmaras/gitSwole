@@ -66,9 +66,9 @@ class MealPlanVC: UIViewController {
         
 //        DataSource.dataSource.listenToCurrentMeal(FirstMealItem, SecondMealItem, ThirdMealItem)
         
-//        self.FirstMealItem.text = MealPlans?[currentMealPlan].Meals?[0].FirstMealItem
-//        self.SecondMealItem.text = MealPlans?[currentMealPlan].Meals?[0].SecondMealItem
-//        self.ThirdMealItem.text = MealPlans?[currentMealPlan].Meals?[0].ThirdMealItem
+        self.FirstMealItem.text = MealPlans?[currentMealPlan].Meals?[0].FirstMealItem
+        self.SecondMealItem.text = MealPlans?[currentMealPlan].Meals?[0].SecondMealItem
+        self.ThirdMealItem.text = MealPlans?[currentMealPlan].Meals?[0].ThirdMealItem
         
         
     }

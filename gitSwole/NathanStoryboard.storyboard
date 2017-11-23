@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,48 +19,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDe-jD-Vlh">
-                                <rect key="frame" x="222" y="55" width="74" height="30"/>
-                                <state key="normal" title="Login"/>
+                                <rect key="frame" x="212" y="55" width="69" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="uqH-Oo-Suv"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="vrq-1c-ZYJ" kind="show" id="YFY-SR-QqA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gitSwole" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3w-ls-84o">
-                                <rect key="frame" x="79" y="95" width="217" height="81"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cd9-cM-z18">
-                                <rect key="frame" x="304" y="55" width="48" height="30"/>
-                                <state key="normal" title="Logout"/>
+                                <rect key="frame" x="289" y="55" width="70" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="qzB-y5-nIm"/>
+                                </constraints>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="logout:" destination="mdu-Ri-XsD" eventType="touchUpInside" id="rdN-dJ-bae"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMi-7I-FTN">
-                                <rect key="frame" x="160" y="55" width="55" height="30"/>
-                                <state key="normal" title="Sign Up"/>
+                                <rect key="frame" x="27" y="55" width="81" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="mK6-Hj-HpL"/>
+                                </constraints>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="o9M-ww-j2c" kind="show" id="kT8-S3-hw7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gitSwole" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3w-ls-84o">
+                                <rect key="frame" x="130" y="136" width="115" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="kdW-0C-LZe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fDe-jD-Vlh" firstAttribute="leading" secondItem="yMi-7I-FTN" secondAttribute="trailing" constant="7" id="0RF-Ys-YqV"/>
-                            <constraint firstItem="fDe-jD-Vlh" firstAttribute="trailing" secondItem="R3w-ls-84o" secondAttribute="trailing" id="3XR-9h-JgI"/>
-                            <constraint firstItem="yMi-7I-FTN" firstAttribute="centerX" secondItem="R3w-ls-84o" secondAttribute="centerX" id="6PS-8q-ze5"/>
-                            <constraint firstItem="cd9-cM-z18" firstAttribute="leading" secondItem="fDe-jD-Vlh" secondAttribute="trailing" constant="8" symbolic="YES" id="Ed8-ZE-RWq"/>
-                            <constraint firstItem="R3w-ls-84o" firstAttribute="leading" secondItem="Cje-IL-FgM" secondAttribute="leading" constant="79" id="Irm-2N-eNd"/>
-                            <constraint firstItem="yMi-7I-FTN" firstAttribute="centerX" secondItem="ks5-8m-WF4" secondAttribute="centerX" id="Xbe-qc-taQ"/>
-                            <constraint firstItem="yMi-7I-FTN" firstAttribute="top" secondItem="fDe-jD-Vlh" secondAttribute="top" id="XmO-jc-OT9"/>
-                            <constraint firstItem="R3w-ls-84o" firstAttribute="top" secondItem="yMi-7I-FTN" secondAttribute="bottom" constant="10" id="iFL-hh-Hfj"/>
-                            <constraint firstItem="fDe-jD-Vlh" firstAttribute="top" secondItem="cd9-cM-z18" secondAttribute="top" id="kuJ-Ev-zhg"/>
-                            <constraint firstItem="Cje-IL-FgM" firstAttribute="bottom" secondItem="cd9-cM-z18" secondAttribute="bottom" constant="582" id="pjT-vV-nEd"/>
-                            <constraint firstItem="yMi-7I-FTN" firstAttribute="baseline" secondItem="fDe-jD-Vlh" secondAttribute="baseline" id="rMS-3N-kdJ"/>
-                            <constraint firstItem="Cje-IL-FgM" firstAttribute="bottom" secondItem="R3w-ls-84o" secondAttribute="bottom" constant="491" id="w5p-q4-zA8"/>
-                            <constraint firstItem="fDe-jD-Vlh" firstAttribute="baseline" secondItem="cd9-cM-z18" secondAttribute="firstBaseline" id="znQ-z5-yFD"/>
+                            <constraint firstItem="yMi-7I-FTN" firstAttribute="leading" secondItem="Cje-IL-FgM" secondAttribute="leading" constant="27" id="0eA-gc-lRA"/>
+                            <constraint firstItem="R3w-ls-84o" firstAttribute="centerX" secondItem="ks5-8m-WF4" secondAttribute="centerX" id="Lnj-vf-hWp"/>
+                            <constraint firstItem="yMi-7I-FTN" firstAttribute="top" secondItem="Cje-IL-FgM" secondAttribute="top" constant="35" id="RH4-wM-Ban"/>
+                            <constraint firstItem="cd9-cM-z18" firstAttribute="leading" secondItem="fDe-jD-Vlh" secondAttribute="trailing" constant="8" symbolic="YES" id="UED-ef-hIV"/>
+                            <constraint firstItem="cd9-cM-z18" firstAttribute="trailing" secondItem="ks5-8m-WF4" secondAttribute="trailingMargin" id="gqC-qP-lQX"/>
+                            <constraint firstItem="fDe-jD-Vlh" firstAttribute="baseline" secondItem="cd9-cM-z18" secondAttribute="baseline" id="kyB-pC-OqW"/>
+                            <constraint firstItem="yMi-7I-FTN" firstAttribute="baseline" secondItem="fDe-jD-Vlh" secondAttribute="baseline" id="rRV-qG-E8O"/>
+                            <constraint firstItem="R3w-ls-84o" firstAttribute="top" secondItem="fDe-jD-Vlh" secondAttribute="bottom" constant="51" id="yEe-dg-AFl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cje-IL-FgM"/>
                     </view>
@@ -116,24 +131,33 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x81-6a-Zmk">
                                 <rect key="frame" x="94" y="318.5" width="188" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="F1D-Vp-mie"/>
                                 </constraints>
-                                <state key="normal" title="Sign In"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="signIn:" destination="vrq-1c-ZYJ" eventType="touchUpInside" id="2WB-VR-upb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gc6-Xi-mCm">
                                 <rect key="frame" x="94" y="356.5" width="188" height="30"/>
-                                <state key="normal" title="Cancel"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="cancel:" destination="vrq-1c-ZYJ" eventType="touchUpInside" id="qw5-dt-Cdd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE1-JG-RP2">
                                 <rect key="frame" x="94" y="529" width="188" height="30"/>
-                                <state key="normal" title="Sign Up"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="register:" destination="vrq-1c-ZYJ" eventType="touchUpInside" id="rL2-CM-FND"/>
                                     <segue destination="o9M-ww-j2c" kind="show" id="GNc-w2-NvZ"/>
@@ -203,7 +227,10 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbs-dV-zQj">
                                 <rect key="frame" x="111" y="540" width="154" height="30"/>
-                                <state key="normal" title="Sign Up"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="signUp:" destination="o9M-ww-j2c" eventType="touchUpInside" id="dWa-vg-PDd"/>
                                 </connections>
@@ -264,7 +291,10 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh3-c4-Ggd">
                                 <rect key="frame" x="111" y="578" width="154" height="30"/>
-                                <state key="normal" title="Cancel"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="cancel:" destination="o9M-ww-j2c" eventType="touchUpInside" id="kGK-le-rJO"/>
                                 </connections>
@@ -860,10 +890,13 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8K-KH-42W">
                                 <rect key="frame" x="91" y="532" width="192" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="192" id="zwI-Br-9fT"/>
                                 </constraints>
-                                <state key="normal" title="Set as Current Meal Plan"/>
+                                <state key="normal" title="Set as Current Meal Plan">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="setCurrentMealPlan:" destination="Aa3-sP-IYc" eventType="touchUpInside" id="1Kz-Yv-zIv"/>
                                 </connections>
@@ -1021,8 +1054,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwh-gg-9vh">
-                                <rect key="frame" x="144.5" y="514" width="86" height="30"/>
-                                <state key="normal" title="Update Goal"/>
+                                <rect key="frame" x="129" y="514" width="118" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="b4T-LE-1to"/>
+                                </constraints>
+                                <state key="normal" title="Update Goal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="saveGoal:" destination="IN4-bk-zpv" eventType="touchUpInside" id="0g4-Sp-Tml"/>
                                 </connections>
@@ -1085,6 +1124,6 @@
         <image name="icons8-unchecked-checkbox-50" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kT8-S3-hw7"/>
+        <segue reference="GNc-w2-NvZ"/>
     </inferredMetricsTieBreakers>
 </document>
