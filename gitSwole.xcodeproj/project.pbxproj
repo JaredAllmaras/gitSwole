@@ -32,10 +32,12 @@
 		C4C048531FC4EB510061473A /* MealPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C048521FC4EB510061473A /* MealPlanTableViewCell.swift */; };
 		C4C048591FC4EF9E0061473A /* MealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C048581FC4EF9E0061473A /* MealPlan.swift */; };
 		C4C0485B1FC4F9E60061473A /* MealPlanDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */; };
-		E16264031FC51E4700228C9E /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16264021FC51E4700228C9E /* UserDataModel.swift */; };
 		C4C0485D1FC51BFC0061473A /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0485C1FC51BFC0061473A /* CheckBox.swift */; };
+		E16264031FC51E4700228C9E /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16264021FC51E4700228C9E /* UserDataModel.swift */; };
+		E175C4861FC60A9F0089E72E /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C4851FC60A9F0089E72E /* AuthUser.swift */; };
+		E175C4881FC65A3F0089E72E /* NickStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E175C4871FC65A3F0089E72E /* NickStoryboard.storyboard */; };
+		E175C48C1FC65D760089E72E /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C48B1FC65D760089E72E /* LoadingViewController.swift */; };
 		E17AAB1B1FC4D333005247C7 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAB1A1FC4D333005247C7 /* DataSource.swift */; };
-		E17AAB1D1FC4DA66005247C7 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAB1C1FC4DA66005247C7 /* Authentication.swift */; };
 		E17AAB1F1FC4EFC5005247C7 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAB1E1FC4EFC5005247C7 /* LocalDataSource.swift */; };
 		E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8292B1FA2B0DB00522204 /* AppDelegate.swift */; };
 		E1C8292E1FA2B0DB00522204 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8292D1FA2B0DB00522204 /* ViewController.swift */; };
@@ -76,10 +78,12 @@
 		C4C048571FC4EF470061473A /* gitSwole-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "gitSwole-Bridging-Header.h"; path = "gitSwole/gitSwole-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4C048581FC4EF9E0061473A /* MealPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlan.swift; sourceTree = "<group>"; };
 		C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanDetailVC.swift; sourceTree = "<group>"; };
-		E16264021FC51E4700228C9E /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		C4C0485C1FC51BFC0061473A /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		E16264021FC51E4700228C9E /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		E175C4851FC60A9F0089E72E /* AuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
+		E175C4871FC65A3F0089E72E /* NickStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NickStoryboard.storyboard; sourceTree = "<group>"; };
+		E175C48B1FC65D760089E72E /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		E17AAB1A1FC4D333005247C7 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		E17AAB1C1FC4DA66005247C7 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		E17AAB1E1FC4EFC5005247C7 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		E1C829281FA2B0DA00522204 /* gitSwole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gitSwole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C8292B1FA2B0DB00522204 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -161,29 +165,31 @@
 				C4142FDC1FA94EC800F3173E /* MealPlanVC.swift */,
 				8CDF7AD61FC4E3E100FB397C /* WorkoutVC.swift */,
 				C4C048581FC4EF9E0061473A /* MealPlan.swift */,
-				C4142FDB1FA94EC700F3173E /* NathanStoryboard.storyboard */,
 				C4C0485C1FC51BFC0061473A /* CheckBox.swift */,
 				C4C0485A1FC4F9E60061473A /* MealPlanDetailVC.swift */,
 				C4C048521FC4EB510061473A /* MealPlanTableViewCell.swift */,
 				C4C048501FC4EA7A0061473A /* MealPlansTableViewController.swift */,
 				C4142FEE1FA96C3400F3173E /* HomeVC.swift */,
-				C4142FE81FA9599900F3173E /* LoginVC.swift */,
 				E16264021FC51E4700228C9E /* UserDataModel.swift */,
 				C4142FE21FA94ED300F3173E /* WorkoutDetailVC.swift */,
-				C4142FEA1FA959D600F3173E /* SignUpVC.swift */,
 				8CDF7AEE1FC5126700FB397C /* BridgeViewController.h */,
 				8CDF7AEF1FC5126700FB397C /* BridgeViewController.m */,
-				E17AAB1C1FC4DA66005247C7 /* Authentication.swift */,
-				E17AAB1E1FC4EFC5005247C7 /* LocalDataSource.swift */,
-				E17AAB1A1FC4D333005247C7 /* DataSource.swift */,
 				C4142FEC1FA96A2100F3173E /* ProgressVC.swift */,
 				8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */,
 				8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */,
 				E1C8292B1FA2B0DB00522204 /* AppDelegate.swift */,
 				E1C8292D1FA2B0DB00522204 /* ViewController.swift */,
+				C4142FE81FA9599900F3173E /* LoginVC.swift */,
+				C4142FEA1FA959D600F3173E /* SignUpVC.swift */,
+				E175C48B1FC65D760089E72E /* LoadingViewController.swift */,
+				E17AAB1A1FC4D333005247C7 /* DataSource.swift */,
+				E17AAB1E1FC4EFC5005247C7 /* LocalDataSource.swift */,
+				E175C4851FC60A9F0089E72E /* AuthUser.swift */,
 				E1C8292F1FA2B0DB00522204 /* Main.storyboard */,
-				E1C829351FA2B0DB00522204 /* Assets.xcassets */,
+				C4142FDB1FA94EC700F3173E /* NathanStoryboard.storyboard */,
+				E175C4871FC65A3F0089E72E /* NickStoryboard.storyboard */,
 				E1C829371FA2B0DB00522204 /* LaunchScreen.storyboard */,
+				E1C829351FA2B0DB00522204 /* Assets.xcassets */,
 				E1C829401FA2B14500522204 /* GoogleService-Info.plist */,
 				E1C8293A1FA2B0DB00522204 /* Info.plist */,
 				8CDF7AF11FC5130A00FB397C /* gitswole-Bridging-header.h */,
@@ -257,6 +263,7 @@
 			files = (
 				E1C829391FA2B0DB00522204 /* LaunchScreen.storyboard in Resources */,
 				E1C829411FA2B14500522204 /* GoogleService-Info.plist in Resources */,
+				E175C4881FC65A3F0089E72E /* NickStoryboard.storyboard in Resources */,
 				E1C829361FA2B0DB00522204 /* Assets.xcassets in Resources */,
 				E1C829311FA2B0DB00522204 /* Main.storyboard in Resources */,
 				C4142FDE1FA94ECD00F3173E /* NathanStoryboard.storyboard in Resources */,
@@ -340,7 +347,6 @@
 				E17AAB1F1FC4EFC5005247C7 /* LocalDataSource.swift in Sources */,
 				E17AAB1B1FC4D333005247C7 /* DataSource.swift in Sources */,
 				C4142FEF1FA96C3400F3173E /* HomeVC.swift in Sources */,
-				E17AAB1D1FC4DA66005247C7 /* Authentication.swift in Sources */,
 				8CDA501E1FA94CFD00CED50D /* SettingsViewController.swift in Sources */,
 				C4142FE61FA94ED400F3173E /* WorkoutDetailVC.swift in Sources */,
 				C4142FE71FA94ED400F3173E /* Workout.swift in Sources */,
@@ -349,10 +355,12 @@
 				E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */,
 				C4C0485B1FC4F9E60061473A /* MealPlanDetailVC.swift in Sources */,
 				C4142FEB1FA959D600F3173E /* SignUpVC.swift in Sources */,
+				E175C4861FC60A9F0089E72E /* AuthUser.swift in Sources */,
 				C4142FDF1FA94ECD00F3173E /* MealPlanVC.swift in Sources */,
 				8CDF7AF01FC5126700FB397C /* BridgeViewController.m in Sources */,
 				8CDF7AD71FC4E3E100FB397C /* WorkoutVC.swift in Sources */,
 				C4C048591FC4EF9E0061473A /* MealPlan.swift in Sources */,
+				E175C48C1FC65D760089E72E /* LoadingViewController.swift in Sources */,
 				C4C0485D1FC51BFC0061473A /* CheckBox.swift in Sources */,
 				C4C048511FC4EA7A0061473A /* MealPlansTableViewController.swift in Sources */,
 				C4142FE41FA94ED400F3173E /* WorkoutCell.swift in Sources */,

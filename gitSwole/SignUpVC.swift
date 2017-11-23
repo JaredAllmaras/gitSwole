@@ -32,34 +32,33 @@ class SignUpVC: UIViewController {
     
     // Validate and add user to firebase user auth object
     @IBAction func signUp(_ sender: Any) {
-        if validUsername(username: usernameTextField.text!) && validEmail(email: emailTextField.text!) && validPassword(password: passwordTextField.text!) {
-            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
-                if error == nil {
-                    print("Firebase sign up was successful!")
-                    DataSource.dataSource.configure(user: user!)
-                    DataSource.dataSource.addUser(user!, self.usernameTextField.text!)
-                    _ = self.navigationController?.popViewController(animated: true)
-                } else {
-                    print("Error signing up for Firebase")
-                    print(error!.localizedDescription)
-                }
-            })
+        
+        let username = usernameTextField.text!
+        let email = emailTextField.text!
+        let password = passwordTextField.text!
+        
+        if validUsername(username) && validEmail(email) && validPassword(password) {
+            AuthUser.user.signUp(username, email, password)
+            _ = navigationController?.popViewController(animated: true)
+//            let storyboard = UIStoryboard(name: "NickStoryboard", bundle: nil)
+//            let loadingVC = storyboard.instantiateViewController(withIdentifier: "LoadingScreen") as! LoadingViewController
+//            _ = navigationController?.pushViewController(loadingVC, animated: true)
         } else {
             print("Invalid username, email, or password")
         }
     }
     
-    private func validUsername(username: String) -> Bool {
+    private func validUsername(_ username: String) -> Bool {
         return username != ""
     }
     
-    private func validEmail(email: String) -> Bool {
+    private func validEmail(_ email: String) -> Bool {
         let regEx = "[A-Z0-9a-z._%+]+@[A-Za-z0-9.]+\\.[A-Za-z]{2,4}"
         let validationStatus = NSPredicate(format:"SELF MATCHES %@", regEx)
         return validationStatus.evaluate(with: email)
     }
     
-    private func validPassword(password: String) -> Bool {
+    private func validPassword(_ password: String) -> Bool {
         return password != "" && password == secondPasswordTextField.text!
     }
     

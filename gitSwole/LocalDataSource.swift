@@ -16,7 +16,7 @@ class LocalDataSource {
     
     var viewContext:NSManagedObjectContext?
     var appDelegate:AppDelegate?
-    
+
     init() {
         viewContext = nil
         appDelegate = nil
@@ -26,17 +26,22 @@ class LocalDataSource {
         appDelegate = (UIApplication.shared.delegate as! AppDelegate)
         viewContext = appDelegate?.persistentContainer.viewContext
     }
-    
-    func setUser(user: FirebaseAuth.User) {
+
+    func saveUser(_ fbUserID:String, _ userID:String) {
         let newUser = User(context: viewContext!)
-        user.getIDToken(completion: { (id, error) in
-            if error == nil {
-                newUser.id = id
-                self.appDelegate?.saveContext()
-            } else {
-                print("Error: Unable to fetch ID")
-            }
-        })
+        newUser.id = userID
+        newUser.fbID = fbUserID
+        
+        appDelegate?.saveContext()
+        
+//        user.getIDToken(completion: { (id, error) in
+//            if error == nil {
+//                newUser.id = id
+//                self.appDelegate?.saveContext()
+//            } else {
+//                print("Error: Unable to fetch ID")
+//            }
+//        })
     }
     
     func getUser() -> String? {

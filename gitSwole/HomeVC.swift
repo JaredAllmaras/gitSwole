@@ -94,7 +94,7 @@ class HomeVC: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlay
     }
     
     @IBAction func testButtonAction(_ sender: Any) {
-        DataSource.dataSource.test()
+//        DataSource.dataSource.test()
     }
     
     /*
