@@ -11,8 +11,7 @@ import SafariServices
 import AVFoundation
 import FirebaseAuth
 
-class HomeVC: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate {
-    
+class HomeViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate {
 
     var auth = SPTAuth.defaultInstance()!
     var session:SPTSession!
@@ -27,7 +26,7 @@ class HomeVC: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlay
         self.view.backgroundColor = primaryBackground
         
         setup()
-        NotificationCenter.default.addObserver(self, selector: #selector(HomeVC.updateAfterFirstLogin), name: NSNotification.Name(rawValue: "loginSuccessfull"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.updateAfterFirstLogin), name: NSNotification.Name(rawValue: "loginSuccessfull"), object: nil)
         
         // Do any additional setup after loading the view.
     }

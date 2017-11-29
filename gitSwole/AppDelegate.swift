@@ -24,18 +24,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         // initialize FirebaseAuth and DataSources
-        AuthUser.user.configure()
-        DataSource.dataSource.configure()
+        UserService.user.configure()
+        DatabaseService.dataSource.configure()
         LocalDataSource.dataSource.configure()
+        DatabaseService.dataSource.loadAppState()
         
         //configures spotify
         auth.redirectURL = URL(string: "gitswole://returnAfterLogin")
         auth.sessionUserDefaultsKey = "current session"
         
-        //setup for tab bar controller
+        // Set window of Application
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
+        // Set MainTabBarController as initial view controller
         tabBarController = MainTabBarController()
         window?.rootViewController = tabBarController
         

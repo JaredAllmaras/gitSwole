@@ -10,18 +10,21 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         self.delegate = self
         self.tabBar.isTranslucent = false
         
         self.createTabs()
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     fileprivate func createTabs() {
@@ -30,10 +33,10 @@ class MainTabBarController: UITabBarController {
         
         //instantiate each view controller
         let settingsVC = storyboard.instantiateViewController(withIdentifier: "settingsVC") as? SettingsViewController
-        let MealPlanVC = NathanStoryboard.instantiateViewController(withIdentifier: "MealPlanVC") as? MealPlanVC
-        let WorkoutsTVC = NathanStoryboard.instantiateViewController(withIdentifier: "WorkoutsTVC") as? WorkoutsTVC
-        let ProgressVC = NathanStoryboard.instantiateViewController(withIdentifier: "ProgressVC") as? ProgressVC
-        let HomeVC = NathanStoryboard.instantiateViewController(withIdentifier: "HomeVC") as? HomeVC
+        let MealPlanVC = NathanStoryboard.instantiateViewController(withIdentifier: "MealPlanVC") as? NutritionViewController
+        let WorkoutsTVC = NathanStoryboard.instantiateViewController(withIdentifier: "WorkoutsTVC") as? WorkoutsTableViewController
+        let ProgressVC = NathanStoryboard.instantiateViewController(withIdentifier: "ProgressVC") as? ProgressViewController
+        let HomeVC = NathanStoryboard.instantiateViewController(withIdentifier: "HomeVC") as? HomeViewController
         
         
         //sets tab's attributes

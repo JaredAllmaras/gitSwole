@@ -8,11 +8,11 @@
 
 import UIKit
 
-class WorkoutDetailVC: UIViewController {
+class WorkoutDetailViewController: UIViewController {
     
     let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
     
-    var Workout:Workout?
+    var workout:Workout!
     var NumExercises:Int?
     var timer = Timer()
     var time = 0
@@ -27,15 +27,14 @@ class WorkoutDetailVC: UIViewController {
     @IBOutlet weak var WorkoutTimer: UILabel!
     
     
-    @IBOutlet weak var CheckBox2: CheckBox!
     @IBOutlet weak var CheckBox1: CheckBox!
+    @IBOutlet weak var CheckBox2: CheckBox!
     @IBOutlet weak var CheckBox3: CheckBox!
     @IBOutlet weak var CheckBox4: CheckBox!
     @IBOutlet weak var CheckBox5: CheckBox!
     @IBOutlet weak var CheckBox6: CheckBox!
     
-    
-    @IBOutlet weak var WorkoutName: UILabel!
+    @IBOutlet weak var workoutNameLabel: UILabel!
     @IBOutlet weak var FirstExercise: UILabel!
     @IBOutlet weak var SecondExercise: UILabel!
     @IBOutlet weak var ThirdExercise: UILabel!
@@ -47,11 +46,12 @@ class WorkoutDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = primaryBackground
-        WorkoutName.text = Workout?.Name
+        
+        workoutNameLabel.text = workout.name
         
         self.Checkboxes = [self.CheckBox1, self.CheckBox2, self.CheckBox3, self.CheckBox4, self.CheckBox5, self.CheckBox6]
         self.WorkoutTimer.isHidden = true
-        self.NumExercises = ((self.Workout?.Exercises)?.count)!
+        self.NumExercises = workout.exercises.count
         let Labels = [self.FirstExercise, self.SecondExercise, self.ThirdExercise, self.FourthExercise, self.FifthExercise, self.SixthExercise]
         
         self.FirstExercise?.isHidden = true
@@ -61,14 +61,13 @@ class WorkoutDetailVC: UIViewController {
         self.FifthExercise?.isHidden = true
         self.SixthExercise?.isHidden = true
         
-        for i in 0...(self.NumExercises)! - 1 {
+        var i = 0
+        for exercise in workout.exercises {
             let currentLabel = Labels[i]
-            currentLabel?.text = ("Exercise \(String(describing: i + 1)): \((self.Workout?.Exercises)![i])")
+            currentLabel?.text = ("Exercise \(String(describing: i + 1)): \(exercise.name) - \(exercise.sets) x \(exercise.reps)")
             currentLabel?.isHidden = false
-            
+            i += 1
         }
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func startWorkout(_ sender: Any) {

@@ -8,17 +8,18 @@
 
 import UIKit
 
-class MealPlansTableViewController: UITableViewController {
+class NutritionTableViewController: UITableViewController {
     
     let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
     
-    var MealPlans:[MealPlan]?
+    var mealPlans:[MealPlan]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.backgroundColor = primaryBackground
 
+        self.mealPlans = Store.store.getDefaultMealPlans()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,24 +29,21 @@ class MealPlansTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return (MealPlans?.count)!
+        return mealPlans!.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MealPlanCell", for: indexPath) as! MealPlanTableViewCell
-        cell.MealPlanName.text = self.MealPlans?[indexPath.row].Name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MealPlanCell", for: indexPath) as! NutritionTableViewCell
+        cell.MealPlanName.text = self.mealPlans?[indexPath.row].name
         cell.backgroundColor = primaryBackground
 
         // Configure the cell...
@@ -93,10 +91,10 @@ class MealPlansTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetail" {
-            if let dsvc = segue.destination as? MealPlanDetailVC {
+            if let dsvc = segue.destination as? NutritionDetailViewController {
                 let selectedIndex = tableView.indexPathForSelectedRow
                 dsvc.selectedMealPlanIdx = (selectedIndex?.row)
-                let selectedMealPlan = self.MealPlans?[(selectedIndex?.row)!]
+                let selectedMealPlan = self.mealPlans?[(selectedIndex?.row)!]
                 dsvc.selectedMealPlan = selectedMealPlan
             }
         }

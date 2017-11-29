@@ -1,5 +1,5 @@
 //
-//  LoginVC.swift
+//  ProgressVC.swift
 //  gitSwole
 //
 //  Created by Nathan Mosley on 10/31/17.
@@ -7,53 +7,56 @@
 //
 
 import UIKit
-import FirebaseAuth
 
-
-class LoginVC: UIViewController {
+class ProgressViewController: UIViewController {
     
     let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
 
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var goalWeight: UITextField!
+    @IBOutlet weak var currentWeight: UITextField!
+    
+    @IBOutlet weak var goalWeightLabel: UILabel!
+    @IBOutlet weak var currentWeightLabel: UILabel!
+    @IBOutlet weak var difference: UILabel!
+    @IBOutlet weak var lastUpdated: UILabel!
+    
+    @IBAction func saveGoal(_ sender: Any) {
+        
+        let intGoal = Int(goalWeight.text!)
+        if intGoal == nil {
+            print("Invalid goal weight")
+            return
+        } else {
+            goalWeightLabel.text = "\(goalWeight.text!)"
+        }
+        
+        let intCurrent = Int(currentWeight.text!)
+        if intCurrent == nil {
+            print("Invalid weight")
+            return
+        } else {
+            currentWeightLabel.text = "\(currentWeight.text!)"
+        }
+        
+        difference.text = "\(String(describing: (intGoal! - intCurrent!)))"
+
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd"
+        
+        lastUpdated.text = formatter.string(from: date)
+        
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = primaryBackground
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func signIn(_ sender: Any) {
-        let email = self.email.text!
-        let password = self.password.text!
-        
-        if validEmail(email) && validPW(password) {
-            AuthUser.user.signIn(email, password)
-            _ = navigationController?.popViewController(animated: true)
-        } else {
-            print("Invalid Username or Password")
-        }
-    }
-    
-    private func validEmail(_ email: String) -> Bool {
-        let regEx = "[A-Z0-9a-z._%+]+@[A-Za-z0-9.]+\\.[A-Za-z]{2,4}"
-        let validationStatus = NSPredicate(format:"SELF MATCHES %@", regEx)
-        return validationStatus.evaluate(with: email)
-    }
-    
-    private func validPW(_ password: String) -> Bool {
-        return password != ""
-    }
-    
-    @IBAction func cancel(_ sender: Any) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func register(_ sender: Any) {
     }
     
     // This method is called when the user touches the Return key on the
@@ -64,6 +67,7 @@ class LoginVC: UIViewController {
     // From the Apple documentation: Asks the delegate if the text field
     // should process the pressing of the return button.
     //
+    //Code for keyboard dismissal when user touches outside textFields
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // 'First Responder' is the same as 'input focus'.
         // We are removing input focus from the text field.
@@ -77,6 +81,7 @@ class LoginVC: UIViewController {
         self.view.endEditing(true)
     }
     
+
     /*
     // MARK: - Navigation
 

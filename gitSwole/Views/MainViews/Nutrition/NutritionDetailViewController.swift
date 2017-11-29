@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MealPlanDetailVC: UIViewController {
+class NutritionDetailViewController: UIViewController {
 
     var selectedMealPlanIdx:Int?
     var selectedMealPlan:MealPlan?
@@ -38,19 +38,19 @@ class MealPlanDetailVC: UIViewController {
         
         self.view.backgroundColor = primaryBackground
         
-        self.BreakfastCalories.text = "Breakfast - \(String(describing: (self.selectedMealPlan?.Meals?[0].MealCalories)!)) calories"
-        self.LunchCalories.text = "Lunch - \(String(describing: (self.selectedMealPlan?.Meals?[1].MealCalories)!)) calories"
-        self.DinnerCalories.text = "Dinner - \(String(describing: (self.selectedMealPlan?.Meals?[2].MealCalories)!)) calories"
+        self.BreakfastCalories.text = "Breakfast - \(String(describing: (self.selectedMealPlan?.breakfast.calories)!)) calories"
+        self.LunchCalories.text = "Lunch - \(String(describing: (self.selectedMealPlan?.lunch.calories)!)) calories"
+        self.DinnerCalories.text = "Dinner - \(String(describing: (self.selectedMealPlan?.dinner.calories)!)) calories"
         
-        self.BreakfastFirst.text = self.selectedMealPlan?.Meals?[0].FirstMealItem
-        self.BreakfastSecond.text = self.selectedMealPlan?.Meals?[0].SecondMealItem
-        self.BreakfastThird.text = self.selectedMealPlan?.Meals?[0].ThirdMealItem
-        self.LunchFirst.text = self.selectedMealPlan?.Meals?[1].FirstMealItem
-        self.LunchSecond.text = self.selectedMealPlan?.Meals?[1].SecondMealItem
-        self.LunchThird.text = self.selectedMealPlan?.Meals?[1].ThirdMealItem
-        self.DinnerFirst.text = self.selectedMealPlan?.Meals?[2].FirstMealItem
-        self.DinnerSecond.text = self.selectedMealPlan?.Meals?[2].SecondMealItem
-        self.DinnerThird.text = self.selectedMealPlan?.Meals?[2].ThirdMealItem
+        self.BreakfastFirst.text = self.selectedMealPlan?.breakfast.firstCourse.name
+        self.BreakfastSecond.text = self.selectedMealPlan?.breakfast.secondCourse.name
+        self.BreakfastThird.text = self.selectedMealPlan?.breakfast.thirdCourse.name
+        self.LunchFirst.text = self.selectedMealPlan?.lunch.firstCourse.name
+        self.LunchSecond.text = self.selectedMealPlan?.lunch.secondCourse.name
+        self.LunchThird.text = self.selectedMealPlan?.lunch.thirdCourse.name
+        self.DinnerFirst.text = self.selectedMealPlan?.dinner.firstCourse.name
+        self.DinnerSecond.text = self.selectedMealPlan?.dinner.secondCourse.name
+        self.DinnerThird.text = self.selectedMealPlan?.dinner.thirdCourse.name
 
         // Do any additional setup after loading the view.
     }
@@ -67,7 +67,7 @@ class MealPlanDetailVC: UIViewController {
                         "lunch": ["first": LunchFirst.text!, "second": LunchSecond.text!, "third": LunchThird.text!],
                         "dinner": ["first": DinnerFirst.text!, "second": DinnerSecond.text!, "third": DinnerThird.text!]]
         
-        DataSource.dataSource.setCurrentMealPlan(mealPlan)
+        DatabaseService.dataSource.setCurrentMealPlan(mealPlan)
     }
     
 

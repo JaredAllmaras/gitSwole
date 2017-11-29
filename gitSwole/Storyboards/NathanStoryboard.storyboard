@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HomeVC-->
+        <!--Home View Controller-->
         <scene sceneID="IXk-Lh-AhS">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="mdu-Ri-XsD" customClass="HomeVC" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="mdu-Ri-XsD" customClass="HomeViewController" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ks5-8m-WF4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -360,10 +360,10 @@
             </objects>
             <point key="canvasLocation" x="1029.5999999999999" y="-1413.6431784107947"/>
         </scene>
-        <!--WorkoutVC-->
+        <!--Workouts View Controller-->
         <scene sceneID="tDk-zP-Neh">
             <objects>
-                <viewController id="OqK-vE-YZ6" customClass="WorkoutVC" sceneMemberID="viewController">
+                <viewController id="OqK-vE-YZ6" customClass="WorkoutsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5hB-Zb-dRh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -382,10 +382,10 @@
             </objects>
             <point key="canvasLocation" x="-567.20000000000005" y="-620.23988005997012"/>
         </scene>
-        <!--WorkoutsTVC-->
+        <!--Workouts Table View Controller-->
         <scene sceneID="PBH-g7-b6a">
             <objects>
-                <tableViewController storyboardIdentifier="WorkoutsTVC" id="Bg7-ak-sZq" customClass="WorkoutsTVC" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="WorkoutsTVC" id="Bg7-ak-sZq" customClass="WorkoutsTableViewController" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Nu-Bl-h3t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -423,10 +423,10 @@
             </objects>
             <point key="canvasLocation" x="162" y="-620"/>
         </scene>
-        <!--Workout DetailVC-->
+        <!--Workout Detail View Controller-->
         <scene sceneID="7a4-qU-gZK">
             <objects>
-                <viewController storyboardIdentifier="WorkoutDetailVC" id="JDb-Pg-lE9" customClass="WorkoutDetailVC" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WorkoutDetailVC" id="JDb-Pg-lE9" customClass="WorkoutDetailViewController" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ihN-8p-e6K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -612,20 +612,20 @@
                         <outlet property="SecondExercise" destination="UTJ-Wz-rQd" id="Aba-vM-OmX"/>
                         <outlet property="SixthExercise" destination="Y7T-PX-uPk" id="MGl-B7-nx0"/>
                         <outlet property="ThirdExercise" destination="nZQ-QK-pjw" id="ADw-Ps-wty"/>
-                        <outlet property="WorkoutName" destination="ceO-mx-YRq" id="Xde-Ne-k66"/>
                         <outlet property="WorkoutStatus" destination="zTN-o1-uvC" id="2gK-rh-Bg5"/>
                         <outlet property="WorkoutTimer" destination="Sv2-5E-x2N" id="p3c-GI-gq1"/>
                         <outlet property="startWorkoutButton" destination="qtZ-nD-2MS" id="dD6-Wq-gko"/>
+                        <outlet property="workoutNameLabel" destination="ceO-mx-YRq" id="Xde-Ne-k66"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPX-vR-IJR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1029.5999999999999" y="-620.23988005997012"/>
         </scene>
-        <!--Meal PlanVC-->
+        <!--Nutrition View Controller-->
         <scene sceneID="vbY-QC-b1o">
             <objects>
-                <viewController storyboardIdentifier="MealPlanVC" id="1Rk-7a-hk1" customClass="MealPlanVC" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MealPlanVC" id="1Rk-7a-hk1" customClass="NutritionViewController" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XBd-At-kVV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -758,16 +758,16 @@
             </objects>
             <point key="canvasLocation" x="119.2" y="135.38230884557723"/>
         </scene>
-        <!--Meal Plans Table View Controller-->
+        <!--Nutrition Table View Controller-->
         <scene sceneID="QMM-20-ueg">
             <objects>
-                <tableViewController id="A8U-uV-IHJ" customClass="MealPlansTableViewController" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="A8U-uV-IHJ" customClass="NutritionTableViewController" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rz1-Jr-ckm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealPlanCell" textLabel="zLg-ty-NA2" style="IBUITableViewCellStyleDefault" id="psM-is-M61" customClass="MealPlanTableViewCell" customModule="gitSwole" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealPlanCell" textLabel="zLg-ty-NA2" style="IBUITableViewCellStyleDefault" id="psM-is-M61" customClass="NutritionTableViewCell" customModule="gitSwole" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="psM-is-M61" id="LcT-ks-e2c">
@@ -799,10 +799,10 @@
             </objects>
             <point key="canvasLocation" x="1030" y="135"/>
         </scene>
-        <!--Meal Plan DetailVC-->
+        <!--Nutrition Detail View Controller-->
         <scene sceneID="3d6-Xg-6Qs">
             <objects>
-                <viewController id="Aa3-sP-IYc" customClass="MealPlanDetailVC" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Aa3-sP-IYc" customClass="NutritionDetailViewController" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ijC-o1-0or">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -889,7 +889,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8K-KH-42W">
-                                <rect key="frame" x="91" y="532" width="192" height="30"/>
+                                <rect key="frame" x="91.5" y="532" width="192" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="192" id="zwI-Br-9fT"/>
@@ -967,10 +967,10 @@
             </objects>
             <point key="canvasLocation" x="1973.5999999999999" y="133.5832083958021"/>
         </scene>
-        <!--ProgressVC-->
+        <!--Progress View Controller-->
         <scene sceneID="1XJ-ht-PL1">
             <objects>
-                <viewController storyboardIdentifier="ProgressVC" id="IN4-bk-zpv" customClass="ProgressVC" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProgressVC" id="IN4-bk-zpv" customClass="ProgressViewController" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LqE-fU-7ey">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
