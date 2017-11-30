@@ -606,15 +606,15 @@
                         <outlet property="CheckBox4" destination="lpS-bg-B28" id="JWu-8B-yUQ"/>
                         <outlet property="CheckBox5" destination="uVx-yQ-wMx" id="CRG-JR-a3z"/>
                         <outlet property="CheckBox6" destination="Sss-of-bgU" id="UrT-lg-UBr"/>
-                        <outlet property="FifthExercise" destination="OyO-6v-RTa" id="ADA-bM-IyS"/>
-                        <outlet property="FirstExercise" destination="Eci-GR-PBc" id="2Wj-ib-JVj"/>
-                        <outlet property="FourthExercise" destination="z1c-rg-d3c" id="OKi-2y-V36"/>
-                        <outlet property="SecondExercise" destination="UTJ-Wz-rQd" id="Aba-vM-OmX"/>
-                        <outlet property="SixthExercise" destination="Y7T-PX-uPk" id="MGl-B7-nx0"/>
-                        <outlet property="ThirdExercise" destination="nZQ-QK-pjw" id="ADw-Ps-wty"/>
                         <outlet property="WorkoutStatus" destination="zTN-o1-uvC" id="2gK-rh-Bg5"/>
                         <outlet property="WorkoutTimer" destination="Sv2-5E-x2N" id="p3c-GI-gq1"/>
+                        <outlet property="fifthExerciseLabel" destination="OyO-6v-RTa" id="ADA-bM-IyS"/>
+                        <outlet property="firstExerciseLabel" destination="Eci-GR-PBc" id="2Wj-ib-JVj"/>
+                        <outlet property="fourthExerciseLabel" destination="z1c-rg-d3c" id="OKi-2y-V36"/>
+                        <outlet property="secondExerciseLabel" destination="UTJ-Wz-rQd" id="Aba-vM-OmX"/>
+                        <outlet property="sixthExerciseLabel" destination="Y7T-PX-uPk" id="MGl-B7-nx0"/>
                         <outlet property="startWorkoutButton" destination="qtZ-nD-2MS" id="dD6-Wq-gko"/>
+                        <outlet property="thirdExerciseLabel" destination="nZQ-QK-pjw" id="ADw-Ps-wty"/>
                         <outlet property="workoutNameLabel" destination="ceO-mx-YRq" id="Xde-Ne-k66"/>
                     </connections>
                 </viewController>

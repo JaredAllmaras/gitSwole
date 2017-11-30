@@ -18,17 +18,12 @@ class HomeViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioS
     var player: SPTAudioStreamingController?
     var loginUrl: URL?
 
-   let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = primaryBackground
+        self.view.backgroundColor = Config.primaryColor
         
         setup()
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.updateAfterFirstLogin), name: NSNotification.Name(rawValue: "loginSuccessfull"), object: nil)
-        
-        // Do any additional setup after loading the view.
     }
     
     
@@ -55,7 +50,6 @@ class HomeViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioS
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func setup() {

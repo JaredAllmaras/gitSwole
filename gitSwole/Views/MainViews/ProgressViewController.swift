@@ -10,8 +10,6 @@ import UIKit
 
 class ProgressViewController: UIViewController {
     
-    let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
-
     @IBOutlet weak var goalWeight: UITextField!
     @IBOutlet weak var currentWeight: UITextField!
     
@@ -52,7 +50,7 @@ class ProgressViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = primaryBackground
+        self.view.backgroundColor = Config.primaryColor
     }
     
     override func didReceiveMemoryWarning() {

@@ -11,12 +11,11 @@ import UIKit
 class WorkoutsTableViewController: UITableViewController {
     
     var workouts:[Workout]!
-    let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.backgroundColor = primaryBackground
+        self.tableView.backgroundColor = Config.primaryColor
         self.workouts = Store.store.getDefaultWorkouts()
 
         // Uncomment the following line to preserve selection between presentations

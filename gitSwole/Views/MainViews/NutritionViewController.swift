@@ -36,7 +36,7 @@ class NutritionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = primaryBackground
+        self.view.backgroundColor = Config.primaryColor
         
 //        self.NextMeal.text = "Next Meal: Breakfast - \(String(describing: (self.MealPlans?[currentMealPlan].Meals?[0].MealCalories)!)) calories"
         

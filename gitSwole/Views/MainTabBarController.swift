@@ -9,18 +9,14 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         self.delegate = self
         self.tabBar.isTranslucent = false
         
         self.createTabs()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {

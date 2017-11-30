@@ -13,6 +13,9 @@ import FirebaseAuth
  *  Firebase User wrapper service (singleton)
  */
 class UserService {
+    
+    // TODO: Recover childByAutoID key when a user logs in
+    
     static let user = UserService()
     
     private var auth: Auth?

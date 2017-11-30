@@ -9,12 +9,10 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
-
-    let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = primaryBackground
+        self.view.backgroundColor = Config.primaryColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,9 +20,6 @@ class LoadingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-
     /*
     // MARK: - Navigation
 

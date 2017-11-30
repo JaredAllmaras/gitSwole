@@ -10,8 +10,6 @@ import UIKit
 
 class WorkoutDetailViewController: UIViewController {
     
-    let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
-    
     var workout:Workout!
     var NumExercises:Int?
     var timer = Timer()
@@ -26,6 +24,7 @@ class WorkoutDetailViewController: UIViewController {
     @IBOutlet weak var WorkoutStatus: UILabel!
     @IBOutlet weak var WorkoutTimer: UILabel!
     
+    @IBOutlet weak var workoutNameLabel: UILabel!
     
     @IBOutlet weak var CheckBox1: CheckBox!
     @IBOutlet weak var CheckBox2: CheckBox!
@@ -33,33 +32,31 @@ class WorkoutDetailViewController: UIViewController {
     @IBOutlet weak var CheckBox4: CheckBox!
     @IBOutlet weak var CheckBox5: CheckBox!
     @IBOutlet weak var CheckBox6: CheckBox!
-    
-    @IBOutlet weak var workoutNameLabel: UILabel!
-    @IBOutlet weak var FirstExercise: UILabel!
-    @IBOutlet weak var SecondExercise: UILabel!
-    @IBOutlet weak var ThirdExercise: UILabel!
-    @IBOutlet weak var FourthExercise: UILabel!
-    @IBOutlet weak var FifthExercise: UILabel!
-    @IBOutlet weak var SixthExercise: UILabel!
+    @IBOutlet weak var firstExerciseLabel: UILabel!
+    @IBOutlet weak var secondExerciseLabel: UILabel!
+    @IBOutlet weak var thirdExerciseLabel: UILabel!
+    @IBOutlet weak var fourthExerciseLabel: UILabel!
+    @IBOutlet weak var fifthExerciseLabel: UILabel!
+    @IBOutlet weak var sixthExerciseLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = primaryBackground
+        self.view.backgroundColor = Config.primaryColor
         
         workoutNameLabel.text = workout.name
         
         self.Checkboxes = [self.CheckBox1, self.CheckBox2, self.CheckBox3, self.CheckBox4, self.CheckBox5, self.CheckBox6]
         self.WorkoutTimer.isHidden = true
         self.NumExercises = workout.exercises.count
-        let Labels = [self.FirstExercise, self.SecondExercise, self.ThirdExercise, self.FourthExercise, self.FifthExercise, self.SixthExercise]
+        let Labels = [self.firstExerciseLabel, self.secondExerciseLabel, self.thirdExerciseLabel, self.fourthExerciseLabel, self.fifthExerciseLabel, self.sixthExerciseLabel]
         
-        self.FirstExercise?.isHidden = true
-        self.SecondExercise?.isHidden = true
-        self.ThirdExercise?.isHidden = true
-        self.FourthExercise?.isHidden = true
-        self.FifthExercise?.isHidden = true
-        self.SixthExercise?.isHidden = true
+        self.firstExerciseLabel?.isHidden = true
+        self.secondExerciseLabel?.isHidden = true
+        self.thirdExerciseLabel?.isHidden = true
+        self.fourthExerciseLabel?.isHidden = true
+        self.fifthExerciseLabel?.isHidden = true
+        self.sixthExerciseLabel?.isHidden = true
         
         var i = 0
         for exercise in workout.exercises {
@@ -83,6 +80,7 @@ class WorkoutDetailViewController: UIViewController {
         self.WorkoutTimer.isHidden = false
         }
     }
+    
     @objc func timerIncrement () {
         
         time += 1
@@ -112,13 +110,6 @@ class WorkoutDetailViewController: UIViewController {
     
     func timeConverter (seconds : Int) -> (Int, Int, Int) {
         return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
-    }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-       
-        // Dispose of any resources that can be recreated.
     }
     
 

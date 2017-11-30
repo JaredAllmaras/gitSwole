@@ -40,6 +40,7 @@
 		E15FEE771FCF36C300523AD2 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FEE761FCF36C300523AD2 /* Course.swift */; };
 		E15FEE791FCF3CD500523AD2 /* FirebaseMappingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FEE781FCF3CD500523AD2 /* FirebaseMappingService.swift */; };
 		E15FEE7B1FCF517600523AD2 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FEE7A1FCF517600523AD2 /* AppState.swift */; };
+		E15FEE7E1FCF687600523AD2 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FEE7D1FCF687600523AD2 /* Config.swift */; };
 		E16264031FC51E4700228C9E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16264021FC51E4700228C9E /* User.swift */; };
 		E175C4861FC60A9F0089E72E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C4851FC60A9F0089E72E /* UserService.swift */; };
 		E175C4881FC65A3F0089E72E /* NickStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E175C4871FC65A3F0089E72E /* NickStoryboard.storyboard */; };
@@ -92,6 +93,7 @@
 		E15FEE761FCF36C300523AD2 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		E15FEE781FCF3CD500523AD2 /* FirebaseMappingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMappingService.swift; sourceTree = "<group>"; };
 		E15FEE7A1FCF517600523AD2 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		E15FEE7D1FCF687600523AD2 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		E16264021FC51E4700228C9E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E175C4851FC60A9F0089E72E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		E175C4871FC65A3F0089E72E /* NickStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NickStoryboard.storyboard; sourceTree = "<group>"; };
@@ -277,13 +279,14 @@
 				E14CD3A91FC6F71100D89BA1 /* Views */,
 				E1C8292B1FA2B0DB00522204 /* AppDelegate.swift */,
 				E14CD3B21FC7331100D89BA1 /* Store.swift */,
+				E15FEE7D1FCF687600523AD2 /* Config.swift */,
+				E14CD3AE1FC701EA00D89BA1 /* FirebaseConfig.json */,
 				E14CD3AB1FC6F7F600D89BA1 /* Storyboards */,
 				E1C829351FA2B0DB00522204 /* Assets.xcassets */,
 				E1C829401FA2B14500522204 /* GoogleService-Info.plist */,
 				E1C8293A1FA2B0DB00522204 /* Info.plist */,
 				8CDF7AF11FC5130A00FB397C /* gitswole-Bridging-header.h */,
 				E1C829321FA2B0DB00522204 /* gitSwole.xcdatamodeld */,
-				E14CD3AE1FC701EA00D89BA1 /* FirebaseConfig.json */,
 			);
 			path = gitSwole;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				8CDF7AF01FC5126700FB397C /* BridgeViewController.m in Sources */,
 				8CDF7AD71FC4E3E100FB397C /* WorkoutsViewController.swift in Sources */,
 				E14CD3B51FC7337100D89BA1 /* UserState.swift in Sources */,
+				E15FEE7E1FCF687600523AD2 /* Config.swift in Sources */,
 				C4C048591FC4EF9E0061473A /* MealPlan.swift in Sources */,
 				E175C48C1FC65D760089E72E /* LoadingViewController.swift in Sources */,
 				E14CD3B31FC7331100D89BA1 /* Store.swift in Sources */,

@@ -12,14 +12,12 @@ import FirebaseAuth
 
 class LoginVC: UIViewController {
     
-    let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
-
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = primaryBackground
+        self.view.backgroundColor = Config.primaryColor
     }
 
     override func didReceiveMemoryWarning() {
