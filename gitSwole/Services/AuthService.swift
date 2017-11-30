@@ -38,32 +38,30 @@ class AuthService {
         })
     }
     
-    func signUp(_ username:String, _ email:String, _ password:String) {
-//        guard !signedIn() else {
-//            // deal with error
-//            print("User is already signed in")
-//            return
-//        }
-        
+    func signUp(_ email:String, _ password:String, _ viewController:SignUpProtocol) {
         
         auth?.createUser(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
-                DatabaseService.dataSource.createAndLoadUser(user!.uid, username)
-                print(Store.store.getUsername() + " successfully signed up!")
+//                DatabaseService.dataSource.createAndLoadUser(user!.uid)
+                viewController.proceed()
             } else {
-                // TODO: guard against already signed up
-                print("Error creating user")
                 print(error!.localizedDescription)
+                var errorMessage:String
+                switch (error!.localizedDescription) {
+                case "The email address is already in use by another account.":
+                    errorMessage = "This email address is already in use"
+                case "The password must be 6 characters long or more.":
+                    errorMessage = "Password must be > 6 characters"
+                default:
+                    errorMessage = "Internal Error!"
+                }
+                
+                viewController.error(errorMessage)
             }
         })
     }
     
     func signIn(_ email:String, _ password:String) {
-//        guard !signedIn() else {
-//            print("User is already signed in")
-//            return
-//        }
-        
         auth?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
                 DatabaseService.dataSource.loadUser(user!.uid)
@@ -78,10 +76,15 @@ class AuthService {
         do {
             try Auth.auth().signOut()
             Store.store.unloadUserState()
+            DatabaseService.dataSource.unloadUserState()
             print(Store.store.getUsername() + " successfully signed out!")
         } catch let error as NSError {
             print(error.localizedDescription)
         }
+    }
+    
+    func getUserID() -> String {
+        return user!.uid
     }
     
     func signedIn() -> Bool {

@@ -15,6 +15,9 @@ class MainTabBarController: UITabBarController {
         
         self.delegate = self
         self.tabBar.isTranslucent = false
+        self.tabBar.barTintColor = Config.primaryColor
+        self.tabBar.tintColor = Config.primaryTextColor
+        self.tabBar.unselectedItemTintColor = Config.secondaryColor
         
         self.createTabs()
     }
@@ -69,7 +72,6 @@ class MainTabBarController: UITabBarController {
         let settingsNav = UINavigationController(rootViewController: settingsVC!)
         let ProgressNav = UINavigationController(rootViewController: ProgressVC!)
         let HomeNav = UINavigationController(rootViewController: HomeVC!)
-        
         
         //Creates an array of controllers that make up the tab bar items.
         let controllers:[UIViewController] = [HomeNav, WorkoutsNav, MealPlanNav, ProgressNav, settingsNav]

@@ -19,6 +19,9 @@ class DatabaseService {
     private var dbref: DatabaseReference?
     private var userDBRef: DatabaseReference?
     
+    private var defaultWorkoutsDone = false
+    private var defaultMealPlansDone = false
+    
     private init() {
         dbref = nil
         userDBRef = nil
@@ -28,7 +31,33 @@ class DatabaseService {
         dbref = Database.database().reference().child("app")
     }
     
-    func createAndLoadUser(_ firAuthUserID:String, _ username:String) {
+    func loading() -> Bool {
+        return !(defaultMealPlansDone && defaultWorkoutsDone)
+    }
+    
+    func createAndLoadUser(_ userState:UserState) {
+        print("Creating user in Firebase..")
+        
+        // generate new user in database
+        userDBRef = dbref?.child("users").childByAutoId()
+        
+        // grab FIRAuthUserID from AuthService
+        let firAuthUserID = AuthService.user.getUserID()
+        
+        // save key-value pair [firAuthUserID: FIRDatabaseAutoID] to local storage
+        let firDatabaseAutoID = userDBRef!.key
+        let defaults = UserDefaults.standard
+        defaults.set(firDatabaseAutoID, forKey: firAuthUserID)
+        
+        // save userState to new user
+        userDBRef?.setValue(FirebaseMappingService.userStateToMap(userState))
+        
+        // load store
+        Store.store.setUserState(userState) // eliminates race conditions inherit by asynchronous call backs from loadUserState
+        loadUserState()
+    }
+    
+    func createAndLoadUser(_ firAuthUserID:String) {
         print("Creating user in Firebase..")
         
         // generate new user in database
@@ -41,6 +70,7 @@ class DatabaseService {
         
         // create user entry
         let currentMealPlan = Store.store.getDefaultMealPlan()
+        let username = ""
         let currentWeight = 170
         let goalWeight = 150
         
@@ -79,6 +109,7 @@ class DatabaseService {
                 mealPlans.append(FirebaseMappingService.mapToMealPlan(mealPlanMap))
             }
             Store.store.setDefaultMealPlans(mealPlans)
+            self.defaultMealPlansDone = true
         })
     }
     
@@ -90,6 +121,7 @@ class DatabaseService {
                 workouts.append(FirebaseMappingService.mapToWorkout(workoutMap))
             }
             Store.store.setDefaultWorkouts(workouts)
+            self.defaultWorkoutsDone = true
         })
     }
     

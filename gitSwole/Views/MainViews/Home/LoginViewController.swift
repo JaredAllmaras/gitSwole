@@ -10,14 +10,20 @@ import UIKit
 import FirebaseAuth
 
 
-class LoginVC: UIViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = Config.primaryColor
+        self.view.backgroundColor = Config.backgroundColor
+        signInButton.setTitleColor(Config.buttonTextColor, for: .normal)
+        signUpButton.setTitleColor(Config.buttonTextColor, for: .normal)
+        cancelButton.setTitleColor(Config.buttonTextColor, for: .normal)
     }
 
     override func didReceiveMemoryWarning() {

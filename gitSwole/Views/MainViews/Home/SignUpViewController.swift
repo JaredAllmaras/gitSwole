@@ -9,42 +9,59 @@
 import UIKit
 import FirebaseAuth
 
-class SignUpVC: UIViewController {
+protocol SignUpProtocol {
+    func proceed() -> Void
+    func error(_ message:String) -> Void
+}
+
+class SignUpViewController: UIViewController, SignUpProtocol {
     
-    @IBOutlet weak var secondPasswordTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = Config.primaryColor
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        self.view.backgroundColor = Config.backgroundColor
+        
+        emailTextField.placeholder = "email"
+        passwordTextField.placeholder = "password"
+        
+        errorLabel.backgroundColor = Config.primaryDarkColor
+        errorLabel.textColor = Config.primaryTextColor
+        errorLabel.layer.cornerRadius = 5
+        errorLabel.isHidden = true
+        
+        signUpButton.backgroundColor = Config.buttonBackgroundColor
+        signUpButton.setTitleColor(Config.buttonTextColor, for: .normal)
+        signUpButton.layer.cornerRadius = Config.buttonCornerRadius
+        
+        cancelButton.backgroundColor = Config.buttonBackgroundColor
+        cancelButton.setTitleColor(Config.buttonTextColor, for: .normal)
+        cancelButton.layer.cornerRadius = Config.buttonCornerRadius
+        
+        titleLabel.textColor = Config.primaryTextColor
+        titleView.backgroundColor = Config.primaryLightColor
+        titleView.layer.cornerRadius = 15
+        
     }
     
     // Validate and add user to firebase user auth object
     @IBAction func signUp(_ sender: Any) {
         
-        let username = usernameTextField.text!
         let email = emailTextField.text!
         let password = passwordTextField.text!
-        
-        if validUsername(username) && validEmail(email) && validPassword(password) {
-            AuthService.user.signUp(username, email, password)
-            _ = navigationController?.popViewController(animated: true)
-//            let storyboard = UIStoryboard(name: "NickStoryboard", bundle: nil)
-//            let loadingVC = storyboard.instantiateViewController(withIdentifier: "LoadingScreen") as! LoadingViewController
-//            _ = navigationController?.pushViewController(loadingVC, animated: true)
+
+        if validEmail(email) && validPassword(password) {
+            AuthService.user.signUp(email, password, self)
         } else {
-            print("Invalid username, email, or password")
+            error("Invalid email or password")
+            errorLabel.isHidden = false
         }
-    }
-    
-    private func validUsername(_ username: String) -> Bool {
-        return username != ""
     }
     
     private func validEmail(_ email: String) -> Bool {
@@ -54,11 +71,23 @@ class SignUpVC: UIViewController {
     }
     
     private func validPassword(_ password: String) -> Bool {
-        return password != "" && password == secondPasswordTextField.text!
+        return password != ""
     }
     
     @IBAction func cancel(_ sender: Any) {
         _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    func proceed() {
+        let storyboard = UIStoryboard(name: "NathanStoryboard", bundle: nil)
+        let userStateFormViewController = storyboard.instantiateViewController(withIdentifier: "UserStateFormViewController") as! UserStateFormViewController
+        present(userStateFormViewController, animated: true, completion: nil)
+//        _ = navigationController?.popViewController(animated: true)
+    }
+    
+    func error(_ message: String) {
+        errorLabel.text = message
+        errorLabel.isHidden = false
     }
     
     // This method is called when the user touches the Return key on the

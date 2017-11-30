@@ -15,7 +15,7 @@ class WorkoutsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.backgroundColor = Config.primaryColor
+        self.tableView.backgroundColor = Config.backgroundColor
         self.workouts = Store.store.getDefaultWorkouts()
 
         // Uncomment the following line to preserve selection between presentations
@@ -44,7 +44,7 @@ class WorkoutsTableViewController: UITableViewController {
         let currentWorkout = self.workouts[indexPath.row]
 
         cell.WorkoutName.text = currentWorkout.name
-        cell.backgroundColor = Config.primaryColor
+        cell.backgroundColor = Config.backgroundColor
         
         return cell
     }

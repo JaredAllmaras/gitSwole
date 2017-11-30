@@ -55,8 +55,6 @@ class Store {
     
     public func setDefaultMealPlans(_ mealPlans:Array<MealPlan>) {
         defaultMealPlans = mealPlans
-        print(mealPlans)
-        print(defaultMealPlans)
         state = AppState(defaultMealPlans: mealPlans, defaultWorkouts: state.defaultWorkouts, userState: defaultUserState())
     }
     

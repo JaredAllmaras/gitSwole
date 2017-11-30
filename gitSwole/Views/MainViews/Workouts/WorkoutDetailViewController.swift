@@ -42,7 +42,7 @@ class WorkoutDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = Config.primaryColor
+        self.view.backgroundColor = Config.backgroundColor
         
         workoutNameLabel.text = workout.name
         

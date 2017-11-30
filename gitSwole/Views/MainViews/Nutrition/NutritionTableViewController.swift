@@ -10,14 +10,12 @@ import UIKit
 
 class NutritionTableViewController: UITableViewController {
     
-    let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
-    
     var mealPlans:[MealPlan]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.backgroundColor = primaryBackground
+        self.tableView.backgroundColor = Config.backgroundColor
 
         self.mealPlans = Store.store.getDefaultMealPlans()
         // Uncomment the following line to preserve selection between presentations
@@ -44,7 +42,7 @@ class NutritionTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MealPlanCell", for: indexPath) as! NutritionTableViewCell
         cell.MealPlanName.text = self.mealPlans?[indexPath.row].name
-        cell.backgroundColor = primaryBackground
+        cell.backgroundColor = Config.backgroundColor
 
         // Configure the cell...
 

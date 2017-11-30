@@ -13,10 +13,6 @@ class NutritionDetailViewController: UIViewController {
     var selectedMealPlanIdx:Int?
     var selectedMealPlan:MealPlan?
     
-    
-    let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
-    
-    
     @IBOutlet weak var BreakfastCalories: UILabel!
     @IBOutlet weak var LunchCalories: UILabel!
     @IBOutlet weak var DinnerCalories: UILabel!
@@ -36,7 +32,7 @@ class NutritionDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = primaryBackground
+        self.view.backgroundColor = Config.backgroundColor
         
         self.BreakfastCalories.text = "Breakfast - \(String(describing: (self.selectedMealPlan?.breakfast.calories)!)) calories"
         self.LunchCalories.text = "Lunch - \(String(describing: (self.selectedMealPlan?.lunch.calories)!)) calories"
@@ -54,6 +50,7 @@ class NutritionDetailViewController: UIViewController {
     }
     
     @IBAction func setCurrentMealPlan(_ sender: Any) {
+        // TODO: Make sure this doesn't do anything when the user is not logged on
         DatabaseService.dataSource.setCurrentMealPlan(selectedMealPlan!)
     }
     

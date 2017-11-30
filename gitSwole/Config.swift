@@ -17,4 +17,10 @@ struct Config {
     static let secondaryLightColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.0);
     static let secondaryDarkColor = UIColor(red: 0.62, green: 0.65, blue: 0.66, alpha: 1.0);
     static let secondaryTextColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.0);
+    
+    static let backgroundColor = secondaryLightColor
+    static let buttonBackgroundColor = secondaryColor
+    static let buttonTextColor = secondaryTextColor
+    static let buttonCornerRadius = CGFloat(5)
+    static let buttonDisabledBackgroundColor = primaryDarkColor
 }

@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AuthService.user.setAuthListener()
         LocalDatabaseService.dataSource.configure()
         
+//        while(DatabaseService.dataSource.loading()) {}
+        
         //configures spotify
         auth.redirectURL = URL(string: "gitswole://returnAfterLogin")
         auth.sessionUserDefaultsKey = "current session"
@@ -40,6 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set MainTabBarController as initial view controller
         tabBarController = MainTabBarController()
         window?.rootViewController = tabBarController
+        
+        UINavigationBar.appearance().barTintColor = Config.secondaryDarkColor
+        UINavigationBar.appearance().tintColor = Config.secondaryTextColor
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : Config.secondaryTextColor]
         
         return true
     }
