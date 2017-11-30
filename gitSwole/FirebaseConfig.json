@@ -3,202 +3,194 @@
         [
          {
                 "name": "Bulking Meal Plan 1",
-                "meals": {
-                    "breakfast": {
-                        "first": {
-                            "name": "Scrambled Whole Egg",
-                            "serving-size": "3 Large"
-                        },
-                        "second": {
-                            "name": "Oatmeal Bowl w/ Yogurt",
-                            "serving-size": "1 Cup"
-                        },
-                        "third": {
-                            "name": "Whole Milk",
-                            "serving-size": "16 oz"
-                        },
-                        "calories": 809
+                "breakfast": {
+                    "first-course": {
+                        "name": "Scrambled Whole Egg",
+                        "serving-size": "3 Large"
                     },
-                    "lunch": {
-                        "first": {
-                            "name": "Chicken Breast",
-                            "serving-size": "6oz"
-                        },
-                        "second": {
-                            "name": "Steamed White Rice",
-                            "serving-size": "1 Cup"
-                        },
-                        "third": {
-                            "name": "Broccoli",
-                            "serving-size": "1 Cup"
-                        },
-                        "calories": 445
+                    "second-course": {
+                        "name": "Oatmeal Bowl w/ Yogurt",
+                        "serving-size": "1 Cup"
                     },
-                    "dinner": {
-                        "first": {
-                            "name": "Steak",
-                            "serving-size": "8 Oz"
-                        },
-                        "second": {
-                            "name": "Sweet Potato",
-                            "serving-size": "10 Oz"
-                        },
-                        "third": {
-                            "name": "Asparagus",
-                            "serving-size": "1 Cup"
-                        },
-                        "calories": 845
-                    }
+                    "third-course": {
+                        "name": "Whole Milk",
+                        "serving-size": "16 oz"
+                    },
+                    "calories": 809
+                },
+                "lunch": {
+                    "first-course": {
+                        "name": "Chicken Breast",
+                        "serving-size": "6oz"
+                    },
+                    "second-course": {
+                        "name": "Steamed White Rice",
+                        "serving-size": "1 Cup"
+                    },
+                    "third-course": {
+                        "name": "Broccoli",
+                        "serving-size": "1 Cup"
+                    },
+                    "calories": 445
+                },
+                "dinner": {
+                    "first-course": {
+                        "name": "Steak",
+                        "serving-size": "8 Oz"
+                    },
+                    "second-course": {
+                        "name": "Sweet Potato",
+                        "serving-size": "10 Oz"
+                    },
+                    "third-course": {
+                        "name": "Asparagus",
+                        "serving-size": "1 Cup"
+                    },
+                    "calories": 845
                 }
             },
             {
                 "name": "Cutting Meal Plan 1",
-                "meals": {
-                    "breakfast": {
-                        "first": {
-                            "name": "Bagel with Peanut Butter",
-                            "serving-size": "2 Tbsp"
-                        },
-                        "second": {
-                            "name": "Egg Whites",
-                            "serving-size": "6 Large"
-                        },
-                        "third": {
-                            "name": "Chicken Breast",
-                            "serving-size": "6 Oz"
-                        },
-                        "calories": 714
+                "breakfast": {
+                    "first-course": {
+                        "name": "Bagel with Peanut Butter",
+                        "serving-size": "2 Tbsp"
                     },
-                    "lunch": {
-                        "first": {
-                            "name": "Green Vegetables",
-                            "serving-size": "1 Cup"
-                        },
-                        "second": {
-                            "name": "Red Snapper",
-                            "serving-size": "8 Oz"
-                        },
-                        "third": {
-                            "name": "White Kidney Beans",
-                            "serving-size": "1/2 Cup"
-                        },
-                        "calories": 591
+                    "second-course": {
+                        "name": "Egg Whites",
+                        "serving-size": "6 Large"
                     },
-                    "dinner": {
-                        "first": {
-                            "name": "Tuna Sandwich",
-                            "serving-size": "6 Oz"
-                        },
-                        "second": {
-                            "name": "Cooked Quinoa",
-                            "serving-size": "1/2 Cup"
-                        },
-                        "third": {
-                            "name": "Whey Protein Shake",
-                            "serving-size": "40g"
-                        },
-                        "calories": 701
-                    }
+                    "third-course": {
+                        "name": "Chicken Breast",
+                        "serving-size": "6 Oz"
+                    },
+                    "calories": 714
+                },
+                "lunch": {
+                    "first-course": {
+                        "name": "Green Vegetables",
+                        "serving-size": "1 Cup"
+                    },
+                    "second-course": {
+                        "name": "Red Snapper",
+                        "serving-size": "8 Oz"
+                    },
+                    "third-course": {
+                        "name": "White Kidney Beans",
+                        "serving-size": "1/2 Cup"
+                    },
+                    "calories": 591
+                },
+                "dinner": {
+                    "first-course": {
+                        "name": "Tuna Sandwich",
+                        "serving-size": "6 Oz"
+                    },
+                    "second-course": {
+                        "name": "Cooked Quinoa",
+                        "serving-size": "1/2 Cup"
+                    },
+                    "third-course": {
+                        "name": "Whey Protein Shake",
+                        "serving-size": "40g"
+                    },
+                    "calories": 701
                 }
             },
             {
                 "name": "Cutting Meal Plan 2",
-                "meals": {
-                    "breakfast": {
-                        "first": {
-                            "name": "Oatmeal",
-                            "serving-size": "1/2 Cup"
-                        },
-                        "second": {
-                            "name": "Strawberries",
-                            "serving-size": "1 Cup"
-                        },
-                        "third": {
-                            "name": "Egg Whites",
-                            "serving-size": "6 Large"
-                        },
-                        "calories": 251
+                "breakfast": {
+                    "first-course": {
+                        "name": "Oatmeal",
+                        "serving-size": "1/2 Cup"
                     },
-                    "lunch": {
-                        "first": {
-                            "name": "Brown Rice",
-                            "serving-size": "1 Cup"
-                        },
-                        "second": {
-                            "name": "Green Vegetables",
-                            "serving-size": "1 Cup"
-                        },
-                        "third": {
-                            "name": "Chicken Breast",
-                            "serving-size": "8 Oz"
-                        },
-                        "calories": 737
+                    "second-course": {
+                        "name": "Strawberries",
+                        "serving-size": "1 Cup"
                     },
-                    "dinner": {
-                        "first": {
-                            "name": "Lean Steak",
-                            "serving-size": "6 Oz"
-                        },
-                        "second": {
-                            "name": "Whey Protein Shake",
-                            "serving-size": "40g"
-                        },
-                        "third": {
-                            "name": "Cooked Vegetables",
-                            "serving-size": "1 Cup"
-                        },
-                        "calories": 656
-                    }
+                    "third-course": {
+                        "name": "Egg Whites",
+                        "serving-size": "6 Large"
+                    },
+                    "calories": 251
+                },
+                "lunch": {
+                    "first-course": {
+                        "name": "Brown Rice",
+                        "serving-size": "1 Cup"
+                    },
+                    "second-course": {
+                        "name": "Green Vegetables",
+                        "serving-size": "1 Cup"
+                    },
+                    "third-course": {
+                        "name": "Chicken Breast",
+                        "serving-size": "8 Oz"
+                    },
+                    "calories": 737
+                },
+                "dinner": {
+                    "first-course": {
+                        "name": "Lean Steak",
+                        "serving-size": "6 Oz"
+                    },
+                    "second-course": {
+                        "name": "Whey Protein Shake",
+                        "serving-size": "40g"
+                    },
+                    "third-course": {
+                        "name": "Cooked Vegetables",
+                        "serving-size": "1 Cup"
+                    },
+                    "calories": 656
                 }
             },
             {
                 "name": "Cutting Meal Plan 3",
-                "meals": {
-                    "breakfast": {
-                        "first": {
-                            "name": "Scrambled Egg Whites",
-                            "serving-size": "4 Large"
-                        },
-                        "second": {
-                            "name": "Whole-wheat Toast",
-                            "serving-size": "2 Slices"
-                        },
-                        "third": {
-                            "name": "Greek Yogurt",
-                            "serving-size": "1 Cup"
-                        },
-                        "calories": 428
+                "breakfast": {
+                    "first-course": {
+                        "name": "Scrambled Egg Whites",
+                        "serving-size": "4 Large"
                     },
-                    "lunch": {
-                        "first": {
-                            "name": "Lean Ground Beef",
-                            "serving-size": "6 Oz"
-                        },
-                        "second": {
-                            "name": "Cauliflower",
-                            "serving-size": "1/2 Cup"
-                        },
-                        "third": {
-                            "name": "Brown Rice",
-                            "serving-size": "1 Cup"
-                        },
-                        "calories": 471
+                    "second-course": {
+                        "name": "Whole-wheat Toast",
+                        "serving-size": "2 Slices"
                     },
-                    "dinner": {
-                        "first": {
-                            "name": "Tuna Steak",
-                            "serving-size": "6 Oz"
-                        },
-                        "second": {
-                            "name": "Sweet Potatoes",
-                            "serving-size": "2 Cup"
-                        },
-                        "third": {
-                            "name": "Broccoli and Asparagus",
-                            "serving-size": "1 Cup"
-                        },
-                        "calories": 607
-                    }
+                    "third-course": {
+                        "name": "Greek Yogurt",
+                        "serving-size": "1 Cup"
+                    },
+                    "calories": 428
+                },
+                "lunch": {
+                    "first-course": {
+                        "name": "Lean Ground Beef",
+                        "serving-size": "6 Oz"
+                    },
+                    "second-course": {
+                        "name": "Cauliflower",
+                        "serving-size": "1/2 Cup"
+                    },
+                    "third-course": {
+                        "name": "Brown Rice",
+                        "serving-size": "1 Cup"
+                    },
+                    "calories": 471
+                },
+                "dinner": {
+                    "first-course": {
+                        "name": "Tuna Steak",
+                        "serving-size": "6 Oz"
+                    },
+                    "second-course": {
+                        "name": "Sweet Potatoes",
+                        "serving-size": "2 Cup"
+                    },
+                    "third-course": {
+                        "name": "Broccoli and Asparagus",
+                        "serving-size": "1 Cup"
+                    },
+                    "calories": 607
                 }
             }
         ],

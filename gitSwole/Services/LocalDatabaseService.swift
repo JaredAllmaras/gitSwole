@@ -11,8 +11,8 @@ import FirebaseAuth
 import CoreData
 import UIKit
 
-class LocalDataSource {
-    static let dataSource = LocalDataSource()
+class LocalDatabaseService {
+    static let dataSource = LocalDatabaseService()
     
     var viewContext:NSManagedObjectContext?
     var appDelegate:AppDelegate?
@@ -27,12 +27,13 @@ class LocalDataSource {
         viewContext = appDelegate?.persistentContainer.viewContext
     }
 
-    func saveUser(_ fbUserID:String, _ userID:String) {
-        let newUser = LocalUser(context: viewContext!)
-        newUser.userRefID = userID
-        newUser.firebaseID = fbUserID
+    func saveUser(_ firAuthUserID:String, _ firDatabaseAutoID:String) {
         
-        appDelegate?.saveContext()
+//        let newUser = LocalUser(context: viewContext!)
+//        newUser.userRefID = userID
+//        newUser.firebaseID = fbUserID
+//
+//        appDelegate?.saveContext()
     }
     
 //    func getUserID() -> String? {

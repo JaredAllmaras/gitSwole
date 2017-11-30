@@ -44,7 +44,7 @@ class WorkoutsTableViewController: UITableViewController {
         let currentWorkout = self.workouts[indexPath.row]
 
         cell.WorkoutName.text = currentWorkout.name
-        cell.backgroundColor = self.primaryBackground
+        cell.backgroundColor = Config.primaryColor
         
         return cell
     }

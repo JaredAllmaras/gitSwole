@@ -12,11 +12,11 @@ import FirebaseAuth
 /**
  *  Firebase User wrapper service (singleton)
  */
-class UserService {
+class AuthService {
     
     // TODO: Recover childByAutoID key when a user logs in
     
-    static let user = UserService()
+    static let user = AuthService()
     
     private var auth: Auth?
     private var user: FirebaseAuth.User?
@@ -26,17 +26,18 @@ class UserService {
         user = nil
     }
     
-    func configure() {
+    func setAuthListener() {
         auth = Auth.auth()
         auth?.addStateDidChangeListener({ (auth, user) in
             if auth.currentUser != nil {
-                print(user!)
+                // successfully signed in
+                print("Detected user... ")
+//                print(Store.store.getUsername() + " successfully signed in!")
                 self.user = user
             }
         })
     }
     
-    // create user and save userID
     func signUp(_ username:String, _ email:String, _ password:String) {
 //        guard !signedIn() else {
 //            // deal with error
@@ -47,7 +48,8 @@ class UserService {
         
         auth?.createUser(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
-                DatabaseService.dataSource.createUserDatabase(user!.uid, username)
+                DatabaseService.dataSource.createAndLoadUser(user!.uid, username)
+                print(Store.store.getUsername() + " successfully signed up!")
             } else {
                 // TODO: guard against already signed up
                 print("Error creating user")
@@ -56,7 +58,6 @@ class UserService {
         })
     }
     
-    // sign user in and save userID
     func signIn(_ email:String, _ password:String) {
 //        guard !signedIn() else {
 //            print("User is already signed in")
@@ -65,8 +66,7 @@ class UserService {
         
         auth?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
-                DatabaseService.dataSource.configureUserDatabase(user!.uid)
-                print("Sign in was successful")
+                DatabaseService.dataSource.loadUser(user!.uid)
             } else {
                 print("Error signing in")
                 print(error!.localizedDescription)
@@ -74,19 +74,17 @@ class UserService {
         })
     }
     
-    /**
-     *  Returns Firebase's internal user ID for the user
-     */
-//    func getUID() -> String? {
-//        guard signedIn() else {
-//            print("Error: Trying to access UID when not signed in" )
-//            return nil
-//        }
-//
-//        return user!.uid
-//    }
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+            Store.store.unloadUserState()
+            print(Store.store.getUsername() + " successfully signed out!")
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
     
-    private func signedIn() -> Bool {
-        return (auth?.currentUser != nil)
+    func signedIn() -> Bool {
+        return (auth!.currentUser != nil)
     }
 }

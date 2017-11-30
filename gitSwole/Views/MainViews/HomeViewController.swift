@@ -9,7 +9,6 @@
 import UIKit
 import SafariServices
 import AVFoundation
-import FirebaseAuth
 
 class HomeViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate {
 
@@ -78,12 +77,7 @@ class HomeViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioS
     }
 
     @IBAction func logout(_ sender: Any) {
-        do {
-            try Auth.auth().signOut()
-            print("Successfully logged out")
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
+        AuthService.user.signOut()
     }
     
     @IBAction func testButtonAction(_ sender: Any) {

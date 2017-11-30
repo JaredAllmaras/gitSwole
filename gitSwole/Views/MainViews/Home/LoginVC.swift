@@ -30,7 +30,7 @@ class LoginVC: UIViewController {
         let password = self.password.text!
         
         if validEmail(email) && validPW(password) {
-            UserService.user.signIn(email, password)
+            AuthService.user.signIn(email, password)
             _ = navigationController?.popViewController(animated: true)
         } else {
             print("Invalid Username or Password")

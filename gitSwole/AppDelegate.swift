@@ -24,10 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         // initialize FirebaseAuth and DataSources
-        UserService.user.configure()
         DatabaseService.dataSource.configure()
-        LocalDataSource.dataSource.configure()
         DatabaseService.dataSource.loadAppState()
+        AuthService.user.setAuthListener()
+        LocalDatabaseService.dataSource.configure()
         
         //configures spotify
         auth.redirectURL = URL(string: "gitswole://returnAfterLogin")

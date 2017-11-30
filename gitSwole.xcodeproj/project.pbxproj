@@ -42,11 +42,11 @@
 		E15FEE7B1FCF517600523AD2 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FEE7A1FCF517600523AD2 /* AppState.swift */; };
 		E15FEE7E1FCF687600523AD2 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FEE7D1FCF687600523AD2 /* Config.swift */; };
 		E16264031FC51E4700228C9E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16264021FC51E4700228C9E /* User.swift */; };
-		E175C4861FC60A9F0089E72E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C4851FC60A9F0089E72E /* UserService.swift */; };
+		E175C4861FC60A9F0089E72E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C4851FC60A9F0089E72E /* AuthService.swift */; };
 		E175C4881FC65A3F0089E72E /* NickStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E175C4871FC65A3F0089E72E /* NickStoryboard.storyboard */; };
 		E175C48C1FC65D760089E72E /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175C48B1FC65D760089E72E /* LoadingViewController.swift */; };
 		E17AAB1B1FC4D333005247C7 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAB1A1FC4D333005247C7 /* DatabaseService.swift */; };
-		E17AAB1F1FC4EFC5005247C7 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAB1E1FC4EFC5005247C7 /* LocalDataSource.swift */; };
+		E17AAB1F1FC4EFC5005247C7 /* LocalDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAB1E1FC4EFC5005247C7 /* LocalDatabaseService.swift */; };
 		E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8292B1FA2B0DB00522204 /* AppDelegate.swift */; };
 		E1C829311FA2B0DB00522204 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C8292F1FA2B0DB00522204 /* Main.storyboard */; };
 		E1C829341FA2B0DB00522204 /* gitSwole.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1C829321FA2B0DB00522204 /* gitSwole.xcdatamodeld */; };
@@ -95,11 +95,11 @@
 		E15FEE7A1FCF517600523AD2 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E15FEE7D1FCF687600523AD2 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		E16264021FC51E4700228C9E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E175C4851FC60A9F0089E72E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		E175C4851FC60A9F0089E72E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E175C4871FC65A3F0089E72E /* NickStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NickStoryboard.storyboard; sourceTree = "<group>"; };
 		E175C48B1FC65D760089E72E /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		E17AAB1A1FC4D333005247C7 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
-		E17AAB1E1FC4EFC5005247C7 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		E17AAB1E1FC4EFC5005247C7 /* LocalDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseService.swift; sourceTree = "<group>"; };
 		E1C829281FA2B0DA00522204 /* gitSwole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gitSwole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C8292B1FA2B0DB00522204 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1C829301FA2B0DB00522204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -200,8 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				E17AAB1A1FC4D333005247C7 /* DatabaseService.swift */,
-				E175C4851FC60A9F0089E72E /* UserService.swift */,
-				E17AAB1E1FC4EFC5005247C7 /* LocalDataSource.swift */,
+				E175C4851FC60A9F0089E72E /* AuthService.swift */,
+				E17AAB1E1FC4EFC5005247C7 /* LocalDatabaseService.swift */,
 				E15FEE781FCF3CD500523AD2 /* FirebaseMappingService.swift */,
 			);
 			path = Services;
@@ -438,7 +438,7 @@
 				E14CD3B11FC72BCF00D89BA1 /* Exercise.swift in Sources */,
 				8CDA501D1FA94CFD00CED50D /* MainTabBarController.swift in Sources */,
 				C4142FED1FA96A2100F3173E /* ProgressViewController.swift in Sources */,
-				E17AAB1F1FC4EFC5005247C7 /* LocalDataSource.swift in Sources */,
+				E17AAB1F1FC4EFC5005247C7 /* LocalDatabaseService.swift in Sources */,
 				E17AAB1B1FC4D333005247C7 /* DatabaseService.swift in Sources */,
 				8CDA501E1FA94CFD00CED50D /* SettingsViewController.swift in Sources */,
 				C4142FE61FA94ED400F3173E /* WorkoutDetailViewController.swift in Sources */,
@@ -451,7 +451,7 @@
 				E15FEE791FCF3CD500523AD2 /* FirebaseMappingService.swift in Sources */,
 				C4C0485B1FC4F9E60061473A /* NutritionDetailViewController.swift in Sources */,
 				C4142FEB1FA959D600F3173E /* SignUpVC.swift in Sources */,
-				E175C4861FC60A9F0089E72E /* UserService.swift in Sources */,
+				E175C4861FC60A9F0089E72E /* AuthService.swift in Sources */,
 				C4142FDF1FA94ECD00F3173E /* NutritionViewController.swift in Sources */,
 				E14CD3B91FC7C39600D89BA1 /* HomeViewController.swift in Sources */,
 				8CDF7AF01FC5126700FB397C /* BridgeViewController.m in Sources */,

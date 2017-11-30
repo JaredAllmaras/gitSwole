@@ -51,26 +51,12 @@ class NutritionDetailViewController: UIViewController {
         self.DinnerFirst.text = self.selectedMealPlan?.dinner.firstCourse.name
         self.DinnerSecond.text = self.selectedMealPlan?.dinner.secondCourse.name
         self.DinnerThird.text = self.selectedMealPlan?.dinner.thirdCourse.name
-
-        // Do any additional setup after loading the view.
-    }
-    
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func setCurrentMealPlan(_ sender: Any) {
-        let mealPlan = ["breakfast": ["first": BreakfastFirst.text!, "second": BreakfastSecond.text!, "third": BreakfastThird.text!],
-                        "lunch": ["first": LunchFirst.text!, "second": LunchSecond.text!, "third": LunchThird.text!],
-                        "dinner": ["first": DinnerFirst.text!, "second": DinnerSecond.text!, "third": DinnerThird.text!]]
-        
-        DatabaseService.dataSource.setCurrentMealPlan(mealPlan)
+        DatabaseService.dataSource.setCurrentMealPlan(selectedMealPlan!)
     }
     
-
     /*
     // MARK: - Navigation
 

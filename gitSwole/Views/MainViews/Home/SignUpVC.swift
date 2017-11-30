@@ -33,7 +33,7 @@ class SignUpVC: UIViewController {
         let password = passwordTextField.text!
         
         if validUsername(username) && validEmail(email) && validPassword(password) {
-            UserService.user.signUp(username, email, password)
+            AuthService.user.signUp(username, email, password)
             _ = navigationController?.popViewController(animated: true)
 //            let storyboard = UIStoryboard(name: "NickStoryboard", bundle: nil)
 //            let loadingVC = storyboard.instantiateViewController(withIdentifier: "LoadingScreen") as! LoadingViewController

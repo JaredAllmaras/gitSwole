@@ -13,16 +13,24 @@ class FirebaseMappingService {
     // object to dictionary (writing)
     
     // TODO: Complete Firebase Mapping Service and use it to create a user when a user signs up
+    static func userStateToMap(_ userState: UserState) -> Dictionary<String, Any> {
+        return
+            [
+                "username": userState.username,
+                "currentMealPlan": mealPlanToMap(userState.currentMealPlan),
+                "currentWeight": userState.currentWeight,
+                "goalWeight": userState.goalWeight
+            ]
+    }
+    
+    
     static func mealPlanToMap(_ mealPlan: MealPlan) -> Dictionary<String, Any> {
         return
             [
                 "name": mealPlan.name,
-                "meals":
-                [
-                    "breakfast": mealToMap(mealPlan.breakfast),
-                    "lunch": mealToMap(mealPlan.lunch),
-                    "dinner": mealToMap(mealPlan.dinner)
-                ]
+                "breakfast": mealToMap(mealPlan.breakfast),
+                "lunch": mealToMap(mealPlan.lunch),
+                "dinner": mealToMap(mealPlan.dinner)
             ]
     }
     
@@ -49,18 +57,17 @@ class FirebaseMappingService {
     // Meal Plans
     static func mapToMealPlan(_ mealPlanMap:Dictionary<String, Any>) -> MealPlan {
         let name = mealPlanMap["name"] as! String
-        let meals = mealPlanMap["meals"] as! Dictionary<String, Any>
-        let breakfast = mapToMeal(meals["breakfast"] as! Dictionary<String, Any>)
-        let lunch = mapToMeal(meals["lunch"] as! Dictionary<String, Any>)
-        let dinner = mapToMeal(meals["dinner"] as! Dictionary<String, Any>)
+        let breakfast = mapToMeal(mealPlanMap["breakfast"] as! Dictionary<String, Any>)
+        let lunch = mapToMeal(mealPlanMap["lunch"] as! Dictionary<String, Any>)
+        let dinner = mapToMeal(mealPlanMap["dinner"] as! Dictionary<String, Any>)
         return MealPlan(name: name, breakfast: breakfast, lunch: lunch, dinner: dinner)
     }
     
     static func mapToMeal(_ mealMap:Dictionary<String, Any>) -> Meal {
         let calories = mealMap["calories"] as! Int
-        let firstCourse = mapToCourse(mealMap["first"] as! Dictionary<String, String>)
-        let secondCourse = mapToCourse(mealMap["second"] as! Dictionary<String, String>)
-        let thirdCourse = mapToCourse(mealMap["third"] as! Dictionary<String, String>)
+        let firstCourse = mapToCourse(mealMap["first-course"] as! Dictionary<String, String>)
+        let secondCourse = mapToCourse(mealMap["second-course"] as! Dictionary<String, String>)
+        let thirdCourse = mapToCourse(mealMap["third-course"] as! Dictionary<String, String>)
         return Meal(calories: calories, first: firstCourse, second: secondCourse, third: thirdCourse)
     }
     
