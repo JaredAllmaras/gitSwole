@@ -10,11 +10,12 @@ import UIKit
 
 class NutritionViewController: UIViewController {
     
-    let primaryBackground = UIColor(red: 1.00, green: 0.40, blue: 0.35, alpha: 1.0)
-    
     private var currentMealPlan:MealPlan?
     private var currentMeal:Meal?
 
+    @IBOutlet weak var calorieCounterButton: UIButton!
+    @IBOutlet weak var viewMealPlansButton: UIButton!
+    @IBOutlet weak var currentMealTabBar: UISegmentedControl!
     @IBOutlet weak var NextMeal: UILabel!
     @IBOutlet weak var FirstMealItem: UILabel!
     @IBOutlet weak var SecondMealItem: UILabel!
@@ -37,6 +38,12 @@ class NutritionViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = Config.backgroundColor
+        self.currentMealTabBar.backgroundColor = Config.backgroundColor
+        self.currentMealTabBar.tintColor = Config.buttonBackgroundColor
+        self.viewMealPlansButton.backgroundColor = Config.buttonBackgroundColor
+        self.viewMealPlansButton.setTitleColor(Config.buttonTextColor, for: .normal)
+        self.calorieCounterButton.backgroundColor = Config.buttonBackgroundColor
+        self.calorieCounterButton.setTitleColor(Config.buttonTextColor, for: .normal)
         
 //        self.NextMeal.text = "Next Meal: Breakfast - \(String(describing: (self.MealPlans?[currentMealPlan].Meals?[0].MealCalories)!)) calories"
         
