@@ -10,6 +10,7 @@ import UIKit
 
 class ProgressViewController: UIViewController {
     
+    @IBOutlet weak var updateGoalButton: UIButton!
     @IBOutlet weak var goalWeight: UITextField!
     @IBOutlet weak var currentWeight: UITextField!
     
@@ -51,6 +52,8 @@ class ProgressViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Config.backgroundColor
+        self.updateGoalButton.backgroundColor = Config.buttonBackgroundColor
+        self.updateGoalButton.setTitleColor(Config.buttonTextColor, for: .normal)
     }
     
     override func didReceiveMemoryWarning() {
