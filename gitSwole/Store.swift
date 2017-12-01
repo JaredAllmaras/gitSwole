@@ -23,7 +23,7 @@ class Store {
         let currentWeight = 170
         let goalWeight = 190
         
-        return UserState(username: "Generic Username",
+        return UserState(username: "DefaultUserName",
                          currentMealPlan: defaultMealPlans.first!,
                          currentWeight: currentWeight,
                          goalWeight: goalWeight)

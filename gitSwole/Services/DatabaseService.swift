@@ -32,10 +32,10 @@ class DatabaseService {
     }
     
     func loading() -> Bool {
-        return !(defaultMealPlansDone && defaultWorkoutsDone)
+        return defaultMealPlansDone && defaultWorkoutsDone
     }
     
-    func createAndLoadUser(_ userState:UserState) {
+    func createAndLoadUser(_ userState:UserState, _ viewController:SignUpProtocol) {
         print("Creating user in Firebase..")
         
         // generate new user in database
@@ -43,6 +43,7 @@ class DatabaseService {
         
         // grab FIRAuthUserID from AuthService
         let firAuthUserID = AuthService.user.getUserID()
+        print("firAuthUserID: " + firAuthUserID)
         
         // save key-value pair [firAuthUserID: FIRDatabaseAutoID] to local storage
         let firDatabaseAutoID = userDBRef!.key
@@ -53,45 +54,45 @@ class DatabaseService {
         userDBRef?.setValue(FirebaseMappingService.userStateToMap(userState))
         
         // load store
-        Store.store.setUserState(userState) // eliminates race conditions inherit by asynchronous call backs from loadUserState
-        loadUserState()
+//        Store.store.setUserState(userState) // eliminates race conditions inherit by asynchronous call backs from loadUserState
+        loadUserState(viewController)
     }
     
-    func createAndLoadUser(_ firAuthUserID:String) {
-        print("Creating user in Firebase..")
-        
-        // generate new user in database
-        userDBRef = dbref?.child("users").childByAutoId()
-
-        // save key-value pair [firAuthUserID: FIRDatabaseAutoID] to local storage
-        let firDatabaseAutoID = userDBRef!.key
-        let defaults = UserDefaults.standard
-        defaults.set(firDatabaseAutoID, forKey: firAuthUserID)
-        
-        // create user entry
-        let currentMealPlan = Store.store.getDefaultMealPlan()
-        let username = ""
-        let currentWeight = 170
-        let goalWeight = 150
-        
-        let userState = UserState(username: username,
-                             currentMealPlan: currentMealPlan,
-                             currentWeight: currentWeight,
-                             goalWeight: goalWeight)
-        
-        // save entry to new user
-        userDBRef?.setValue(FirebaseMappingService.userStateToMap(userState))
-        
-        // load store
-        Store.store.setUserState(userState) // eliminates race conditions inherit by asynchronous call backs from loadUserState
-        loadUserState()
-    }
+//    func createAndLoadUser(_ firAuthUserID:String) {
+//        print("Creating user in Firebase..")
+//
+//        // generate new user in database
+//        userDBRef = dbref?.child("users").childByAutoId()
+//
+//        // save key-value pair [firAuthUserID: FIRDatabaseAutoID] to local storage
+//        let firDatabaseAutoID = userDBRef!.key
+//        let defaults = UserDefaults.standard
+//        defaults.set(firDatabaseAutoID, forKey: firAuthUserID)
+//
+//        // create user entry
+//        let currentMealPlan = Store.store.getDefaultMealPlan()
+//        let username = ""
+//        let currentWeight = 170
+//        let goalWeight = 150
+//
+//        let userState = UserState(username: username,
+//                             currentMealPlan: currentMealPlan,
+//                             currentWeight: currentWeight,
+//                             goalWeight: goalWeight)
+//
+//        // save entry to new user
+//        userDBRef?.setValue(FirebaseMappingService.userStateToMap(userState))
+//
+//        // load store
+//        Store.store.setUserState(userState) // eliminates race conditions inherit by asynchronous call backs from loadUserState
+//        loadUserState()
+//    }
     
-    func loadUser(_ firAuthUserID:String) {
+    func loadUser(_ firAuthUserID:String, _ viewController:SignUpProtocol) {
         let defaults = UserDefaults.standard
         let firDatabaseAutoID = defaults.string(forKey: firAuthUserID)!
         userDBRef = dbref?.child("users").child(firDatabaseAutoID)
-        loadUserState()
+        loadUserState(viewController)
     }
     
     // load App State
@@ -127,20 +128,20 @@ class DatabaseService {
     
     // load User State
     
-    func loadUserState() {
-        setUserStateListeners()
-    }
-    
-    private func setUserStateListeners() {
-        setCurrentMealPlanListener()
-    }
-    
-    private func setCurrentMealPlanListener() {
-        userDBRef?.child("currentMealPlan").observe(DataEventType.value, with: { (snapshot) in
-            let currentMealPlanMap = snapshot.value as! Dictionary<String, Any>
-            Store.store.setCurrentMealPlan(FirebaseMappingService.mapToMealPlan(currentMealPlanMap))
+    func loadUserState(_ viewController:SignUpProtocol) {
+        userDBRef?.observe(DataEventType.value, with: { (userStateSnapshot) in
+            let userStateMap = userStateSnapshot.value as! Dictionary<String, Any>
+            Store.store.setUserState(FirebaseMappingService.mapToUserState(userStateMap))
+            viewController.proceed()
         })
     }
+    
+//    private func setCurrentMealPlanListener() {
+//        userDBRef?.child("currentMealPlan").observe(DataEventType.value, with: { (snapshot) in
+//            let currentMealPlanMap = snapshot.value as! Dictionary<String, Any>
+//            Store.store.setCurrentMealPlan(FirebaseMappingService.mapToMealPlan(currentMealPlanMap))
+//        })
+//    }
     
     func setCurrentMealPlan(_ mealPlan:MealPlan) {
         userDBRef?.child("currentMealPlan").setValue(FirebaseMappingService.mealPlanToMap(mealPlan))
@@ -151,7 +152,6 @@ class DatabaseService {
     func unloadUserState() {
         userDBRef = nil
     }
-    
 }
 
 

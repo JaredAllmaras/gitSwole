@@ -160,7 +160,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func logout(_ sender: Any) {
         AuthService.user.signOut()
         enableDisableButtons()
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

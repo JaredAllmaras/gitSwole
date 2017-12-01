@@ -8,7 +8,15 @@
 
 import UIKit
 
-class UserStateFormViewController: UIViewController {
+class UserStateFormViewController: UIViewController, SignUpProtocol {
+    func proceed() {
+        present(MainTabBarController(), animated: true, completion: nil)
+    }
+    
+    func error(_ message: String) {
+        print(message)
+    }
+    
 
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -66,8 +74,7 @@ class UserStateFormViewController: UIViewController {
             let currentWeight = Int(currentWeightTextField.text!)!
             
             let userState = UserState(username: username, currentMealPlan: Store.store.getDefaultMealPlan(), currentWeight: currentWeight, goalWeight: goalWeight)
-            DatabaseService.dataSource.createAndLoadUser(userState)
-            present(MainTabBarController(), animated: true, completion: nil)
+            DatabaseService.dataSource.createAndLoadUser(userState, self)
         }
     }
     

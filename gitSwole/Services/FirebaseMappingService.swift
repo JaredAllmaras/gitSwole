@@ -17,9 +17,9 @@ class FirebaseMappingService {
         return
             [
                 "username": userState.username,
-                "currentMealPlan": mealPlanToMap(userState.currentMealPlan),
-                "currentWeight": userState.currentWeight,
-                "goalWeight": userState.goalWeight
+                "current-meal-plan": mealPlanToMap(userState.currentMealPlan),
+                "current-weight": userState.currentWeight,
+                "goal-weight": userState.goalWeight
             ]
     }
     
@@ -53,6 +53,17 @@ class FirebaseMappingService {
     }
     
     // dictionary to object (reading)
+    
+    // User State
+    static func mapToUserState(_ userStateMap:Dictionary<String, Any>) -> UserState {
+        let username = userStateMap["username"] as! String
+        let currentMealPlanMap = userStateMap["current-meal-plan"] as! Dictionary<String, Any>
+        let currentMealPlan = mapToMealPlan(currentMealPlanMap)
+        let currentWeight = userStateMap["current-weight"] as! Int
+        let goalWeight = userStateMap["goal-weight"] as! Int
+        return UserState(username: username, currentMealPlan: currentMealPlan, currentWeight: currentWeight, goalWeight: goalWeight)
+    }
+    
     
     // Meal Plans
     static func mapToMealPlan(_ mealPlanMap:Dictionary<String, Any>) -> MealPlan {

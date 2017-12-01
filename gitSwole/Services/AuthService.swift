@@ -61,13 +61,12 @@ class AuthService {
         })
     }
     
-    func signIn(_ email:String, _ password:String) {
+    func signIn(_ email:String, _ password:String, _ viewController:SignUpProtocol) {
         auth?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
-                DatabaseService.dataSource.loadUser(user!.uid)
+                DatabaseService.dataSource.loadUser(user!.uid, viewController)
             } else {
-                print("Error signing in")
-                print(error!.localizedDescription)
+                viewController.error(error!.localizedDescription)
             }
         })
     }
@@ -77,8 +76,7 @@ class AuthService {
             try Auth.auth().signOut()
             Store.store.unloadUserState()
             DatabaseService.dataSource.unloadUserState()
-            print(Store.store.getUsername() + " successfully signed out!")
-        } catch let error as NSError {
+         } catch let error as NSError {
             print(error.localizedDescription)
         }
     }
