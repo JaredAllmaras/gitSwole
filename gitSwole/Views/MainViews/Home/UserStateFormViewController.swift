@@ -37,8 +37,8 @@ class UserStateFormViewController: UIViewController, SignUpProtocol {
         titleLabel.textColor = Config.primaryTextColor
         
         usernameTextField.placeholder = "username"
-        currentHeightTextField.placeholder = "current height"
-        currentWeightTextField.placeholder = "current weight"
+        currentHeightTextField.placeholder = "current height in inches"
+        currentWeightTextField.placeholder = "current weight in lbs"
         
         submitButton.backgroundColor = Config.buttonBackgroundColor
         submitButton.setTitleColor(Config.buttonTextColor, for: .normal)

@@ -201,7 +201,7 @@
     },
     "workouts": [
         {
-            "name": "chest",
+            "name": "Chest",
             "muscle-group": "chest",
             "exercises": [
                 {
@@ -228,7 +228,7 @@
 
         },
         {
-            "name": "back",
+            "name": "Back",
             "muscle-group": "back",
             "exercises": [
                 {
@@ -254,7 +254,7 @@
             ]
         },
         {
-            "name": "legs",
+            "name": "Legs",
             "muscle-group": "legs",
             "exercises": [
                 {
@@ -290,7 +290,7 @@
             ]
         },
         {
-            "name": "arms",
+            "name": "Arms",
             "muscle-group": "arms",
             "exercises": [
                 {
@@ -326,7 +326,7 @@
             ]
         },
         {
-            "name": "shoulders",
+            "name": "Shoulders",
             "muscle-group": "shoulders",
             "exercises": [
                 {

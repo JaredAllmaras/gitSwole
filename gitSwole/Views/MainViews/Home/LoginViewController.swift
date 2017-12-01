@@ -12,6 +12,7 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController, SignUpProtocol {
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -27,6 +28,8 @@ class LoginViewController: UIViewController, SignUpProtocol {
         
         titleView.backgroundColor = Config.primaryLightColor
         titleView.layer.cornerRadius = 15
+        
+        titleLabel.textColor = Config.primaryTextColor
         
         emailTextField.placeholder = "email"
         passwordTextField.placeholder = "password"

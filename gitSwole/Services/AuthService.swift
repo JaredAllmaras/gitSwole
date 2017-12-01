@@ -32,7 +32,6 @@ class AuthService {
             if auth.currentUser != nil {
                 // successfully signed in
                 print("Detected user... ")
-//                print(Store.store.getUsername() + " successfully signed in!")
                 self.user = user
             }
         })
@@ -53,7 +52,7 @@ class AuthService {
                 case "The password must be 6 characters long or more.":
                     errorMessage = "Password must be > 6 characters"
                 default:
-                    errorMessage = "Internal Error!"
+                    errorMessage = "Oops! Something went wrong."
                 }
                 
                 viewController.error(errorMessage)
@@ -66,7 +65,15 @@ class AuthService {
             if error == nil {
                 DatabaseService.dataSource.loadUser(user!.uid, viewController)
             } else {
-                viewController.error(error!.localizedDescription)
+                print(error!.localizedDescription)
+                var errorString:String
+                switch error!.localizedDescription {
+                case "The password is invalid or the user does not have a password.":
+                    errorString = "Invalid password"
+                default:
+                    errorString = "Oops! Something went wrong."
+                }
+                viewController.error(errorString)
             }
         })
     }

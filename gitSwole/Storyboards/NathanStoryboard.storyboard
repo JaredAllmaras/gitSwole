@@ -227,7 +227,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x81-6a-Zmk">
                                 <rect key="frame" x="94" y="367" width="188" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Sign In">
+                                <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -273,7 +273,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9IP-ba-BZJ">
                                 <rect key="frame" x="38" y="97" width="419" height="98"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8J-9l-23p">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8J-9l-23p">
                                         <rect key="frame" x="8" y="33" width="289" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="289" id="cji-j1-EaT"/>
@@ -326,6 +326,7 @@
                         <outlet property="passwordTextField" destination="hdy-fx-ilE" id="jRL-LB-Vs8"/>
                         <outlet property="signInButton" destination="x81-6a-Zmk" id="Dae-I0-lSw"/>
                         <outlet property="signUpButton" destination="gE1-JG-RP2" id="DX1-YZ-2K4"/>
+                        <outlet property="titleLabel" destination="A8J-9l-23p" id="YHZ-7m-rDI"/>
                         <outlet property="titleView" destination="9IP-ba-BZJ" id="A7q-cU-OU4"/>
                     </connections>
                 </viewController>
