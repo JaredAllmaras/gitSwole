@@ -27,6 +27,7 @@
 		C4142FE91FA9599900F3173E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FE81FA9599900F3173E /* LoginViewController.swift */; };
 		C4142FEB1FA959D600F3173E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FEA1FA959D600F3173E /* SignUpViewController.swift */; };
 		C4142FED1FA96A2100F3173E /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FEC1FA96A2100F3173E /* ProgressViewController.swift */; };
+		C41A870F1FD0DB2600D20840 /* CalorieCalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A870E1FD0DB2600D20840 /* CalorieCalculatorVC.swift */; };
 		C4C048511FC4EA7A0061473A /* NutritionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C048501FC4EA7A0061473A /* NutritionTableViewController.swift */; };
 		C4C048531FC4EB510061473A /* NutritionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C048521FC4EB510061473A /* NutritionTableViewCell.swift */; };
 		C4C048591FC4EF9E0061473A /* MealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C048581FC4EF9E0061473A /* MealPlan.swift */; };
@@ -83,6 +84,7 @@
 		C4142FE81FA9599900F3173E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C4142FEA1FA959D600F3173E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C4142FEC1FA96A2100F3173E /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		C41A870E1FD0DB2600D20840 /* CalorieCalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieCalculatorVC.swift; sourceTree = "<group>"; };
 		C4C048501FC4EA7A0061473A /* NutritionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTableViewController.swift; sourceTree = "<group>"; };
 		C4C048521FC4EB510061473A /* NutritionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTableViewCell.swift; sourceTree = "<group>"; };
 		C4C048571FC4EF470061473A /* gitSwole-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "gitSwole-Bridging-Header.h"; path = "gitSwole/gitSwole-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				C4C048521FC4EB510061473A /* NutritionTableViewCell.swift */,
 				C4C048501FC4EA7A0061473A /* NutritionTableViewController.swift */,
 				C4C0485A1FC4F9E60061473A /* NutritionDetailViewController.swift */,
+				C41A870E1FD0DB2600D20840 /* CalorieCalculatorVC.swift */,
 			);
 			path = Nutrition;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				C4C048591FC4EF9E0061473A /* MealPlan.swift in Sources */,
 				E175C48C1FC65D760089E72E /* LoadingViewController.swift in Sources */,
 				E14CD3B31FC7331100D89BA1 /* Store.swift in Sources */,
+				C41A870F1FD0DB2600D20840 /* CalorieCalculatorVC.swift in Sources */,
 				C4C0485D1FC51BFC0061473A /* CheckBox.swift in Sources */,
 				C4C048511FC4EA7A0061473A /* NutritionTableViewController.swift in Sources */,
 				C4142FE41FA94ED400F3173E /* WorkoutCell.swift in Sources */,

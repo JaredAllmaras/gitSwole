@@ -865,6 +865,9 @@
                                 <state key="normal" title="Calorie Calculator">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="A7Z-Mf-bu2" kind="show" id="yqW-8g-fJc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Meal Plan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkV-Ec-mbW">
                                 <rect key="frame" x="92" y="58" width="191" height="21"/>
@@ -1178,10 +1181,10 @@
             </objects>
             <point key="canvasLocation" x="1973.5999999999999" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Calorie CalculatorVC-->
         <scene sceneID="QLM-Xf-bF3">
             <objects>
-                <viewController id="A7Z-Mf-bu2" sceneMemberID="viewController">
+                <viewController id="A7Z-Mf-bu2" customClass="CalorieCalculatorVC" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bMM-No-nMb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1273,6 +1276,13 @@
                                     <segment title="Cut"/>
                                 </segments>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calorie Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qot-N8-HWO">
+                                <rect key="frame" x="16" y="80" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ngD-TR-KEe">
                                 <rect key="frame" x="168" y="430" width="166" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1281,34 +1291,42 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Suggested Caloric Intake:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xln-PO-4ze">
-                                <rect key="frame" x="46" y="564" width="196" height="21"/>
+                                <rect key="frame" x="47" y="580" width="196" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O18-5U-CP3">
-                                <rect key="frame" x="262" y="564" width="8" height="21"/>
+                                <rect key="frame" x="263" y="580" width="96" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calorie Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qot-N8-HWO">
-                                <rect key="frame" x="16" y="80" width="343" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFU-Md-T5u">
+                                <rect key="frame" x="155" y="542" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Calculate"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="O1f-pu-IWN"/>
                     </view>
+                    <connections>
+                        <outlet property="activityLevel" destination="ngD-TR-KEe" id="Kbu-LR-UdU"/>
+                        <outlet property="age" destination="0Qq-CO-hUW" id="Ecr-as-BMV"/>
+                        <outlet property="calculateButton" destination="MFU-Md-T5u" id="ioZ-dq-Yut"/>
+                        <outlet property="goal" destination="vQy-sJ-4VR" id="tga-7g-YPK"/>
+                        <outlet property="height" destination="7lq-ph-IkF" id="uf2-ST-2gn"/>
+                        <outlet property="intake" destination="O18-5U-CP3" id="Hro-0F-UAn"/>
+                        <outlet property="sex" destination="PZq-Tc-Brq" id="JuS-kK-y9f"/>
+                        <outlet property="weight" destination="Wbo-ya-cAF" id="a5p-Ap-gep"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TsY-2s-4ua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2861.5999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2910" y="135"/>
         </scene>
         <!--Progress View Controller-->
         <scene sceneID="1XJ-ht-PL1">
