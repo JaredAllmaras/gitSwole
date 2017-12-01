@@ -33,6 +33,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleLabel.text = "gitSwole"
+        
         let delegate = PopularMealPlansDelegate()
         popularMealPlansCollectionView.delegate = delegate
         popularMealPlansCollectionView.dataSource = delegate
@@ -87,11 +89,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         enableDisableButtons()
-        if AuthService.user.signedIn() {
-            titleLabel.text = "Welcome, " + Store.store.getUsername()
-        } else {
-            titleLabel.text = "gitSwole"
-        }
+//        if AuthService.user.signedIn() {
+//            titleLabel.text = "Welcome, " + Store.store.getUsername()
+//        } else {
+//            titleLabel.text = "gitSwole"
+//        }
     }
     
     func enableDisableButtons() {

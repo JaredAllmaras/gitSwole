@@ -39,12 +39,22 @@ class WorkoutDetailViewController: UIViewController {
     @IBOutlet weak var fifthExerciseLabel: UILabel!
     @IBOutlet weak var sixthExerciseLabel: UILabel!
     
+    @IBOutlet weak var titleView: UIView!
     
+    @IBOutlet weak var titleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Config.backgroundColor
         
+        titleView.backgroundColor = Config.primaryLightColor
+        titleView.layer.cornerRadius = 15
+        titleLabel.textColor = Config.primaryTextColor
         workoutNameLabel.text = workout.name
+        
+        startWorkoutButton.backgroundColor = Config.buttonBackgroundColor
+        startWorkoutButton.setTitleColor(Config.buttonTextColor, for: .normal)
+        
+        startWorkoutButton.layer.cornerRadius = Config.buttonCornerRadius
         
         self.Checkboxes = [self.CheckBox1, self.CheckBox2, self.CheckBox3, self.CheckBox4, self.CheckBox5, self.CheckBox6]
         self.WorkoutTimer.isHidden = true
@@ -61,7 +71,7 @@ class WorkoutDetailViewController: UIViewController {
         var i = 0
         for exercise in workout.exercises {
             let currentLabel = Labels[i]
-            currentLabel?.text = ("Exercise \(String(describing: i + 1)): \(exercise.name) - \(exercise.sets) x \(exercise.reps)")
+            currentLabel?.text = ("\(String(describing: i + 1)): \(exercise.name) - \(exercise.sets) x \(exercise.reps)")
             currentLabel?.isHidden = false
             i += 1
         }
