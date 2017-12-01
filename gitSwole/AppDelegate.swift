@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var tabBarController: MainTabBarController?
-    var auth = SPTAuth()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -31,9 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        while(DatabaseService.dataSource.loading()) {}
         
-        //configures spotify
-        auth.redirectURL = URL(string: "gitswole://returnAfterLogin")
-        auth.sessionUserDefaultsKey = "current session"
         
         // Set window of Application
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -142,6 +138,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
         return false
+    }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        if !LoginManager.shared.isLogged {
+            self.window?.rootViewController = LoginViewController()
+            self.window?.makeKeyAndVisible()
+        } else {
+            LoginManager.shared.preparePlayer()
+        }
+        return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return LoginManager.shared.handled(url: url)
     }
 
 }

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		64B0BFC3851F1523E4E79D65 /* Pods_gitSwole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E953D4272458E5B1674B8B /* Pods_gitSwole.framework */; };
+		8C244D9D1FD0CD740002865D /* MediaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244D9C1FD0CD740002865D /* MediaPlayer.swift */; };
+		8C244D9F1FD0D6A70002865D /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244D9E1FD0D6A70002865D /* LoginManager.swift */; };
+		8C244DA11FD0D9960002865D /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244DA01FD0D9960002865D /* PlaylistViewController.swift */; };
+		8C244DA31FD0DC810002865D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244DA21FD0DC810002865D /* LoginViewController.swift */; };
+		8C244DA51FD0DCFD0002865D /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244DA41FD0DCFD0002865D /* Playlist.swift */; };
+		8C244DA71FD0DD9B0002865D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244DA61FD0DD9B0002865D /* UIColor.swift */; };
 		8CDA501D1FA94CFD00CED50D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */; };
 		8CDA501E1FA94CFD00CED50D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */; };
 		8CDF7AD71FC4E3E100FB397C /* WorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF7AD61FC4E3E100FB397C /* WorkoutsViewController.swift */; };
@@ -61,6 +67,12 @@
 
 /* Begin PBXFileReference section */
 		30F154C6F91BE2EE172DAF0D /* Pods-gitSwole.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gitSwole.release.xcconfig"; path = "Pods/Target Support Files/Pods-gitSwole/Pods-gitSwole.release.xcconfig"; sourceTree = "<group>"; };
+		8C244D9C1FD0CD740002865D /* MediaPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayer.swift; sourceTree = "<group>"; };
+		8C244D9E1FD0D6A70002865D /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		8C244DA01FD0D9960002865D /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
+		8C244DA21FD0DC810002865D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8C244DA41FD0DCFD0002865D /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		8C244DA61FD0DD9B0002865D /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8CDF7AD61FC4E3E100FB397C /* WorkoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +157,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8C244DA81FD0DFA20002865D /* MediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				8C244D9C1FD0CD740002865D /* MediaPlayer.swift */,
+				8C244DA01FD0D9960002865D /* PlaylistViewController.swift */,
+				8C244DA41FD0DCFD0002865D /* Playlist.swift */,
+				8C244D9E1FD0D6A70002865D /* LoginManager.swift */,
+				8C244DA61FD0DD9B0002865D /* UIColor.swift */,
+				8C244DA21FD0DC810002865D /* LoginViewController.swift */,
+			);
+			path = MediaPlayer;
+			sourceTree = "<group>";
+		};
 		92F5E9DD933FBEE869D09CE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +251,7 @@
 				C4142FDC1FA94EC800F3173E /* NutritionViewController.swift */,
 				C4142FEC1FA96A2100F3173E /* ProgressViewController.swift */,
 				8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */,
+				8C244DA81FD0DFA20002865D /* MediaPlayer */,
 				E14CD3BD1FC7C48B00D89BA1 /* Home */,
 				E14CD3BB1FC7C41F00D89BA1 /* Workouts */,
 				E14CD3BC1FC7C44200D89BA1 /* Nutrition */,
@@ -445,9 +471,11 @@
 			files = (
 				C4C048531FC4EB510061473A /* NutritionTableViewCell.swift in Sources */,
 				E15FEE851FD074B300523AD2 /* PopularMealPlanCollectionViewCell.swift in Sources */,
+				8C244DA31FD0DC810002865D /* LoginViewController.swift in Sources */,
 				E1C829341FA2B0DB00522204 /* gitSwole.xcdatamodeld in Sources */,
 				C4142FE91FA9599900F3173E /* LoginViewController.swift in Sources */,
 				E12B34221FD0985C003FAB0F /* UserStateFormViewController.swift in Sources */,
+				8C244D9F1FD0D6A70002865D /* LoginManager.swift in Sources */,
 				C4142FE51FA94ED400F3173E /* WorkoutsTableViewController.swift in Sources */,
 				E14CD3B11FC72BCF00D89BA1 /* Exercise.swift in Sources */,
 				8CDA501D1FA94CFD00CED50D /* MainTabBarController.swift in Sources */,
@@ -456,12 +484,16 @@
 				E17AAB1B1FC4D333005247C7 /* DatabaseService.swift in Sources */,
 				8CDA501E1FA94CFD00CED50D /* SettingsViewController.swift in Sources */,
 				C4142FE61FA94ED400F3173E /* WorkoutDetailViewController.swift in Sources */,
+				8C244D9D1FD0CD740002865D /* MediaPlayer.swift in Sources */,
 				E15FEE7B1FCF517600523AD2 /* AppState.swift in Sources */,
+				8C244DA51FD0DCFD0002865D /* Playlist.swift in Sources */,
+				8C244DA11FD0D9960002865D /* PlaylistViewController.swift in Sources */,
 				C4142FE71FA94ED400F3173E /* Workout.swift in Sources */,
 				E15FEE771FCF36C300523AD2 /* Course.swift in Sources */,
 				E16264031FC51E4700228C9E /* User.swift in Sources */,
 				C4142FDD1FA94ECD00F3173E /* Meal.swift in Sources */,
 				E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */,
+				8C244DA71FD0DD9B0002865D /* UIColor.swift in Sources */,
 				E15FEE791FCF3CD500523AD2 /* FirebaseMappingService.swift in Sources */,
 				C4C0485B1FC4F9E60061473A /* NutritionDetailViewController.swift in Sources */,
 				C4142FEB1FA959D600F3173E /* SignUpViewController.swift in Sources */,
