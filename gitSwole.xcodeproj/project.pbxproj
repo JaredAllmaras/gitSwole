@@ -11,9 +11,10 @@
 		8C244D9D1FD0CD740002865D /* MediaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244D9C1FD0CD740002865D /* MediaPlayer.swift */; };
 		8C244D9F1FD0D6A70002865D /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244D9E1FD0D6A70002865D /* LoginManager.swift */; };
 		8C244DA11FD0D9960002865D /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244DA01FD0D9960002865D /* PlaylistViewController.swift */; };
-		8C244DA31FD0DC810002865D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244DA21FD0DC810002865D /* LoginViewController.swift */; };
+		8C244DA31FD0DC810002865D /* SpotifyLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244DA21FD0DC810002865D /* SpotifyLoginViewController.swift */; };
 		8C244DA51FD0DCFD0002865D /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244DA41FD0DCFD0002865D /* Playlist.swift */; };
 		8C244DA71FD0DD9B0002865D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244DA61FD0DD9B0002865D /* UIColor.swift */; };
+		8CD4C3CA1FDB58EF00D5A564 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD4C3C91FDB58EF00D5A564 /* DummyViewController.swift */; };
 		8CDA501D1FA94CFD00CED50D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */; };
 		8CDA501E1FA94CFD00CED50D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */; };
 		8CDF7AD71FC4E3E100FB397C /* WorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF7AD61FC4E3E100FB397C /* WorkoutsViewController.swift */; };
@@ -22,7 +23,6 @@
 		8CDF7ADF1FC4FC5800FB397C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF7ADE1FC4FC4900FB397C /* SystemConfiguration.framework */; };
 		8CDF7AE51FC5010000FB397C /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF7AE41FC5010000FB397C /* SpotifyAudioPlayback.framework */; };
 		8CDF7AE71FC5011B00FB397C /* SpotifyMetadata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF7AE61FC5011B00FB397C /* SpotifyMetadata.framework */; };
-		8CDF7AF01FC5126700FB397C /* BridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF7AEF1FC5126700FB397C /* BridgeViewController.m */; };
 		C4142FDD1FA94ECD00F3173E /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FDA1FA94EC700F3173E /* Meal.swift */; };
 		C4142FDE1FA94ECD00F3173E /* NathanStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4142FDB1FA94EC700F3173E /* NathanStoryboard.storyboard */; };
 		C4142FDF1FA94ECD00F3173E /* NutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4142FDC1FA94EC800F3173E /* NutritionViewController.swift */; };
@@ -71,9 +71,10 @@
 		8C244D9C1FD0CD740002865D /* MediaPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayer.swift; sourceTree = "<group>"; };
 		8C244D9E1FD0D6A70002865D /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		8C244DA01FD0D9960002865D /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
-		8C244DA21FD0DC810002865D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8C244DA21FD0DC810002865D /* SpotifyLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyLoginViewController.swift; sourceTree = "<group>"; };
 		8C244DA41FD0DCFD0002865D /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		8C244DA61FD0DD9B0002865D /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		8CD4C3C91FDB58EF00D5A564 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8CDF7AD61FC4E3E100FB397C /* WorkoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsViewController.swift; sourceTree = "<group>"; };
@@ -82,9 +83,7 @@
 		8CDF7ADE1FC4FC4900FB397C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8CDF7AE41FC5010000FB397C /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
 		8CDF7AE61FC5011B00FB397C /* SpotifyMetadata.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyMetadata.framework; sourceTree = "<group>"; };
-		8CDF7AEE1FC5126700FB397C /* BridgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeViewController.h; sourceTree = "<group>"; };
-		8CDF7AEF1FC5126700FB397C /* BridgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BridgeViewController.m; sourceTree = "<group>"; };
-		8CDF7AF11FC5130A00FB397C /* gitswole-Bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gitswole-Bridging-header.h"; sourceTree = "<group>"; };
+		8CDF7AF11FC5130A00FB397C /* gitswole-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gitswole-Bridging-Header.h"; sourceTree = "<group>"; };
 		B44AB520063DBC96F4502F9B /* Pods-gitSwole.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gitSwole.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gitSwole/Pods-gitSwole.debug.xcconfig"; sourceTree = "<group>"; };
 		C4142FDA1FA94EC700F3173E /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		C4142FDB1FA94EC700F3173E /* NathanStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NathanStoryboard.storyboard; sourceTree = "<group>"; };
@@ -165,9 +164,10 @@
 				8C244D9C1FD0CD740002865D /* MediaPlayer.swift */,
 				8C244DA01FD0D9960002865D /* PlaylistViewController.swift */,
 				8C244DA41FD0DCFD0002865D /* Playlist.swift */,
+				8CD4C3C91FDB58EF00D5A564 /* DummyViewController.swift */,
 				8C244D9E1FD0D6A70002865D /* LoginManager.swift */,
 				8C244DA61FD0DD9B0002865D /* UIColor.swift */,
-				8C244DA21FD0DC810002865D /* LoginViewController.swift */,
+				8C244DA21FD0DC810002865D /* SpotifyLoginViewController.swift */,
 			);
 			path = MediaPlayer;
 			sourceTree = "<group>";
@@ -191,8 +191,6 @@
 				8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */,
 				E14CD3B61FC7C29600D89BA1 /* MainViews */,
 				E14CD3AC1FC6F82D00D89BA1 /* UIComponents */,
-				8CDF7AEE1FC5126700FB397C /* BridgeViewController.h */,
-				8CDF7AEF1FC5126700FB397C /* BridgeViewController.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -326,7 +324,7 @@
 				E1C829351FA2B0DB00522204 /* Assets.xcassets */,
 				E1C829401FA2B14500522204 /* GoogleService-Info.plist */,
 				E1C8293A1FA2B0DB00522204 /* Info.plist */,
-				8CDF7AF11FC5130A00FB397C /* gitswole-Bridging-header.h */,
+				8CDF7AF11FC5130A00FB397C /* gitswole-Bridging-Header.h */,
 				E1C829321FA2B0DB00522204 /* gitSwole.xcdatamodeld */,
 			);
 			path = gitSwole;
@@ -450,6 +448,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-gitSwole/Pods-gitSwole-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Hex/Hex.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -457,6 +456,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hex.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -474,7 +474,7 @@
 			files = (
 				C4C048531FC4EB510061473A /* NutritionTableViewCell.swift in Sources */,
 				E15FEE851FD074B300523AD2 /* PopularMealPlanCollectionViewCell.swift in Sources */,
-				8C244DA31FD0DC810002865D /* LoginViewController.swift in Sources */,
+				8C244DA31FD0DC810002865D /* SpotifyLoginViewController.swift in Sources */,
 				E1C829341FA2B0DB00522204 /* gitSwole.xcdatamodeld in Sources */,
 				C4142FE91FA9599900F3173E /* LoginViewController.swift in Sources */,
 				E12B34221FD0985C003FAB0F /* UserStateFormViewController.swift in Sources */,
@@ -495,6 +495,7 @@
 				E15FEE771FCF36C300523AD2 /* Course.swift in Sources */,
 				E16264031FC51E4700228C9E /* User.swift in Sources */,
 				C4142FDD1FA94ECD00F3173E /* Meal.swift in Sources */,
+				8CD4C3CA1FDB58EF00D5A564 /* DummyViewController.swift in Sources */,
 				E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */,
 				8C244DA71FD0DD9B0002865D /* UIColor.swift in Sources */,
 				E15FEE791FCF3CD500523AD2 /* FirebaseMappingService.swift in Sources */,
@@ -505,7 +506,6 @@
 				C4142FDF1FA94ECD00F3173E /* NutritionViewController.swift in Sources */,
 				E15FEE871FD0757000523AD2 /* PopularMealPlansDelegate.swift in Sources */,
 				E14CD3B91FC7C39600D89BA1 /* HomeViewController.swift in Sources */,
-				8CDF7AF01FC5126700FB397C /* BridgeViewController.m in Sources */,
 				8CDF7AD71FC4E3E100FB397C /* WorkoutsViewController.swift in Sources */,
 				E14CD3B51FC7337100D89BA1 /* UserState.swift in Sources */,
 				E15FEE7E1FCF687600523AD2 /* Config.swift in Sources */,

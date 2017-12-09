@@ -17,8 +17,8 @@ class LoginManager {
     
     static var shared = LoginManager()
     private init() {
-        let redirectURL = "gitswole://returnAfterLogin"
-        let clientID = ""
+        let redirectURL = "gitswole://"
+        let clientID = "c32c4b25afb545a9824c43ac88a32247"
         auth.sessionUserDefaultsKey = "current session"
         auth.redirectURL    = URL(string: redirectURL)
         auth.clientID       = clientID
@@ -43,8 +43,8 @@ class LoginManager {
     }
     
     func preparePlayer() {
-        guard let session = session else {return}
-        MediaPlayer.shared.configurePlayer(authSession: sessuib, id: auth.clientID)
+        guard let session = session else { return }
+        MediaPlayer.shared.configurePlayer(authSession: session, id: auth.clientID)
     }
     
     func login() {

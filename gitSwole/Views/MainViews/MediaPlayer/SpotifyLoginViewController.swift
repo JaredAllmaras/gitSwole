@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  SpotifyLoginViewController.swift
 //  gitSwole
 //
 //  Created by Jared Allmaras on 11/30/17.
@@ -8,29 +8,23 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class SpotifyLoginViewController: UIViewController {
+    
+    @IBOutlet var loginButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
+    // MARK: VIEW CONFIG
     
-    // MARK: - Navigation
      private func configureView() {
          LoginManager.shared.delegate = self
-         configureLoginButton()
+         //configureLoginButton()
          view.backgroundColor = .spotifyBackground
      }
-    
+    /*
      private func configureLoginButton() {
          let buttonWidth = view.frame.width - 100.0
          let buttonFrame = CGRect(x: (view.bounds.width - buttonWidth)/2, y: view.bounds.height/2, width: buttonWidth, height: 50)
@@ -57,12 +51,18 @@ class LoginViewController: UIViewController {
          titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
          titleLabel.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -10).isActive = true
      }
-    
+    */
+     @IBAction func loginAction(_ sender: Any) {
+        LoginManager.shared.login()
+     }
      // MARK: Login handling
     
+    @IBAction func cancelLogin(_ sender: Any) {
+        // return to main screen
+    }
 }
 
-     extension LoginViewController: LoginManagerDelegate {
+extension SpotifyLoginViewController: LoginManagerDelegate {
      func loginManagerDidLoginWithSuccess() {
      UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
      dismiss(animated: true, completion: nil)

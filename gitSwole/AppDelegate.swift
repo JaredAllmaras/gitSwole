@@ -114,45 +114,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-    
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        
-        // check if app can handle redirect URL
-        if auth.canHandle(auth.redirectURL) {
-            //handles callback
-            auth.handleAuthCallback(withTriggeredAuthURL: url, callback: {
-                (error, session) in
-                
-                if error != nil {
-                    print("Error!")
-                }
-                // add session to User Defaults
-                let userDefaults = UserDefaults.standard
-                let sessionData = NSKeyedArchiver.archivedData(withRootObject: session)
-                userDefaults.set(sessionData, forKey: "Spotify Session")
-                userDefaults.synchronize()
-                
-                //tell notification center login is successful
-                NotificationCenter.default.post(name: Notification.Name(rawValue: "loginSuccessfull"), object: nil)
-            })
-            return true
-        }
-        return false
-    }
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        if !LoginManager.shared.isLogged {
-            self.window?.rootViewController = LoginViewController()
-            self.window?.makeKeyAndVisible()
-        } else {
-            LoginManager.shared.preparePlayer()
-        }
-        return true
-    }
-    
+
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         return LoginManager.shared.handled(url: url)
     }
 
 }
+    
+

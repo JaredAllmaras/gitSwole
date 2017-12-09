@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 protocol MediaPlayerDelegate: class {
     func mediaPlayerDidFinishTrack()
     func mediaPlayerDidFail(error: Error)
@@ -16,7 +15,6 @@ protocol MediaPlayerDelegate: class {
     func mediaPlayerDidPause()
     func mediaPlayerDidChange(trackProgress: Double)
     func mediaPlayerDidResume()
-    
 }
 
 class MediaPlayer: NSObject {
@@ -30,32 +28,38 @@ class MediaPlayer: NSObject {
         if let player = player,
             let state = player.playbackState {
             return state.isPlaying
-            }
+        }
         return false
-}
-
-    func loadAlbum(url: String, completion: @escaping(_ album: SPTAlbvum?, _ error: Error?) -> Void) {
-        SPTAlbum.album(withURI: URL(string: url), accessToken:
-        LoginManager.shared.auth.session.accessToken, market: nil) { (error, response) in
+    }
+    
+    func loadAlbum(url: String, completion: @escaping (_ album: SPTAlbum?, _ error: Error?) -> Void) {
+        SPTAlbum.album(withURI: URL(string: url), accessToken: LoginManager.shared.auth.session.accessToken, market: nil) { (error, response) in
             completion(response as? SPTAlbum, error)
         }
     }
-
+    
     func play(track: SPTPartialTrack) {
-        player?.playSpotifyURI(track.uri.absoluteString, startingWith: 0, startingWithPosition: 0,
-                               callback: { (error) in
-                                if let error = error {
-                                    self.delegate?.mediaPlayerDidFail(error: error)
-                                } else {
-                                    self.currentTrack = track
-                                    self.delegate?.mediaPlayerDidStartPlaying(track: track)
-                                }
+        player?.playSpotifyURI(track.uri.absoluteString, startingWith: 0, startingWithPosition: 0, callback: { (error) in
+            if let error = error {
+                self.delegate?.mediaPlayerDidFail(error: error)
+            } else {
+                self.currentTrack = track
+                self.delegate?.mediaPlayerDidStartPlaying(track: track)
+            }
         })
     }
     
     func seek(to progress: Float) {
         guard let current = currentTrack else {return}
         player?.seek(to: Double(progress) * current.duration, callback: { (error) in
+            if let error = error {
+                self.delegate?.mediaPlayerDidFail(error: error)
+            }
+        })
+    }
+    
+    func resume() {
+        player?.setIsPlaying(true, callback: { (error) in
             if let error = error {
                 self.delegate?.mediaPlayerDidFail(error: error)
             } else {
@@ -74,18 +78,19 @@ class MediaPlayer: NSObject {
         })
     }
     
-    func configurePlayer(authSession: SPTSession, id: String) {
+    func configurePlayer(authSession:SPTSession, id: String) {
         if self.player == nil {
-            self.player = SPTAudioStramingController.sharedInstance()
+            self.player = SPTAudioStreamingController.sharedInstance()
             self.player!.playbackDelegate = self
-            self.player!.delegaste = self
+            self.player!.delegate = self
             try! player?.start(withClientId: id)
             self.player!.login(withAccessToken: authSession.accessToken)
         }
     }
+    
 }
 
-extension MediaPlayer: SPTAudioStramingDelegate, SPTAudioStreamingPlaybackDelegate {
+extension MediaPlayer: SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate {
     
     func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didChangePosition position: TimeInterval) {
         delegate?.mediaPlayerDidChange(trackProgress: position/currentTrack!.duration)
@@ -98,4 +103,5 @@ extension MediaPlayer: SPTAudioStramingDelegate, SPTAudioStreamingPlaybackDelega
     func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didStopPlayingTrack trackUri: String!) {
         delegate?.mediaPlayerDidFinishTrack()
     }
+    
 }

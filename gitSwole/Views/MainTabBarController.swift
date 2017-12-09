@@ -31,7 +31,7 @@ class MainTabBarController: UITabBarController {
         let NathanStoryboard = UIStoryboard(name: "NathanStoryboard",bundle: nil)
         
         //instantiate each view controller
-        let settingsVC = storyboard.instantiateViewController(withIdentifier: "settingsVC") as? SettingsViewController
+        let DummyVC = storyboard.instantiateViewController(withIdentifier: "DummyVC") as? DummyViewController
         let MealPlanVC = NathanStoryboard.instantiateViewController(withIdentifier: "MealPlanVC") as? NutritionViewController
         let WorkoutsTVC = NathanStoryboard.instantiateViewController(withIdentifier: "WorkoutsTVC") as? WorkoutsTableViewController
         let ProgressVC = NathanStoryboard.instantiateViewController(withIdentifier: "ProgressVC") as? ProgressViewController
@@ -59,9 +59,9 @@ class MainTabBarController: UITabBarController {
             image: #imageLiteral(resourceName: "heartMonitorIcon"),
             tag: 4)
         
-        settingsVC!.tabBarItem = UITabBarItem(
-            title: "Settings",
-            image: #imageLiteral(resourceName: "SettingsIcon"),
+        DummyVC!.tabBarItem = UITabBarItem(
+            title: "Music",
+            image: #imageLiteral(resourceName: "smallPlay"),
             tag: 5)
         
         
@@ -69,13 +69,14 @@ class MainTabBarController: UITabBarController {
         //Wrap view controllers in their own nav controllers
         let WorkoutsNav = UINavigationController(rootViewController: WorkoutsTVC!)
         let MealPlanNav = UINavigationController(rootViewController: MealPlanVC!)
-        let settingsNav = UINavigationController(rootViewController: settingsVC!)
+        let DummyNav = UINavigationController(rootViewController: DummyVC!)
         let ProgressNav = UINavigationController(rootViewController: ProgressVC!)
         let HomeNav = UINavigationController(rootViewController: HomeVC!)
         
         //Creates an array of controllers that make up the tab bar items.
-        let controllers:[UIViewController] = [HomeNav, WorkoutsNav, MealPlanNav, ProgressNav, settingsNav]
+        let controllers:[UIViewController] = [HomeNav, WorkoutsNav, MealPlanNav, ProgressNav, DummyNav]
         self.viewControllers = controllers
+        
         
     }
     

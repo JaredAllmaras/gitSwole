@@ -11,36 +11,69 @@ import UIKit
 class PlaylistViewController: UIViewController {
     
     private var playerView: UIView!
-    private var playerButton: UIButton!
-    fileprivate var infoLabel: UILabel!
-    private var tableView: UITableView!
-    fileprivate var progressSlider: UISlider!
+    //private var playerButton: UIButton!
+    //fileprivate var infoLabel: UILabel!
+    //private var tableView: UITableView!
+    //fileprivate var progressSlider: UISlider!
     fileprivate var album: SPTAlbum?
     fileprivate var tracks: [SPTPartialTrack]? {
         return album?.tracksForPlayback() as? [SPTPartialTrack]
     }
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var playerButton: UIButton!
+    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var songLabel: UILabel!
+    @IBOutlet weak var progressSlider: UISlider!
+    
+    
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         showAlbumSelection()
         configureView()
         MediaPlayer.shared.delegate = self
-
-        // Do any additional setup after loading the view.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    // MARK: Playlist loading
     
     func showAlbumSelection() {
-        let alert = UIAlertController(title: "Please select your favorite album", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Please select your favourite album", message: "", preferredStyle: .alert)
         let firstAction = UIAlertAction(title: Playlist.kanye.title, style: .default) { (action) in
             self.load(playlist: Playlist.kanye)
         }
+        let secondAction = UIAlertAction(title: Playlist.drake.title, style: .default) { (action) in
+            self.load(playlist: Playlist.drake)
+        }
+
         alert.addAction(firstAction)
+        alert.addAction(secondAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func load(playlist: Playlist) {
+        guard LoginManager.shared.isLogged else {return}
+        MediaPlayer.shared.loadAlbum(url: playlist.urlString) {[weak self] (album, error) in
+            guard let `self` = self else {return}
+            guard let album = album, error == nil else {
+                self.showDefaultError()
+                return
+            }
+            self.album = album
+            self.title = album.name
+            self.tableView.reloadData()
+        }
+    }
+    
+    // MARK: View config
+    
+    private func configureView() {
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.barTintColor = UIColor.spotifyBackground
+        view.backgroundColor = UIColor.spotifyBackground
+        configurePlayerView()
+        configureTableView()
     }
     
     private func configurePlayerView() {
@@ -48,28 +81,30 @@ class PlaylistViewController: UIViewController {
         playerView.backgroundColor = UIColor.white.withAlphaComponent(0.3)
         playerView.translatesAutoresizingMaskIntoConstraints = false
         
-        playerButton = UIButton()
+        
+        //playerButton = UIButton()
         playerButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
         playerButton.tintColor = .white
         playerButton.translatesAutoresizingMaskIntoConstraints = false
         playerButton.addTarget(self, action: #selector(playerButtonAction), for: .touchUpInside)
         
-        infoLabel = UILabel()
-        infoLabel.text = "No song loaded"
-        infoLabel.textColor = .white
-        infoLabel.translatesAutoresizingMaskIntoConstraints = false
-        infoLabel.numberOfLines = 0
+        songLabel.text = "No song loaded"
+        songLabel.textColor = .white
+        songLabel.translatesAutoresizingMaskIntoConstraints = false
+        songLabel.numberOfLines = 0
         
-        progressSlider = UISlider()
+        //progressSlider = UISlider()
         progressSlider.translatesAutoresizingMaskIntoConstraints = false
         progressSlider.tintColor = .spotifyGreen
         progressSlider.isContinuous = false
         progressSlider.addTarget(self, action: #selector(progressSliderAction(sender:)), for: .valueChanged)
         
+        /*
         view.addSubview(playerView)
         playerView.addSubview(infoLabel)
         playerView.addSubview(playerButton)
         playerView.addSubview(progressSlider)
+        
         
         playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
@@ -88,6 +123,7 @@ class PlaylistViewController: UIViewController {
         progressSlider.leadingAnchor.constraint(equalTo: infoLabel.leadingAnchor).isActive = true
         progressSlider.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 5).isActive = true
         progressSlider.trailingAnchor.constraint(equalTo: playerView.trailingAnchor, constant: -16).isActive = true
+        */
         
     }
     
@@ -125,7 +161,7 @@ class PlaylistViewController: UIViewController {
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
                     MediaPlayer.shared.play(track: first)
-                    infoLabel.text = first.name
+                    songLabel.text = first.name
                 } else {
                     showDefaultError()
                 }
@@ -133,23 +169,10 @@ class PlaylistViewController: UIViewController {
         }
     }
     
-    private func load(playlist: Playlist) {
-        guard LoginManager.shared.isLogged else {return}
-        MediaPlayer.shared.loadAlbum(url: playlist.urlString) {[weak self] (album, error) in
-            guard let  `self` = self else {return}
-            guard let album = album, error == nil else {
-                self.showDefaultError()
-                return
-            }
-            self.album = album
-            self.title = album.name
-            self.tableView.reloadData()
-        }
-    }
-    
     fileprivate func updatePlayButton(playing: Bool) {
         playerButton.setImage(playing ? #imageLiteral(resourceName: "pause") : #imageLiteral(resourceName: "play"), for: .normal)
     }
+    
 }
 
 extension PlaylistViewController: UITableViewDataSource, UITableViewDelegate {
@@ -183,7 +206,7 @@ extension PlaylistViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.cellForRow(at: indexPath)
         cell!.textLabel?.textColor = .black
         MediaPlayer.shared.play(track: track)
-        infoLabel.text = track.name
+        songLabel.text = track.name
         updatePlayButton(playing: true)
     }
 }
@@ -225,13 +248,3 @@ extension PlaylistViewController: MediaPlayerDelegate {
     }
     
 }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
