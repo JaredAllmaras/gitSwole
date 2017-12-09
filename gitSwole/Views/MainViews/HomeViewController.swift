@@ -97,15 +97,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func enableDisableButtons() {
-        if AuthService.user.signedIn() {
-            signUpButton.isEnabled = false
-            loginButton.isEnabled = false
-            logoutButton.isEnabled = true
-        } else {
-            signUpButton.isEnabled = true
-            loginButton.isEnabled = true
-            logoutButton.isEnabled = false
-        }
+//        if ServiceAPI.current.signedIn() {
+//            signUpButton.isEnabled = false
+//            loginButton.isEnabled = false
+//            logoutButton.isEnabled = true
+//        } else {
+//            signUpButton.isEnabled = true
+//            loginButton.isEnabled = true
+//            logoutButton.isEnabled = false
+//        }
     }
     
     
@@ -128,10 +128,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             try! player!.start(withClientId: auth.clientID)
             self.player!.login(withAccessToken: authSession.accessToken)
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     func setup() {
@@ -160,7 +156,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     @IBAction func logout(_ sender: Any) {
-        AuthService.user.signOut()
+//        StateManager.current.signOut()
         enableDisableButtons()
     }
     

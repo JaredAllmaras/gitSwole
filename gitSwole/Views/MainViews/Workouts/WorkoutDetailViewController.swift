@@ -10,8 +10,12 @@ import UIKit
 
 class WorkoutDetailViewController: UIViewController {
     
-    var workout:Workout!
+    // MARK: - Properties
+    
+    var selectedWorkoutIndex: Int = -1
     var NumExercises:Int?
+    
+    // TODO: Refactor Timer()
     var timer = Timer()
     var time = 0
     var Checkboxes:[CheckBox]?
@@ -42,6 +46,9 @@ class WorkoutDetailViewController: UIViewController {
     @IBOutlet weak var titleView: UIView!
     
     @IBOutlet weak var titleLabel: UILabel!
+    
+    // MARK: - UIViewController Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Config.backgroundColor
@@ -49,6 +56,9 @@ class WorkoutDetailViewController: UIViewController {
         titleView.backgroundColor = Config.primaryLightColor
         titleView.layer.cornerRadius = 15
         titleLabel.textColor = Config.primaryTextColor
+        
+        let workout = ServiceAPI.current.getSelectedWorkout(at: selectedWorkoutIndex)
+        
         workoutNameLabel.text = workout.name
         
         startWorkoutButton.backgroundColor = Config.buttonBackgroundColor

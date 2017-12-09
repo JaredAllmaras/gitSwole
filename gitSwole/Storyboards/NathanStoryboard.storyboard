@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -213,19 +213,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TEj-LX-XVW">
-                                <rect key="frame" x="39" y="231" width="299" height="30"/>
+                                <rect key="frame" x="39" y="231" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hdy-fx-ilE">
-                                <rect key="frame" x="39" y="268" width="299" height="30"/>
+                                <rect key="frame" x="39" y="268" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x81-6a-Zmk">
-                                <rect key="frame" x="94" y="367" width="188" height="30"/>
+                                <rect key="frame" x="94" y="367" width="189" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -235,7 +235,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gc6-Xi-mCm">
-                                <rect key="frame" x="94" y="405" width="188" height="30"/>
+                                <rect key="frame" x="94" y="405" width="189" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -245,7 +245,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE1-JG-RP2">
-                                <rect key="frame" x="94" y="529" width="188" height="30"/>
+                                <rect key="frame" x="94" y="529" width="189" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -256,13 +256,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not a User? Sign Up!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3I-q5-lgz">
-                                <rect key="frame" x="107" y="500" width="160" height="21"/>
+                                <rect key="frame" x="107.5" y="500" width="160" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3I4-Q9-xCe">
-                                <rect key="frame" x="38" y="306" width="299" height="29"/>
+                                <rect key="frame" x="38" y="306" width="300" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="9VQ-0s-te8"/>
                                 </constraints>
@@ -498,8 +498,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeL-u4-dFb">
-                                <rect key="frame" x="146" y="586" width="82" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeL-u4-dFb">
+                                <rect key="frame" x="162.5" y="587" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitAction:" destination="EzF-qg-ypr" eventType="touchUpInside" id="dVw-Lp-oTN"/>
@@ -595,7 +595,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="WorkoutName" destination="MTk-sC-Dv1" id="ZwW-3b-PkU"/>
+                                    <outlet property="workoutNameLabel" destination="MTk-sC-Dv1" id="ZwW-3b-PkU"/>
                                     <segue destination="JDb-Pg-lE9" kind="show" identifier="ShowDetail" id="UIH-2X-cMX"/>
                                 </connections>
                             </tableViewCell>
@@ -1163,18 +1163,18 @@
                         <viewLayoutGuide key="safeArea" id="XC2-Hf-ZcC"/>
                     </view>
                     <connections>
-                        <outlet property="BreakfastCalories" destination="bKU-DX-9PU" id="w1Y-hH-OU8"/>
-                        <outlet property="BreakfastFirst" destination="ldZ-nF-bRk" id="Qn7-sP-1en"/>
-                        <outlet property="BreakfastSecond" destination="Pad-UD-bws" id="A2S-9s-hrt"/>
-                        <outlet property="BreakfastThird" destination="e8b-pS-Rma" id="i4A-df-MnA"/>
-                        <outlet property="DinnerCalories" destination="Sqo-2l-jd4" id="M7X-F2-oEO"/>
                         <outlet property="DinnerFirst" destination="Tay-AY-hl4" id="2uf-Pz-6TH"/>
                         <outlet property="DinnerSecond" destination="1tu-Yf-gcB" id="Ij4-Uo-10n"/>
                         <outlet property="DinnerThird" destination="Hhq-3H-HnP" id="Bsz-8c-An7"/>
-                        <outlet property="LunchCalories" destination="DlI-te-kQ8" id="PTO-g8-qO5"/>
                         <outlet property="LunchFirst" destination="wPl-VK-2Bx" id="zWB-nd-t5G"/>
                         <outlet property="LunchSecond" destination="JTR-fM-R3O" id="hWk-q2-GZH"/>
                         <outlet property="LunchThird" destination="nkd-dd-3FE" id="gLh-hz-vQz"/>
+                        <outlet property="breakfastCaloriesLabel" destination="bKU-DX-9PU" id="w1Y-hH-OU8"/>
+                        <outlet property="breakfastFirstCourseLabel" destination="ldZ-nF-bRk" id="Qn7-sP-1en"/>
+                        <outlet property="breakfastSecondCourseLabel" destination="Pad-UD-bws" id="A2S-9s-hrt"/>
+                        <outlet property="breakfastThirdCourseLabel" destination="e8b-pS-Rma" id="i4A-df-MnA"/>
+                        <outlet property="dinnerCaloriesLabel" destination="Sqo-2l-jd4" id="M7X-F2-oEO"/>
+                        <outlet property="lunchCaloriesLabel" destination="DlI-te-kQ8" id="PTO-g8-qO5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBl-2t-yoC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1305,7 +1305,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFU-Md-T5u">
-                                <rect key="frame" x="155" y="542" width="64" height="30"/>
+                                <rect key="frame" x="137" y="542" width="106" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Calculate"/>
                             </button>
@@ -1326,7 +1326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TsY-2s-4ua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2910" y="135"/>
+            <point key="canvasLocation" x="2909.5999999999999" y="134.48275862068968"/>
         </scene>
         <!--Progress View Controller-->
         <scene sceneID="1XJ-ht-PL1">

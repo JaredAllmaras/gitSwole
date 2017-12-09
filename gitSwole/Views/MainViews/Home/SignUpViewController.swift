@@ -57,7 +57,7 @@ class SignUpViewController: UIViewController, SignUpProtocol {
         let password = passwordTextField.text!
 
         if validEmail(email) && validPassword(password) {
-            AuthService.user.signUp(email, password, self)
+//            AuthManager.user.signUp(email, password, self)
         } else {
             error("Invalid email or password")
             errorLabel.isHidden = false
@@ -82,7 +82,6 @@ class SignUpViewController: UIViewController, SignUpProtocol {
         let storyboard = UIStoryboard(name: "NathanStoryboard", bundle: nil)
         let userStateFormViewController = storyboard.instantiateViewController(withIdentifier: "UserStateFormViewController") as! UserStateFormViewController
         present(userStateFormViewController, animated: true, completion: nil)
-//        _ = navigationController?.popViewController(animated: true)
     }
     
     func error(_ message: String) {

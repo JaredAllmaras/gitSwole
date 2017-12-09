@@ -12,18 +12,24 @@ import Foundation
  *  AppState models the state of the application at startup
  */
 struct AppState {
-    let defaultMealPlans:Array<MealPlan>
-    let defaultWorkouts:Array<Workout>
-    let userState:UserState
+    
+    // MARK: - Fields
+    
+    let user:User
+    let popularMealPlans:Array<MealPlan>
+    let popularWorkouts:Array<Workout>
+    
+    // MARK: - Constructors
+    
     init() {
-        defaultMealPlans = []
-        defaultWorkouts = []
-        userState = UserState()
+        popularMealPlans = []
+        popularWorkouts = []
+        user = User()
     }
     
-    init(defaultMealPlans:Array<MealPlan>, defaultWorkouts:Array<Workout>, userState:UserState) {
-        self.defaultMealPlans = defaultMealPlans
-        self.defaultWorkouts = defaultWorkouts
-        self.userState = userState
+    init(popularMealPlans: [MealPlan], popularWorkouts: [Workout], user: User) {
+        self.popularMealPlans = popularMealPlans
+        self.popularWorkouts = popularWorkouts
+        self.user = user
     }
 }

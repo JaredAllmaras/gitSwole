@@ -59,7 +59,7 @@ class LoginViewController: UIViewController, SignUpProtocol {
         let password = self.passwordTextField.text!
         
         if validEmail(email) && validPW(password) {
-            AuthService.user.signIn(email, password, self)
+//            AuthManager.user.signIn(email, password, self)
         } else {
             errorLabel.text = "Invalid Username or Password"
             errorLabel.isHidden = false

@@ -9,14 +9,8 @@
 import UIKit
 
 class UserStateFormViewController: UIViewController, SignUpProtocol {
-    func proceed() {
-        present(MainTabBarController(), animated: true, completion: nil)
-    }
     
-    func error(_ message: String) {
-        print(message)
-    }
-    
+    // MARK: - Properties
 
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -28,6 +22,8 @@ class UserStateFormViewController: UIViewController, SignUpProtocol {
     
     @IBOutlet weak var usernameErrorLabel: UILabel!
     @IBOutlet weak var profileErrorLabel: UILabel!
+    
+    // MARK: - UIViewController Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,10 +51,8 @@ class UserStateFormViewController: UIViewController, SignUpProtocol {
         profileErrorLabel.layer.cornerRadius = 5
         profileErrorLabel.isHidden = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    
+    // MARK: - Actions
     
     @IBAction func submitAction(_ sender: Any) {
         
@@ -69,12 +63,12 @@ class UserStateFormViewController: UIViewController, SignUpProtocol {
             profileErrorLabel.text = "Weight and Height must be integers"
             profileErrorLabel.isHidden = false
         } else {
-            let username = usernameTextField.text!
-            let goalWeight = Int(currentHeightTextField.text!)!
-            let currentWeight = Int(currentWeightTextField.text!)!
+//            let username = usernameTextField.text!
+//            let goalWeight = Int(currentHeightTextField.text!)!
+//            let currentWeight = Int(currentWeightTextField.text!)!
             
-            let userState = UserState(username: username, currentMealPlan: Store.store.getDefaultMealPlan(), currentWeight: currentWeight, goalWeight: goalWeight)
-            DatabaseService.dataSource.createAndLoadUser(userState, self)
+//            let userState = UserState(username: username, currentMealPlan: StateManager.current.getDefaultMealPlan(), currentWeight: currentWeight, goalWeight: goalWeight)
+//            PersistenceManager.dataSource.createAndLoadUser(userState, self)
         }
     }
     
@@ -87,6 +81,16 @@ class UserStateFormViewController: UIViewController, SignUpProtocol {
     private func validUsername() -> Bool {
         let username = usernameTextField.text
         return username != ""
+    }
+    
+    // MARK: - SignUp Delegate
+    
+    func proceed() {
+        present(MainTabBarController(), animated: true, completion: nil)
+    }
+    
+    func error(_ message: String) {
+        print(message)
     }
     
     /*

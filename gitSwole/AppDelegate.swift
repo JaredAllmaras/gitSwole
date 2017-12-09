@@ -23,13 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // initialize Firebase
         FirebaseApp.configure()
         
-        // initialize FirebaseAuth and DataSources
-        DatabaseService.dataSource.configure()
-        DatabaseService.dataSource.loadAppState()
-        AuthService.user.setAuthListener()
-        LocalDatabaseService.dataSource.configure()
-        
-//        while(DatabaseService.dataSource.loading()) {}
+        ServiceAPI.current.configure()
         
         //configures spotify
         auth.redirectURL = URL(string: "gitswole://returnAfterLogin")
@@ -132,7 +126,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
                 // add session to User Defaults
                 let userDefaults = UserDefaults.standard
-                let sessionData = NSKeyedArchiver.archivedData(withRootObject: session)
+                let sessionData = NSKeyedArchiver.archivedData(withRootObject: session!)
                 userDefaults.set(sessionData, forKey: "Spotify Session")
                 userDefaults.synchronize()
                 
