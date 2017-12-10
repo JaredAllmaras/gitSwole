@@ -8,27 +8,33 @@
 
 import UIKit
 
-class DummyViewController: UINavigationController {
+
+class DummyViewController: UIViewController {
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-         if !LoginManager.shared.isLogged {
-            let spotifyLoginVC = storyboard?.instantiateViewController(withIdentifier: "SpotifyLoginVC") as? SpotifyLoginViewController
-            viewControllers = [spotifyLoginVC!]
-         } else {
-            LoginManager.shared.preparePlayer()
-            
-         }
-        
-        
-        
-    }
+         setView()
+        }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setView() {
+        if !LoginManager.shared.isLogged {
+            if let spotifyLoginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SpotifyLoginVC") as? SpotifyLoginViewController {
+                self.navigationController?.pushViewController(spotifyLoginVC, animated: false)
+            }
+        } else {
+            LoginManager.shared.preparePlayer()
+            if let playlistVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlaylistVC") as? PlaylistViewController {
+                self.navigationController?.pushViewController(playlistVC, animated: false)
+            }
+        }
     }
     
 

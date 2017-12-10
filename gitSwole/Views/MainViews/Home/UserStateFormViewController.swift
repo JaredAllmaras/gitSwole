@@ -9,6 +9,8 @@
 import UIKit
 
 class UserStateFormViewController: UIViewController {
+    
+    // MARK: - Properties
 
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -21,6 +23,8 @@ class UserStateFormViewController: UIViewController {
     @IBOutlet weak var usernameErrorLabel: UILabel!
     @IBOutlet weak var profileErrorLabel: UILabel!
     
+    // MARK: - UIViewController Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleView.layer.cornerRadius = CGFloat(15)
@@ -29,8 +33,8 @@ class UserStateFormViewController: UIViewController {
         titleLabel.textColor = Config.primaryTextColor
         
         usernameTextField.placeholder = "username"
-        currentHeightTextField.placeholder = "current height"
-        currentWeightTextField.placeholder = "current weight"
+        currentHeightTextField.placeholder = "current height in inches"
+        currentWeightTextField.placeholder = "current weight in lbs"
         
         submitButton.backgroundColor = Config.buttonBackgroundColor
         submitButton.setTitleColor(Config.buttonTextColor, for: .normal)
@@ -47,10 +51,8 @@ class UserStateFormViewController: UIViewController {
         profileErrorLabel.layer.cornerRadius = 5
         profileErrorLabel.isHidden = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    
+    // MARK: - Actions
     
     @IBAction func submitAction(_ sender: Any) {
         
@@ -63,13 +65,21 @@ class UserStateFormViewController: UIViewController {
         } else {
             let username = usernameTextField.text!
             let goalWeight = Int(currentHeightTextField.text!)!
+            let currentHeight = Int(currentHeightTextField.text!)!
             let currentWeight = Int(currentWeightTextField.text!)!
             
-            let userState = UserState(username: username, currentMealPlan: Store.store.getDefaultMealPlan(), currentWeight: currentWeight, goalWeight: goalWeight)
-            DatabaseService.dataSource.createAndLoadUser(userState)
-            present(MainTabBarController(), animated: true, completion: nil)
+            let user = User(username: username,
+                       currentHeight: currentHeight,
+                       currentWeight: currentWeight,
+                          goalWeight: goalWeight,
+                           mealPlans: DefaultUser.user.mealplans,
+                            workouts: DefaultUser.user.workouts)
+            
+            ServiceAPI.current.setUser(user, self)
         }
     }
+    
+    // MARK: - Validation
     
     private func validProfileInfo() -> Bool {
         let currentHeight = Int(currentHeightTextField.text!)
@@ -81,15 +91,19 @@ class UserStateFormViewController: UIViewController {
         let username = usernameTextField.text
         return username != ""
     }
+
+}
+
+extension UserStateFormViewController: AuthDelegate {
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - AuthDelegate
+    
+    func proceed() {
+        present(MainTabBarController(), animated: true, completion: nil)
     }
-    */
-
+    
+    func error(_ message: String) {
+        print(message)
+    }
+    
 }

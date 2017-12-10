@@ -10,17 +10,17 @@ import UIKit
 
 class NutritionDetailViewController: UIViewController {
 
-    var selectedMealPlanIdx:Int?
-    var selectedMealPlan:MealPlan?
+    // MARK: - Properties
     
-    @IBOutlet weak var BreakfastCalories: UILabel!
-    @IBOutlet weak var LunchCalories: UILabel!
-    @IBOutlet weak var DinnerCalories: UILabel!
+    var selectedMealPlanIndex:Int!
     
+    @IBOutlet weak var breakfastCaloriesLabel: UILabel!
+    @IBOutlet weak var lunchCaloriesLabel: UILabel!
+    @IBOutlet weak var dinnerCaloriesLabel: UILabel!
 
-    @IBOutlet weak var BreakfastFirst: UILabel!
-    @IBOutlet weak var BreakfastSecond: UILabel!
-    @IBOutlet weak var BreakfastThird: UILabel!
+    @IBOutlet weak var breakfastFirstCourseLabel: UILabel!
+    @IBOutlet weak var breakfastSecondCourseLabel: UILabel!
+    @IBOutlet weak var breakfastThirdCourseLabel: UILabel!
     @IBOutlet weak var LunchFirst: UILabel!
     @IBOutlet weak var LunchSecond: UILabel!
     @IBOutlet weak var LunchThird: UILabel!
@@ -28,40 +28,37 @@ class NutritionDetailViewController: UIViewController {
     @IBOutlet weak var DinnerSecond: UILabel!
     @IBOutlet weak var DinnerThird: UILabel!
     
+    // MARK: - UIViewController Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = Config.backgroundColor
-        
-        self.BreakfastCalories.text = "Breakfast - \(String(describing: (self.selectedMealPlan?.breakfast.calories)!)) calories"
-        self.LunchCalories.text = "Lunch - \(String(describing: (self.selectedMealPlan?.lunch.calories)!)) calories"
-        self.DinnerCalories.text = "Dinner - \(String(describing: (self.selectedMealPlan?.dinner.calories)!)) calories"
-        
-        self.BreakfastFirst.text = self.selectedMealPlan?.breakfast.firstCourse.name
-        self.BreakfastSecond.text = self.selectedMealPlan?.breakfast.secondCourse.name
-        self.BreakfastThird.text = self.selectedMealPlan?.breakfast.thirdCourse.name
-        self.LunchFirst.text = self.selectedMealPlan?.lunch.firstCourse.name
-        self.LunchSecond.text = self.selectedMealPlan?.lunch.secondCourse.name
-        self.LunchThird.text = self.selectedMealPlan?.lunch.thirdCourse.name
-        self.DinnerFirst.text = self.selectedMealPlan?.dinner.firstCourse.name
-        self.DinnerSecond.text = self.selectedMealPlan?.dinner.secondCourse.name
-        self.DinnerThird.text = self.selectedMealPlan?.dinner.thirdCourse.name
+        let selectedMealPlan = ServiceAPI.current.getSelectedMealPlan(at: selectedMealPlanIndex)
+        updateLabels(selectedMealPlan)
     }
+    
+    // MARK: - Actions
     
     @IBAction func setCurrentMealPlan(_ sender: Any) {
-        // TODO: Make sure this doesn't do anything when the user is not logged on
-        DatabaseService.dataSource.setCurrentMealPlan(selectedMealPlan!)
+        ServiceAPI.current.setMyCurrentMealPlan(to: selectedMealPlanIndex)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Update
+    
+    func updateLabels(_ selectedMealPlan: MealPlan) {
+        self.breakfastCaloriesLabel.text = "Breakfast - \(selectedMealPlan.breakfast.calories) calories"
+        self.lunchCaloriesLabel.text = "Lunch - \(selectedMealPlan.lunch.calories) calories"
+        self.dinnerCaloriesLabel.text = "Dinner - \(selectedMealPlan.dinner.calories) calories"
+        
+        self.breakfastFirstCourseLabel.text = selectedMealPlan.breakfast.firstCourse.name
+        self.breakfastSecondCourseLabel.text = selectedMealPlan.breakfast.secondCourse.name
+        self.breakfastThirdCourseLabel.text = selectedMealPlan.breakfast.thirdCourse.name
+        self.LunchFirst.text = selectedMealPlan.lunch.firstCourse.name
+        self.LunchSecond.text = selectedMealPlan.lunch.secondCourse.name
+        self.LunchThird.text = selectedMealPlan.lunch.thirdCourse.name
+        self.DinnerFirst.text = selectedMealPlan.dinner.firstCourse.name
+        self.DinnerSecond.text = selectedMealPlan.dinner.secondCourse.name
+        self.DinnerThird.text = selectedMealPlan.dinner.thirdCourse.name
     }
-    */
 
 }

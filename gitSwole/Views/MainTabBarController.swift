@@ -76,10 +76,8 @@ class MainTabBarController: UITabBarController {
         //Creates an array of controllers that make up the tab bar items.
         let controllers:[UIViewController] = [HomeNav, WorkoutsNav, MealPlanNav, ProgressNav, DummyNav]
         self.viewControllers = controllers
-        
-        
     }
-    
+
     /*
     // MARK: - Navigation
 

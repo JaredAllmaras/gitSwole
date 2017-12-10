@@ -7,16 +7,54 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 struct Course {
-    let name:String
-    let servingSize:String // TODO: Change this to an int
+    
+    // MARK: - FirebaseModel Metadata
+    
+    let key: String
+    let ref: DatabaseReference!
+    
+    // MARK: - Fields
+    
+    let name: String
+    let servingSize: String // TODO: Change this to an int
+    
+    // MARK: - Constructors
+    
     init() {
+        key = ""
+        ref = nil
+        
         name = ""
         servingSize = ""
     }
-    init(name:String, servingSize:String) {
+    
+    init(name: String, servingSize: String, key: String = "") {
+        self.key = ""
+        ref = nil
+        
         self.name = name;
         self.servingSize = servingSize;
     }
+    
+    init(snapshot: DataSnapshot) {
+        key = snapshot.key
+        ref = snapshot.ref
+        
+        let snapshotValue = snapshot.value as! [String:Any]
+        name = snapshotValue["name"] as! String
+        servingSize = snapshotValue["serving-size"] as! String
+    }
+    
+    // MARK: - Map
+    
+    func toMap() -> [String:Any] {
+        return [
+            "name": name,
+            "serving-size": servingSize,
+        ]
+    }
+    
 }

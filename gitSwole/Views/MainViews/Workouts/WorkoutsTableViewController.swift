@@ -10,13 +10,12 @@ import UIKit
 
 class WorkoutsTableViewController: UITableViewController {
     
-    var workouts:[Workout]!
+    // MARK: - UIViewController Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.backgroundColor = Config.backgroundColor
-        self.workouts = Store.store.getDefaultWorkouts()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -25,25 +24,24 @@ class WorkoutsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-    // MARK: - Table view data source
+    // MARK: - UITableViewController DataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let workouts = ServiceAPI.current.getMyWorkouts()
         return workouts.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! WorkoutCell
-        let currentWorkout = self.workouts[indexPath.row]
+        
+        let workouts = ServiceAPI.current.getMyWorkouts()
+        let currentWorkout = workouts[indexPath.row]
 
-        cell.WorkoutName.text = currentWorkout.name
+        cell.workoutNameLabel.text = currentWorkout.name
         cell.backgroundColor = Config.backgroundColor
         
         return cell
@@ -92,9 +90,8 @@ class WorkoutsTableViewController: UITableViewController {
         if segue.identifier == "ShowDetail" {
             if let dsvc = segue.destination as? WorkoutDetailViewController {
                 let selectedIndex = tableView.indexPathForSelectedRow
-                dsvc.workout = self.workouts[selectedIndex!.row]
+                dsvc.selectedWorkoutIndex = selectedIndex!.row
             }
-    }
-
+        }
     }
 }

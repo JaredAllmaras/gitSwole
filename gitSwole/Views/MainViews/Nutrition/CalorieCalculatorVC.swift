@@ -10,6 +10,7 @@ import UIKit
 
 class CalorieCalculatorVC: UIViewController {
 
+    
     @IBOutlet weak var sex: UISegmentedControl!
     @IBOutlet weak var age: UITextField!
     @IBOutlet weak var intake: UILabel!
@@ -18,6 +19,7 @@ class CalorieCalculatorVC: UIViewController {
     @IBOutlet weak var goal: UISegmentedControl!
     @IBOutlet weak var activityLevel: UITextField!
     @IBOutlet weak var calculateButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,9 +27,13 @@ class CalorieCalculatorVC: UIViewController {
         self.sex.backgroundColor = Config.backgroundColor
         self.goal.tintColor = Config.buttonBackgroundColor
         self.goal.backgroundColor = Config.backgroundColor
-        self.calculateButton.backgroundColor = Config.buttonTextColor
+        self.calculateButton.backgroundColor = Config.buttonBackgroundColor
+        self.calculateButton.setTitleColor(Config.buttonTextColor, for: .normal)
+        
+        self.intake.text = "3107 cal."
         // Do any additional setup after loading the view.
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
