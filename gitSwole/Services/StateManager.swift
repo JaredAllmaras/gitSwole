@@ -76,6 +76,10 @@ class StateManager: AuthStateDelegate {
         return user.workouts
     }
     
+    public func addWorkout(_ workout: Workout) {
+        user.workouts.append(workout)
+    }
+    
     // MARK: - UI State
     
     public func getMyCurrentMealPlan() -> MealPlan {

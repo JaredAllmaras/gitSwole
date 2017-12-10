@@ -10,10 +10,12 @@ import UIKit
 
 class CreateWorkoutVC: UIViewController {
     
-    var labels:[UILabel]?
-    var textFields:[UITextField]?
-    var sets:[UITextField]?
-    var reps:[UITextField]?
+    // MARK: - Properties
+    
+    var labels:[UILabel]!
+    var textFields:[UITextField]!
+    var sets:[UITextField]!
+    var reps:[UITextField]!
     
     var numExercisesDisplayed:Int = 1
     
@@ -53,80 +55,66 @@ class CreateWorkoutVC: UIViewController {
     @IBOutlet weak var ex8sets: UITextField!
     @IBOutlet weak var ex8reps: UITextField!
     
-    
+    // MARK: - Actions
     
     @IBAction func addExercise(_ sender: Any) {
-        self.numExercisesDisplayed += 1
-        self.labels?[numExercisesDisplayed].isHidden = false
-        self.textFields?[numExercisesDisplayed].isHidden = false
-        self.sets?[numExercisesDisplayed].isHidden = false
-        self.reps?[numExercisesDisplayed].isHidden = false
+        if numExercisesDisplayed < 8 {
+            labels[numExercisesDisplayed].isHidden = false
+            textFields[numExercisesDisplayed].isHidden = false
+            sets[numExercisesDisplayed].isHidden = false
+            reps[numExercisesDisplayed].isHidden = false
+            numExercisesDisplayed += 1
+        } else {
+            print("No more exercises can be added!")
+        }
     }
-    
     
     @IBAction func saveWorkout(_ sender: Any) {
         
-        var invalidInput = false
-        
         for i in 0 ... numExercisesDisplayed {
-            if (self.labels?[i].text)! == "" {
-                invalidInput = true
+            guard labels[i].text != "" else {
+                print("Invalid Input")
+                return
             }
         }
-        if invalidInput == true {
-            print ("Invalid input.")
-        } else {
-        var exercises:[Exercise]?
-        var newExercise:Exercise?
-        var sets:Int?
-        var reps:Int?
-        
-        for i in 0 ... 	self.numExercisesDisplayed {
-            sets = Int((self.sets?[i].text)!)
-            reps = Int((self.reps?[i].text)!)
-            
-            newExercise = Exercise(name: (self.textFields?[i].text)!, sets: sets!, reps: reps!)
-            exercises?.append(newExercise!)
-        }
-        
-            let newWorkout = Workout(name: "\(String(describing: self.workoutName.text))", muscleGroup: "", exercises: exercises!)
-        // implement database code here to save new workout for user
     
+        var exercises:[Exercise] = []
+        var newExercise:Exercise
+        
+        for i in 0 ... self.numExercisesDisplayed {
+            
+            if let sets = Int(self.sets[i].text!), let reps = Int(self.reps[i].text!) {
+                newExercise = Exercise(name: self.textFields[i].text!, sets: sets, reps: reps)
+                exercises.append(newExercise)
+            } else {
+                print("Invalid Input in Line \(i + 1)")
+            }
         }
+        
+        let newWorkout = Workout(name: self.workoutName.text!, muscleGroup: "", exercises: exercises)
+        
+        ServiceAPI.current.addWorkout(newWorkout)
+    
     }
     
+    // MARK: UIViewController LifeCycle
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        self.labels = [self.ex1label, self.ex2label, self.ex3label, self.ex4label, self.ex5label, self.ex6label, self.ex7label, self.ex8label]
-        self.textFields = [self.ex1text, self.ex2text, self.ex3text, self.ex4text, self.ex5text, self.ex6text, self.ex7text, self.ex8text]
+        labels = [ex1label, ex2label, ex3label, ex4label, ex5label, ex6label, ex7label, ex8label]
+        textFields = [ex1text, ex2text, ex3text, ex4text, ex5text, ex6text, ex7text, ex8text]
+        sets = [ex1sets, ex2sets, ex3sets, ex4sets, ex5sets, ex6sets, ex7sets, ex8sets]
+        reps = [ex1reps, ex2reps, ex3reps, ex4reps, ex5reps, ex6reps, ex7reps, ex8reps]
         
-        for i in numExercisesDisplayed ... (self.textFields?.count)! {
-            self.labels?[i].isHidden = true
-            self.textFields?[i].isHidden = true
-            self.sets?[i].isHidden = true
-            self.reps?[i].isHidden = true
+        for i in numExercisesDisplayed ... self.textFields!.count - 1 {
+            self.labels[i].isHidden = true
+            self.textFields[i].isHidden = true
+            self.sets[i].isHidden = true
+            self.reps[i].isHidden = true
         }
         
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

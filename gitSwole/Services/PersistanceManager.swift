@@ -21,6 +21,8 @@ class PersistanceManager {
 
     init() {}
     
+    // MARK: User
+    
     private func fetchUser(state: StateManager, user: FirebaseAuth.User, viewController: AuthDelegate?) {
         print("Info: Fetching user with key: ...")
         
@@ -50,6 +52,18 @@ class PersistanceManager {
 
         // load store
         fetchUser(state: state, user: Auth.auth().currentUser!, viewController: viewController)
+    }
+    
+    // MARK: Workouts
+    
+    func addWorkout(_ workout: Workout, numWorkouts: Int) {
+        userDBRef?.child("workouts/\(numWorkouts)").setValue(workout.toMap())
+    }
+    
+    // MARK: - UI State
+    
+    func setMyCurrentMealPlan(to index: Int) {
+        userDBRef?.child("current-meal-plan-index").setValue(index)
     }
     
     private func fetchDefaults(state: StateManager) {

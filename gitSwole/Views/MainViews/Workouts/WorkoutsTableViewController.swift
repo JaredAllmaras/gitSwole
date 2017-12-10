@@ -16,12 +16,19 @@ class WorkoutsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.backgroundColor = Config.backgroundColor
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Workout", style: .plain, target: self, action: #selector(addWorkout))
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
     }
 
     // MARK: - UITableViewController DataSource
@@ -45,6 +52,14 @@ class WorkoutsTableViewController: UITableViewController {
         cell.backgroundColor = Config.backgroundColor
         
         return cell
+    }
+    
+    // MARK: - Add Workout
+    
+    @objc func addWorkout() {
+        let storyboard = UIStoryboard(name: "NathanStoryboard", bundle: nil)
+        let createWorkoutViewController = storyboard.instantiateViewController(withIdentifier: "CreateWorkoutVC")
+        navigationController?.pushViewController(createWorkoutViewController, animated: true)
     }
 
     /*

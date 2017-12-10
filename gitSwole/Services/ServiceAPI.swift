@@ -71,6 +71,11 @@ extension ServiceAPI {
         return stateManager.getMyWorkouts()
     }
     
+    public func addWorkout(_ workout: Workout) {
+        persistanceManager.addWorkout(workout, numWorkouts: stateManager.getMyWorkouts().count)
+        stateManager.addWorkout(workout)
+    }
+    
     // MARK: - UI State
     
     public func getMyCurrentMealPlan() -> MealPlan {
@@ -79,6 +84,7 @@ extension ServiceAPI {
     
     public func setMyCurrentMealPlan(to index: Int) {
         stateManager.setMyCurrentMealPlan(to: index)
+        persistanceManager.setMyCurrentMealPlan(to: index)
     }
     
     public func getMyCurrentMeal() -> Meal? {

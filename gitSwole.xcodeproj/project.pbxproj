@@ -500,8 +500,6 @@
 				8C244DA71FD0DD9B0002865D /* UIColor.swift in Sources */,
 				E15FEE791FCF3CD500523AD2 /* FirebaseMappingService.swift in Sources */,
 				C4647AD21FDB61E40050C3FE /* CreateWorkoutVC.swift in Sources */,
-=======
->>>>>>> 35127a2fa45647619dcf496d17b30222e07a953f
 				C4C0485B1FC4F9E60061473A /* NutritionDetailViewController.swift in Sources */,
 				C4142FEB1FA959D600F3173E /* SignUpViewController.swift in Sources */,
 				E15FEE831FD06F6700523AD2 /* PopularWorkoutCollectionViewCell.swift in Sources */,
