@@ -14,7 +14,6 @@ class DummyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
          setView()
         }
 
