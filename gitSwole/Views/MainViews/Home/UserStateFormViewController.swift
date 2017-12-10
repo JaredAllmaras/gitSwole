@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserStateFormViewController: UIViewController, SignUpProtocol {
+class UserStateFormViewController: UIViewController {
     
     // MARK: - Properties
 
@@ -63,14 +63,23 @@ class UserStateFormViewController: UIViewController, SignUpProtocol {
             profileErrorLabel.text = "Weight and Height must be integers"
             profileErrorLabel.isHidden = false
         } else {
-//            let username = usernameTextField.text!
-//            let goalWeight = Int(currentHeightTextField.text!)!
-//            let currentWeight = Int(currentWeightTextField.text!)!
+            let username = usernameTextField.text!
+            let goalWeight = Int(currentHeightTextField.text!)!
+            let currentHeight = Int(currentHeightTextField.text!)!
+            let currentWeight = Int(currentWeightTextField.text!)!
             
-//            let userState = UserState(username: username, currentMealPlan: StateManager.current.getDefaultMealPlan(), currentWeight: currentWeight, goalWeight: goalWeight)
-//            PersistenceManager.dataSource.createAndLoadUser(userState, self)
+            let user = User(username: username,
+                       currentHeight: currentHeight,
+                       currentWeight: currentWeight,
+                          goalWeight: goalWeight,
+                           mealPlans: DefaultUser.user.mealplans,
+                            workouts: DefaultUser.user.workouts)
+            
+            ServiceAPI.current.setUser(user, self)
         }
     }
+    
+    // MARK: - Validation
     
     private func validProfileInfo() -> Bool {
         let currentHeight = Int(currentHeightTextField.text!)
@@ -82,8 +91,12 @@ class UserStateFormViewController: UIViewController, SignUpProtocol {
         let username = usernameTextField.text
         return username != ""
     }
+
+}
+
+extension UserStateFormViewController: AuthDelegate {
     
-    // MARK: - SignUp Delegate
+    // MARK: - AuthDelegate
     
     func proceed() {
         present(MainTabBarController(), animated: true, completion: nil)
@@ -93,14 +106,4 @@ class UserStateFormViewController: UIViewController, SignUpProtocol {
         print(message)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -39,6 +39,10 @@ extension ServiceAPI {
         return stateManager.getUser()
     }
     
+    public func setUser(_ user: User, _ viewController: AuthDelegate) {
+        persistanceManager.setUser(user, stateManager, viewController)
+    }
+    
     // MARK: - Meal Plans
     
     public func getPopularMealPlans() -> [MealPlan] {
@@ -74,7 +78,7 @@ extension ServiceAPI {
     }
     
     public func setMyCurrentMealPlan(to index: Int) {
-        stateManager.setMyCurrentMeal(to: index)
+        stateManager.setMyCurrentMealPlan(to: index)
     }
     
     public func getMyCurrentMeal() -> Meal? {
@@ -97,6 +101,22 @@ extension ServiceAPI {
 // MARK: - Authentication Management
 
 extension ServiceAPI {
+    
+    public func signUpToPersistanceManager(_ email: String, _ password: String, _ viewController: AuthDelegate) {
+        persistanceManager.signUp(email, password, viewController)
+    }
+    
+    public func signInToPersistanceManager(_ email: String, _ password: String, _ viewController: AuthDelegate) {
+        persistanceManager.signIn(email, password, viewController)
+    }
+    
+    public func signOutOfPersistanceManager() {
+        persistanceManager.close()
+    }
+    
+    public func isSignedInToPersistanceManager() -> Bool {
+        return persistanceManager.isSignedIn()
+    }
     
     public func clearUser() {
         stateManager.clearUser()

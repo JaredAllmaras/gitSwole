@@ -35,6 +35,7 @@
 		C4C0485D1FC51BFC0061473A /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0485C1FC51BFC0061473A /* CheckBox.swift */; };
 		E12B34221FD0985C003FAB0F /* UserStateFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12B34211FD0985C003FAB0F /* UserStateFormViewController.swift */; };
 		E145A5981FDC74EF00B1ADC3 /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E145A5971FDC74EF00B1ADC3 /* ServiceAPI.swift */; };
+		E145A59E1FDCC8BC00B1ADC3 /* DefaultUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E145A59D1FDCC8BC00B1ADC3 /* DefaultUser.swift */; };
 		E14CD3AF1FC701EA00D89BA1 /* FirebaseConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = E14CD3AE1FC701EA00D89BA1 /* FirebaseConfig.json */; };
 		E14CD3B11FC72BCF00D89BA1 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CD3B01FC72BCF00D89BA1 /* Exercise.swift */; };
 		E14CD3B31FC7331100D89BA1 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CD3B21FC7331100D89BA1 /* StateManager.swift */; };
@@ -91,6 +92,7 @@
 		C4C0485C1FC51BFC0061473A /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		E12B34211FD0985C003FAB0F /* UserStateFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStateFormViewController.swift; sourceTree = "<group>"; };
 		E145A5971FDC74EF00B1ADC3 /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
+		E145A59D1FDCC8BC00B1ADC3 /* DefaultUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUser.swift; sourceTree = "<group>"; };
 		E14CD3AE1FC701EA00D89BA1 /* FirebaseConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FirebaseConfig.json; sourceTree = "<group>"; };
 		E14CD3B01FC72BCF00D89BA1 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		E14CD3B21FC7331100D89BA1 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				E17AAB1A1FC4D333005247C7 /* PersistanceManager.swift */,
 				E175C4851FC60A9F0089E72E /* AuthManager.swift */,
 				E145A5971FDC74EF00B1ADC3 /* ServiceAPI.swift */,
+				E145A59D1FDCC8BC00B1ADC3 /* DefaultUser.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				C4C0485D1FC51BFC0061473A /* CheckBox.swift in Sources */,
 				C4C048511FC4EA7A0061473A /* NutritionTableViewController.swift in Sources */,
 				C4142FE41FA94ED400F3173E /* WorkoutCell.swift in Sources */,
+				E145A59E1FDCC8BC00B1ADC3 /* DefaultUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

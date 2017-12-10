@@ -21,6 +21,48 @@ class PersistanceManager {
 
     init() {}
     
+    private func fetchUser(state: StateManager, user: FirebaseAuth.User, viewController: AuthDelegate?) {
+        print("Info: Fetching user with key: ...")
+        
+        userDBRef!.observe(.value) { (userSnapshot: DataSnapshot) in
+            state.setUser(User(user: user, snapshot: userSnapshot))
+            viewController?.proceed()
+        }
+    }
+    
+    func setUser(_ user: User, _ state: StateManager, _ viewController: AuthDelegate) {
+        print("Info: Creating user in Firebase..")
+
+        // generate new user in database
+        userDBRef = dbref?.child("users").childByAutoId()
+
+        // grab FIRAuthUserID from AuthService
+        let firAuthUserID = Auth.auth().currentUser!.uid
+        print("firAuthUserID: " + firAuthUserID)
+
+        // save key-value pair [firAuthUserID: FIRDatabaseAutoID] to local storage
+        let firDatabaseAutoID = userDBRef!.key
+        let defaults = UserDefaults.standard
+        defaults.set(firDatabaseAutoID, forKey: firAuthUserID)
+
+        // write user to database
+        userDBRef!.setValue(user.toMap())
+
+        // load store
+        fetchUser(state: state, user: Auth.auth().currentUser!, viewController: viewController)
+    }
+    
+    private func fetchDefaults(state: StateManager) {
+        print("Info: Fetching Defaults")
+        
+        dbref!.child("default-user").observe(.value) { (defaultUserSnapshot) in
+            state.setUser(User(user: nil, snapshot: defaultUserSnapshot))
+        }
+    }
+}
+
+extension PersistanceManager {
+    
     // MARK: - Open
     
     func open(manager state: StateManager) {
@@ -30,88 +72,59 @@ class PersistanceManager {
         Auth.auth().addStateDidChangeListener { (auth, firebaseUser) in
             
             let localUser = state.getUser()
-
+            
             // Case 1: User is not signed in (firebaseUser == nil && localUser == nil)
             // load defaults
-            if (firebaseUser == nil && localUser == nil) {
-                self.fetchDefaults(state: state)
+            if (firebaseUser == nil && localUser?.id == nil) {
+//                self.fetchDefaults(state: state)
+                state.setDefaultUser()
             }
-            // Case 2: User is signed in locally but not in firebase (firebaseUser == nil && localUser == A)
-            // load defaults
-            // set user to nil
-            else if firebaseUser == nil && localUser != nil {
-                state.setUser(nil)
-                self.fetchDefaults(state: state)
+                // Case 2: User is signed in locally but not in firebase (firebaseUser == nil && localUser == A)
+                // load defaults
+                // set user to nil
+            else if firebaseUser == nil && localUser?.id != nil {
+//                state.setUser(nil)
+                state.setDefaultUser()
+//                self.fetchDefaults(state: state)
             }
-            // Case 3: User is signed in on firebase but not locally (firebaseUser == A && localUser == nil)
-            //      Means that they just signed in or signed up
-            // load user from firebase database
-            else if firebaseUser != nil && localUser == nil {
-                self.userDBRef = self.dbref!.child("users/\(firebaseUser!.uid)")
-                if self.userDBRef != nil {
+                // Case 3: User is signed in on firebase but not locally (firebaseUser == A && localUser == nil)
+                //      Means that they just signed in or signed up
+                // load user from firebase database
+            else if firebaseUser != nil && localUser?.id == nil {
+                let defaults = UserDefaults.standard
+                let firDatabaseAutoID = defaults.string(forKey: Auth.auth().currentUser!.uid)
+                if let autoID = firDatabaseAutoID {
                     // if user exists in the database (user is signing in) fetch user
-                    self.fetchUser(state: state, user: firebaseUser!)
+                    self.userDBRef = self.dbref!.child("users").child(autoID)
+                    self.fetchUser(state: state, user: firebaseUser!, viewController: nil)
                 } else {
                     // user does not exist in the database (user is signing up) don't load anything
                     // The user will be loaded once he fills out the user form
                 }
             }
-            else if let user1 = firebaseUser, let user2 = localUser {
+            else if let user1 = firebaseUser, let user2ID = localUser?.id {
                 
                 // Case 4: (firebaseUser == A && localUser == B)
                 // load defaults
                 // signout of firebase
                 // set user to nil
-                if user1.uid != user2.id {
-                    self.fetchDefaults(state: state)
+                if user1.uid != user2ID {
+//                    self.fetchDefaults(state: state)
+                    state.setDefaultUser()
                     self.close()
-                    state.setUser(nil)
                 }
-                
+                    
                 // Case 5: (firebaseUser == A && localUser == A)
                 // load user from firebase
                 else {
-                    self.userDBRef = self.dbref!.child("users/\(user2.key)")
-                    self.fetchUser(state: state, user: user1)
+                    let defaults = UserDefaults.standard
+                    if let firDatabaseAutoID = defaults.string(forKey: user2ID) {
+                        self.userDBRef = self.dbref!.child("users/\(firDatabaseAutoID)")
+                        self.fetchUser(state: state, user: user1, viewController: nil)
+                    }
                 }
             }
         }
-    }
-    
-    private func fetchUser(state: StateManager, user: FirebaseAuth.User) {
-        print("Info: Fetching user with key: \(state.getUser()!.key)")
-        
-        userDBRef!.observe(.value) { (userSnapshot: DataSnapshot) in
-            state.setUser(User(user: user, snapshot: userSnapshot))
-        }
-    }
-    
-    private func fetchDefaults(state: StateManager) {
-        print("Info: Fetching Defaults")
-        
-        dbref!.child("default-meal-plans").observe(.value) { (defaultMealPlansSnapshot) in
-            self.populateMealPlans(snapshot: defaultMealPlansSnapshot, setter: state.setDefaultMealPlans)
-        }
-        
-        dbref!.child("default-workouts").observe(.value, with: { (defaultWorkoutsSnapshot) in
-            self.populateWorkouts(snapshot: defaultWorkoutsSnapshot, setter: state.setDefaultWorkouts)
-        })
-    }
-    
-    private func populateMealPlans(snapshot mealPlansSnapshot: DataSnapshot, setter: ([MealPlan]) -> ()) {
-        var mealPlans = [MealPlan]()
-        for mealPlanSnapshot in mealPlansSnapshot.children {
-            mealPlans.append(MealPlan(snapshot: mealPlanSnapshot as! DataSnapshot))
-        }
-        setter(mealPlans)
-    }
-    
-    private func populateWorkouts(snapshot workoutsSnapshot: DataSnapshot, setter: ([Workout]) -> ()) {
-        var workouts = [Workout]()
-        for workoutSnapshot in workoutsSnapshot.children {
-            workouts.append(Workout(snapshot: workoutSnapshot as! DataSnapshot))
-        }
-        setter(workouts)
     }
     
     // MARK: - Close
@@ -119,57 +132,57 @@ class PersistanceManager {
     func close() {
         do {
             try Auth.auth().signOut()
-            //            ServiceAPI.current.unloadUserState()
-            //            PersistenceManager.dataSource.unloadUserState()
         } catch let error as NSError {
             print(error.localizedDescription)
         }
     }
-}
-
-extension PersistanceManager {
     
+    // MARK: - Authentication
+    
+    func signUp(_ email:String, _ password:String, _ viewController: AuthDelegate) {
+        
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+            if error == nil {
+                viewController.proceed()
+            } else {
+                print(error!.localizedDescription)
+                var errorMessage:String
+                switch (error!.localizedDescription) {
+                case "The email address is already in use by another account.":
+                    errorMessage = "This email address is already in use"
+                case "The password must be 6 characters long or more.":
+                    errorMessage = "Password must be > 6 characters"
+                default:
+                    errorMessage = "Oops! Something went wrong."
+                }
+                
+                viewController.error(errorMessage)
+            }
+        })
+    }
+    
+    func signIn(_ email: String, _ password: String, _ viewController: AuthDelegate) {
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+            if error == nil {
+                viewController.proceed()
+            } else {
+                print(error!.localizedDescription)
+                var errorString:String
+                switch error!.localizedDescription {
+                case "The password is invalid or the user does not have a password.":
+                    errorString = "Invalid password"
+                default:
+                    errorString = "Oops! Something went wrong."
+                }
+                viewController.error(errorString)
+            }
+        })
+    }
+    
+    func isSignedIn() -> Bool {
+        return Auth.auth().currentUser != nil
+    }
 }
-
-//    func signUp(_ email:String, _ password:String, _ viewController:SignUpProtocol) {
-//
-//        auth?.createUser(withEmail: email, password: password, completion: { (user, error) in
-//            if error == nil {
-//                viewController.proceed()
-//            } else {
-//                print(error!.localizedDescription)
-//                var errorMessage:String
-//                switch (error!.localizedDescription) {
-//                case "The email address is already in use by another account.":
-//                    errorMessage = "This email address is already in use"
-//                case "The password must be 6 characters long or more.":
-//                    errorMessage = "Password must be > 6 characters"
-//                default:
-//                    errorMessage = "Oops! Something went wrong."
-//                }
-//
-//                viewController.error(errorMessage)
-//            }
-//        })
-//    }
-//
-//    func signIn(_ email:String, _ password:String, _ viewController:SignUpProtocol) {
-//        auth?.signIn(withEmail: email, password: password, completion: { (user, error) in
-//            if error == nil {
-//                PersistenceManager.dataSource.loadUser(user!.uid, viewController)
-//            } else {
-//                print(error!.localizedDescription)
-//                var errorString:String
-//                switch error!.localizedDescription {
-//                case "The password is invalid or the user does not have a password.":
-//                    errorString = "Invalid password"
-//                default:
-//                    errorString = "Oops! Something went wrong."
-//                }
-//                viewController.error(errorString)
-//            }
-//        })
-//    }
 
 //
 //    func createAndLoadUser(_ userState:UserState, _ viewController:SignUpProtocol) {

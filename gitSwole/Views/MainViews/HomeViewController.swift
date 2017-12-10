@@ -97,17 +97,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func enableDisableButtons() {
-//        if ServiceAPI.current.signedIn() {
-//            signUpButton.isEnabled = false
-//            loginButton.isEnabled = false
-//            logoutButton.isEnabled = true
-//        } else {
-//            signUpButton.isEnabled = true
-//            loginButton.isEnabled = true
-//            logoutButton.isEnabled = false
-//        }
+        if ServiceAPI.current.isSignedInToPersistanceManager() {
+            signUpButton.isEnabled = false
+            loginButton.isEnabled = false
+            logoutButton.isEnabled = true
+        } else {
+            signUpButton.isEnabled = true
+            loginButton.isEnabled = true
+            logoutButton.isEnabled = false
+        }
     }
-    
     
     @objc func updateAfterFirstLogin() {
         let userDefaults = UserDefaults.standard
@@ -157,6 +156,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     @IBAction func logout(_ sender: Any) {
 //        StateManager.current.signOut()
+        ServiceAPI.current.signOutOfPersistanceManager()
         enableDisableButtons()
     }
     

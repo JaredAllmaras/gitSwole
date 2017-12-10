@@ -19,7 +19,7 @@ struct User {
     
     // MARK: - Fields
 
-    let id: String
+    let id: String?
     var profileImage: UIImage? // TODO: Complete this
     let username: String
     let currentHeight: Int
@@ -28,6 +28,9 @@ struct User {
     
     var mealplans: [MealPlan]
     var workouts: [Workout]
+    
+    var currentMealPlanIndex: Int
+    var currentMealIndex: Int
     
     
     // MARK: - Constructors
@@ -44,16 +47,45 @@ struct User {
         
         mealplans = []
         workouts = []
+        
+        currentMealPlanIndex = 0
+        currentMealIndex = 0
+    }
+    
+    init(username: String,
+         currentHeight: Int,
+         currentWeight: Int,
+         goalWeight: Int,
+         mealPlans: [MealPlan] = [],
+         workouts: [Workout] = [],
+         currentMealPlanIndex: Int = 0,
+         currentMealIndex: Int = 0,
+         key: String = "")
+    {
+        self.key = key
+        ref = nil
+        id = nil
+        
+        self.username = username
+        self.currentHeight = currentHeight
+        self.currentWeight = currentWeight
+        self.goalWeight = goalWeight
+        
+        self.mealplans = mealPlans
+        self.workouts = workouts
+        
+        self.currentMealPlanIndex = currentMealPlanIndex
+        self.currentMealIndex = currentMealIndex
     }
     
     // loading user from auth and database
-    init(user: FirebaseAuth.User, snapshot:DataSnapshot) {
+    init(user: FirebaseAuth.User?, snapshot: DataSnapshot) {
         key = snapshot.key
         ref = snapshot.ref
         
         let snapshotValue = snapshot.value as! [String:Any]
         
-        id = user.uid
+        id = user?.uid
         username = snapshotValue["username"] as! String
         currentHeight = snapshotValue["current-height"] as! Int
         currentWeight = snapshotValue["current-weight"] as! Int
@@ -68,6 +100,10 @@ struct User {
         for workoutSnapshot in snapshot.childSnapshot(forPath: "workouts").children {
             workouts.append(Workout(snapshot: workoutSnapshot as! DataSnapshot))
         }
+        
+//        currentMealPlanIndex = snapshotValue["current-meal-plan-index"] as! Int
+        currentMealPlanIndex = 0
+        currentMealIndex = 0
     }
     
     // MARK - Map
@@ -91,7 +127,9 @@ struct User {
             "current-weight": currentWeight,
             "goal-weight": goalWeight,
             "meal-plans": mealplanMaps,
-            "workouts": workoutMaps
+            "workouts": workoutMaps,
+            "current-meal-plan-index": currentMealPlanIndex,
+            "current-meal-index": currentMealIndex
         ]
     }
 }

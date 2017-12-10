@@ -38,7 +38,7 @@ struct MealPlan {
         image = nil
     }
     
-    init(name:String, breakfast:Meal, lunch:Meal, dinner:Meal, key:String = "") {
+    init(name:String, breakfast: Meal, lunch: Meal, dinner: Meal, key:String = "") {
         self.key = key
         self.ref = nil
 
