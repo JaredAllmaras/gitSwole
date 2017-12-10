@@ -34,7 +34,51 @@ class CalorieCalculatorVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    // This function calculates expected caloric need
+    // Not sure if the error checking forumals will work, I
+    // know swift is particular about variable types
+    @IBAction func calculateCalories(_ sender: Any) {
+        
+        let ageInput = Int(self.age.text!)
+        let heightInput = Int(self.height.text!)
+        let weightInput = Int(self.weight.text!)
+        let activityLevelInput = Int(self.activityLevel.text!)
+        
+        if (ageInput != nil && heightInput != nil && weightInput != nil && activityLevelInput != nil) {
+        
+        var caloricIntake:Float = 66.473
+        
+        // adjust for sex differences
+        if self.sex.selectedSegmentIndex == 0 {
+            caloricIntake += 13.7516 / 2.20462 * Float(weightInput!)
+            caloricIntake += 5.0033 * 2.54 * Float(heightInput!)
+            caloricIntake -= 6.7550 * Float(ageInput!)
+        } else {
+            caloricIntake = 655.0955
+            caloricIntake += 9.5634 / 2.20462 * Float(weightInput!)
+            caloricIntake += 1.8496 * 2.54 * Float(heightInput!)
+            caloricIntake -= 4.33 * Float(ageInput!)
+        }
+        // adjust for activity level
+        let activityLevel = Float(activityLevelInput!)
+        if activityLevel > 20 {
+            caloricIntake *= 2.0
+        } else {
+            caloricIntake *= (1 + (0.05 * activityLevel))
+        }
+        // adjust for goal
+        let caloricGoal = self.goal.selectedSegmentIndex
+        if caloricGoal == 0 {
+            caloricIntake += 500.0
+        } else if caloricGoal == 2{
+            caloricIntake -= 500.0
+        }
+            self.intake.text = "\(String(describing: caloricIntake)) cal."
+        
+        // Save caloric intake to database here
+    }
+    }
+    
     /*
     // MARK: - Navigation
 
