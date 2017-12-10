@@ -107,7 +107,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             logoutButton.isEnabled = false
         }
     }
-    
+
+
     @objc func updateAfterFirstLogin() {
         let userDefaults = UserDefaults.standard
         if let sessionObj:AnyObject = userDefaults.object(forKey: "SpotifySession") as AnyObject? {
@@ -145,7 +146,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
         })
     }
-    
+ 
+ 
     @IBAction func loginBtnPressed(_ sender: Any) {
         if UIApplication.shared.openURL(loginUrl!) {
             if auth.canHandle(auth.redirectURL) {
