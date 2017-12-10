@@ -4,15 +4,17 @@ Implementation Contributions:
 Nathan Mosley - 33%
 	meal plan screens
 	workout screens
-	main screen
-        progress screen
+	progress screen
         workout timer and tracker ability
+        create workout screen
+        calorie calculator screen
         
 
 Jared Allmaras - 33%
 	tab bar controller setup
 	icons
        spotify authentication
+       created music tab
 
 
 Nick Amaya - 33%
@@ -20,6 +22,7 @@ Nick Amaya - 33%
 	signup screen
 	implemented cocoa pods / firebase
        changed database to allow storage of user variables (track progress)
+       aesthetic design of app
 
 -----------------------------
 Grading Level:
@@ -29,7 +32,9 @@ Same grade for all members
 -----------------------------
 Differences:
 -----------------------------
-Spotify authentication and framework works, however we had trouble implementing the Spotify button that links opens Spotify directly, will fix for final.  For the beta, much of the work was already completed. Design and aesthetics were not prioritized for this build.
+The settings page was not completed, as we prioritized functionality and quality of consumer experience. The settings page was originally intended to be minimal, as the user experience is centered around the simple use of various functionality within the app, not profile customization as a settings page would offer.
+
+Note: We intend to continue developing this app and publish it on the App Store within the next semester, in which we will of course include a settings/ profile page.
 
 -----------------------------
 Special Instructions:
