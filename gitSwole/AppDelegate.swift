@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var tabBarController: MainTabBarController?
-    var auth = SPTAuth()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -25,9 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         ServiceAPI.current.configure()
         
-        //configures spotify
-        auth.redirectURL = URL(string: "gitswole://returnAfterLogin")
-        auth.sessionUserDefaultsKey = "current session"
         
         // Set window of Application
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -112,30 +108,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-    
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        
-        // check if app can handle redirect URL
-        if auth.canHandle(auth.redirectURL) {
-            //handles callback
-            auth.handleAuthCallback(withTriggeredAuthURL: url, callback: {
-                (error, session) in
-                
-                if error != nil {
-                    print("Error!")
-                }
-                // add session to User Defaults
-                let userDefaults = UserDefaults.standard
-                let sessionData = NSKeyedArchiver.archivedData(withRootObject: session!)
-                userDefaults.set(sessionData, forKey: "Spotify Session")
-                userDefaults.synchronize()
-                
-                //tell notification center login is successful
-                NotificationCenter.default.post(name: Notification.Name(rawValue: "loginSuccessfull"), object: nil)
-            })
-            return true
-        }
-        return false
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return LoginManager.shared.handled(url: url)
     }
 
 }
+
