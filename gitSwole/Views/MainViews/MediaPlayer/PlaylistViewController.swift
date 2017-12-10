@@ -77,19 +77,21 @@ class PlaylistViewController: UIViewController {
     }
     
     private func configurePlayerView() {
+        
+        /*
         playerView = UIView()
         playerView.backgroundColor = UIColor.white.withAlphaComponent(0.3)
         playerView.translatesAutoresizingMaskIntoConstraints = false
-        
+        */
         
         //playerButton = UIButton()
-        playerButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
-        playerButton.tintColor = .white
+        playerButton.setImage(#imageLiteral(resourceName: "smallPlay"), for: .normal)
+        playerButton.tintColor = .black
         playerButton.translatesAutoresizingMaskIntoConstraints = false
         playerButton.addTarget(self, action: #selector(playerButtonAction), for: .touchUpInside)
         
         songLabel.text = "No song loaded"
-        songLabel.textColor = .white
+        songLabel.textColor = .black
         songLabel.translatesAutoresizingMaskIntoConstraints = false
         songLabel.numberOfLines = 0
         
@@ -104,41 +106,39 @@ class PlaylistViewController: UIViewController {
         playerView.addSubview(infoLabel)
         playerView.addSubview(playerButton)
         playerView.addSubview(progressSlider)
-        
-        
+        */
+        /*
         playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         playerView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
         playerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        
+ 
         playerButton.leadingAnchor.constraint(equalTo: playerView.leadingAnchor, constant: 16).isActive = true
         playerButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
         playerButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
         playerButton.centerYAnchor.constraint(equalTo: playerView.centerYAnchor).isActive = true
-        
-        infoLabel.leadingAnchor.constraint(equalTo: playerButton.trailingAnchor, constant: 20).isActive = true
-        infoLabel.trailingAnchor.constraint(equalTo: playerView.trailingAnchor, constant: -16).isActive = true
-        infoLabel.centerYAnchor.constraint(equalTo: playerView.centerYAnchor, constant: -15).isActive = true
         
         progressSlider.leadingAnchor.constraint(equalTo: infoLabel.leadingAnchor).isActive = true
         progressSlider.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 5).isActive = true
         progressSlider.trailingAnchor.constraint(equalTo: playerView.trailingAnchor, constant: -16).isActive = true
         */
         
+        
     }
     
     private func configureTableView() {
-        tableView = UITableView()
+        //tableView = UITableView()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .clear
-        view.addSubview(tableView)
-        
+        //view.addSubview(tableView)
+        /*
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         tableView.topAnchor.constraint(equalTo: playerView.bottomAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
+        */
     }
     
     @objc func progressSliderDidStartDrag(sender: UISlider) {
@@ -189,13 +189,13 @@ extension PlaylistViewController: UITableViewDataSource, UITableViewDelegate {
         let track = tracks![indexPath.row]
         cell.textLabel!.text = track.name
         cell.backgroundColor = .clear
-        cell.textLabel?.textColor = .white
+        cell.textLabel?.textColor = .gray
         return cell
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        cell?.textLabel?.textColor = .white
+        cell?.textLabel?.textColor = .gray
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

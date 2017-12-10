@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import Foundation
+import SafariServices
 
 class SpotifyLoginViewController: UIViewController {
     
     @IBOutlet var loginButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /*
+        if LoginManager.shared.isLogged {
+            LoginManager.shared.preparePlayer()
+            let playlistVC = storyboard?.instantiateViewController(withIdentifier: "PlaylistVC") as? PlaylistViewController
+            self.present(playlistVC!, animated: false)
+        }
+         */
         configureView()
     }
     
@@ -52,9 +62,11 @@ class SpotifyLoginViewController: UIViewController {
          titleLabel.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -10).isActive = true
      }
     */
-     @IBAction func loginAction(_ sender: Any) {
-        LoginManager.shared.login()
-     }
+    @IBAction func loginAction(_ sender: Any) {
+            let safariVC = SFSafariViewController(url: LoginManager.shared.auth.spotifyWebAuthenticationURL())
+            self.present(safariVC, animated: true, completion: nil)
+    }
+
      // MARK: Login handling
     
     @IBAction func cancelLogin(_ sender: Any) {
