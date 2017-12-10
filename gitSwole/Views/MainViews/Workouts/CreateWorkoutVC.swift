@@ -66,6 +66,13 @@ class CreateWorkoutVC: UIViewController {
             numExercisesDisplayed += 1
         } else {
             print("No more exercises can be added!")
+            let alert = UIAlertController(title: "Error", message: "Can't add anymore exercises!", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                alert.dismiss(animated: true, completion: nil)
+            })
+            
+            alert.addAction(cancelAction)
+            present(alert, animated: true, completion: nil)
         }
     }
     
