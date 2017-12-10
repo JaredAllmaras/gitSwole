@@ -89,11 +89,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         enableDisableButtons()
-//        if AuthService.user.signedIn() {
-//            titleLabel.text = "Welcome, " + Store.store.getUsername()
-//        } else {
-//            titleLabel.text = "gitSwole"
-//        }
+        if ServiceAPI.current.isSignedInToPersistanceManager(), let username = ServiceAPI.current.getUser()?.username  {
+            titleLabel.text = "Welcome, " + username
+        } else {
+            titleLabel.text = "gitSwole"
+        }
     }
     
     func enableDisableButtons() {

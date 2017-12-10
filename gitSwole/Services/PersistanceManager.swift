@@ -164,6 +164,7 @@ extension PersistanceManager {
     func signIn(_ email: String, _ password: String, _ viewController: AuthDelegate) {
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
+                print(user?.displayName)
                 viewController.proceed()
             } else {
                 print(error!.localizedDescription)
