@@ -22,13 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // initialize Firebase
         FirebaseApp.configure()
         
-        // initialize FirebaseAuth and DataSources
-        DatabaseService.dataSource.configure()
-        DatabaseService.dataSource.loadAppState()
-        AuthService.user.setAuthListener()
-        LocalDatabaseService.dataSource.configure()
-        
-//        while(DatabaseService.dataSource.loading()) {}
+        ServiceAPI.current.configure()
         
         
         // Set window of Application
@@ -120,5 +114,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-    
 

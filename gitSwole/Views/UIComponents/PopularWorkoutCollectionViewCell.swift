@@ -11,4 +11,5 @@ import UIKit
 class PopularWorkoutCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var workoutImage: UIImageView!
+    
 }

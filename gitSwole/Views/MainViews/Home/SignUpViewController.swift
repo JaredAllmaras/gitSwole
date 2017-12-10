@@ -9,12 +9,14 @@
 import UIKit
 import FirebaseAuth
 
-protocol SignUpProtocol {
+protocol AuthDelegate {
     func proceed() -> Void
     func error(_ message:String) -> Void
 }
 
-class SignUpViewController: UIViewController, SignUpProtocol {
+class SignUpViewController: UIViewController {
+    
+    // MARK: - Properties
     
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -23,6 +25,8 @@ class SignUpViewController: UIViewController, SignUpProtocol {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    // MARK: - UIViewController Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,19 +54,27 @@ class SignUpViewController: UIViewController, SignUpProtocol {
         
     }
     
-    // Validate and add user to firebase user auth object
+    // MARK: - Actions
+    
     @IBAction func signUp(_ sender: Any) {
         
         let email = emailTextField.text!
         let password = passwordTextField.text!
 
         if validEmail(email) && validPassword(password) {
-            AuthService.user.signUp(email, password, self)
+            ServiceAPI.current.signUpToPersistanceManager(email, password, self)
         } else {
             error("Invalid email or password")
             errorLabel.isHidden = false
         }
     }
+    
+    
+    @IBAction func cancel(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - Validation
     
     private func validEmail(_ email: String) -> Bool {
         let regEx = "[A-Z0-9a-z._%+]+@[A-Za-z0-9.]+\\.[A-Za-z]{2,4}"
@@ -74,21 +86,27 @@ class SignUpViewController: UIViewController, SignUpProtocol {
         return password != ""
     }
     
-    @IBAction func cancel(_ sender: Any) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
+}
+
+extension SignUpViewController: AuthDelegate {
+    
+    // MARK: - AuthDelegate
     
     func proceed() {
         let storyboard = UIStoryboard(name: "NathanStoryboard", bundle: nil)
         let userStateFormViewController = storyboard.instantiateViewController(withIdentifier: "UserStateFormViewController") as! UserStateFormViewController
         present(userStateFormViewController, animated: true, completion: nil)
-//        _ = navigationController?.popViewController(animated: true)
     }
     
     func error(_ message: String) {
         errorLabel.text = message
         errorLabel.isHidden = false
     }
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+    
+    // MARK: - UITextFieldDelegate
     
     // This method is called when the user touches the Return key on the
     // keyboard. The 'textField' passed in is a pointer to the textField
@@ -111,15 +129,4 @@ class SignUpViewController: UIViewController, SignUpProtocol {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

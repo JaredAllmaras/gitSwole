@@ -33,6 +33,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleLabel.text = "gitSwole"
+        
         let delegate = PopularMealPlansDelegate()
         popularMealPlansCollectionView.delegate = delegate
         popularMealPlansCollectionView.dataSource = delegate
@@ -87,15 +89,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         enableDisableButtons()
-        if AuthService.user.signedIn() {
-            titleLabel.text = "Welcome, " + Store.store.getUsername()
-        } else {
-            titleLabel.text = "gitSwole"
-        }
+//        if AuthService.user.signedIn() {
+//            titleLabel.text = "Welcome, " + Store.store.getUsername()
+//        } else {
+//            titleLabel.text = "gitSwole"
+//        }
     }
     
     func enableDisableButtons() {
-        if AuthService.user.signedIn() {
+        if ServiceAPI.current.isSignedInToPersistanceManager() {
             signUpButton.isEnabled = false
             loginButton.isEnabled = false
             logoutButton.isEnabled = true
@@ -105,7 +107,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             logoutButton.isEnabled = false
         }
     }
-    
     
     @objc func updateAfterFirstLogin() {
         let userDefaults = UserDefaults.standard
@@ -126,10 +127,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             try! player!.start(withClientId: auth.clientID)
             self.player!.login(withAccessToken: authSession.accessToken)
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     func setup() {
@@ -158,9 +155,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     @IBAction func logout(_ sender: Any) {
-        AuthService.user.signOut()
+//        StateManager.current.signOut()
+        ServiceAPI.current.signOutOfPersistanceManager()
         enableDisableButtons()
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
