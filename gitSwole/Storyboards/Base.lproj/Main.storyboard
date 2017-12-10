@@ -19,15 +19,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Tj6-XP-bfM"/>
                     </view>
+                    <connections>
+                        <segue destination="4Ip-yp-x0R" kind="show" id="iiS-02-A1R"/>
+                        <segue destination="4Vt-ix-gs5" kind="show" id="Xv3-nS-ef8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKJ-S7-Dgk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2666" y="-36"/>
         </scene>
-        <!--View Controller-->
+        <!--Spotify Login View Controller-->
         <scene sceneID="Iji-Nh-1xz">
             <objects>
-                <viewController storyboardIdentifier="test" id="4Ip-yp-x0R" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SpotifyLoginVC" id="4Ip-yp-x0R" customClass="SpotifyLoginViewController" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DH3-kP-cf8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,11 +40,18 @@
                                 <rect key="frame" x="108" y="199" width="158" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login to Spotify"/>
+                                <connections>
+                                    <action selector="loginAction:" destination="4Ip-yp-x0R" eventType="touchUpInside" id="JXz-fR-Kwo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VJZ-I0-cIO"/>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="oXU-Ec-SHJ" id="3j4-tB-ZhE"/>
+                        <segue destination="4Vt-ix-gs5" kind="show" id="khH-IN-fsl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhk-ai-SsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,39 +65,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cFB-IN-VzB">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cFB-IN-VzB">
                                 <rect key="frame" x="16" y="20" width="343" height="219"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4OE-ms-hka">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4OE-ms-hka">
                                         <rect key="frame" x="8" y="0.0" width="153" height="124"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivi-MZ-MT1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivi-MZ-MT1">
                                         <rect key="frame" x="169" y="0.0" width="133" height="47"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgO-2O-G0g">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgO-2O-G0g">
                                         <rect key="frame" x="169" y="55" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71y-9V-3oN">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71y-9V-3oN">
                                         <rect key="frame" x="144" y="176" width="54" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Play/Pause" image="play"/>
                                     </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VO8-Wj-NY3">
+                                    <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VO8-Wj-NY3">
                                         <rect key="frame" x="8" y="132" width="337" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="4OE-ms-hka" firstAttribute="top" secondItem="cFB-IN-VzB" secondAttribute="top" id="0sr-v3-67a"/>
+                                    <constraint firstItem="4OE-ms-hka" firstAttribute="leading" secondItem="cFB-IN-VzB" secondAttribute="leading" constant="8" id="7hw-l7-N6h"/>
+                                    <constraint firstItem="ivi-MZ-MT1" firstAttribute="top" secondItem="cFB-IN-VzB" secondAttribute="top" id="BnU-1z-ASs"/>
+                                    <constraint firstItem="71y-9V-3oN" firstAttribute="top" secondItem="VO8-Wj-NY3" secondAttribute="bottom" constant="15" id="Cmy-YF-03K"/>
+                                    <constraint firstItem="ivi-MZ-MT1" firstAttribute="leading" secondItem="4OE-ms-hka" secondAttribute="trailing" constant="8" id="RcE-Ty-mvf"/>
+                                    <constraint firstItem="AgO-2O-G0g" firstAttribute="leading" secondItem="4OE-ms-hka" secondAttribute="trailing" constant="8" id="ZhR-so-RXE"/>
+                                    <constraint firstItem="71y-9V-3oN" firstAttribute="leading" secondItem="cFB-IN-VzB" secondAttribute="leading" constant="144" id="a6I-jB-r34"/>
+                                    <constraint firstItem="VO8-Wj-NY3" firstAttribute="leading" secondItem="cFB-IN-VzB" secondAttribute="leading" constant="10" id="cwS-4s-dsl"/>
+                                    <constraint firstItem="VO8-Wj-NY3" firstAttribute="top" secondItem="4OE-ms-hka" secondAttribute="bottom" constant="8" id="mai-hm-B1A"/>
+                                    <constraint firstItem="AgO-2O-G0g" firstAttribute="top" secondItem="ivi-MZ-MT1" secondAttribute="bottom" constant="8" id="mdC-Hj-e0w"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MLY-td-QTl">
                                 <rect key="frame" x="16" y="247" width="343" height="400"/>
@@ -119,6 +136,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cmh-qJ-d42"/>
                     </view>
+                    <navigationItem key="navigationItem" id="xpv-PO-zlm"/>
                     <connections>
                         <outlet property="artistLabel" destination="AgO-2O-G0g" id="fdb-dI-Lmb"/>
                         <outlet property="playerButton" destination="71y-9V-3oN" id="eO5-LV-mNO"/>
@@ -130,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="klJ-9O-hWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-967" y="-36"/>
+            <point key="canvasLocation" x="-2244" y="742"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="yLo-ZY-blF">
@@ -160,48 +178,11 @@
             </objects>
             <point key="canvasLocation" x="-92" y="76.911544227886068"/>
         </scene>
-        <!--Spotify Login View Controller-->
-        <scene sceneID="vLz-Dh-NO6">
-            <objects>
-                <viewController storyboardIdentifier="SpotifyLoginVC" id="NrR-Np-zdT" customClass="SpotifyLoginViewController" customModule="gitSwole" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xEo-7F-Kbb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tf9-c7-cH6">
-                                <rect key="frame" x="61" y="490" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSc-yD-fOW">
-                                        <rect key="frame" x="33" y="25" width="175" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Login to Spotify"/>
-                                        <connections>
-                                            <action selector="loginAction:" destination="NrR-Np-zdT" eventType="touchUpInside" id="kFE-76-ocz"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeV-4G-gGP">
-                                        <rect key="frame" x="67" y="73" width="107" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Cancel"/>
-                                        <connections>
-                                            <action selector="cancelLogin:" destination="NrR-Np-zdT" eventType="touchUpInside" id="ODn-Ti-eHT"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="12S-o3-veo"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uzo-gS-7QO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="781.60000000000002" y="76.911544227886068"/>
-        </scene>
     </scenes>
     <resources>
         <image name="play" width="128" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="khH-IN-fsl"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -69,12 +69,12 @@ class MainTabBarController: UITabBarController {
         //Wrap view controllers in their own nav controllers
         let WorkoutsNav = UINavigationController(rootViewController: WorkoutsTVC!)
         let MealPlanNav = UINavigationController(rootViewController: MealPlanVC!)
-//        let DummyNav = UINavigationController(rootViewController: DummyVC!)
+        let DummyNav = UINavigationController(rootViewController: DummyVC!)
         let ProgressNav = UINavigationController(rootViewController: ProgressVC!)
         let HomeNav = UINavigationController(rootViewController: HomeVC!)
         
         //Creates an array of controllers that make up the tab bar items.
-        let controllers:[UIViewController] = [HomeNav, WorkoutsNav, MealPlanNav, ProgressNav, DummyVC!]//, DummyNav]
+        let controllers:[UIViewController] = [HomeNav, WorkoutsNav, MealPlanNav, ProgressNav, DummyNav]
         self.viewControllers = controllers
     }
 
