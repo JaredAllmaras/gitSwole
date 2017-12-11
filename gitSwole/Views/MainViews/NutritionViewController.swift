@@ -19,16 +19,30 @@ class NutritionViewController: UIViewController {
     @IBOutlet weak var FirstMealItem: UILabel!
     @IBOutlet weak var SecondMealItem: UILabel!
     @IBOutlet weak var ThirdMealItem: UILabel!
+    @IBOutlet weak var firstCourseServingSizeLabel: UILabel!
+    @IBOutlet weak var secondCourseServingSizeLabel: UILabel!
+    @IBOutlet weak var thirdCourseServingSizeLabel: UILabel!
     
     @IBOutlet weak var CaloricGoal: UILabel!
     @IBOutlet weak var CaloriesEaten: UILabel!    
     @IBOutlet weak var CaloriesRemaining: UILabel!
+    
+    @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var segment: UISegmentedControl!
     
     // MARK: - UIViewController Lifecycle
     
     // TODO: Decide whether to lazy load values from firebase or not
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleView.backgroundColor = Config.primaryLightColor
+        titleView.layer.cornerRadius = 15
+        titleLabel.textColor = Config.primaryTextColor
+        
+        segment.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : Config.secondaryTextColor], for: .selected)
         
         self.view.backgroundColor = Config.backgroundColor
         self.currentMealTabBar.backgroundColor = Config.backgroundColor
@@ -52,10 +66,15 @@ class NutritionViewController: UIViewController {
     }
     
     private func updateLabels() {
-        let currentMeal = ServiceAPI.current.getMyCurrentMeal()
-        FirstMealItem.text = currentMeal!.firstCourse.name
-        SecondMealItem.text = currentMeal!.secondCourse.name
-        ThirdMealItem.text = currentMeal!.thirdCourse.name
+        let currentMealPlan = ServiceAPI.current.getMyCurrentMealPlan()
+        let currentMeal = ServiceAPI.current.getMyCurrentMeal()!
+        NextMeal.text = currentMealPlan.name
+        FirstMealItem.text = currentMeal.firstCourse.name
+        SecondMealItem.text = currentMeal.secondCourse.name
+        ThirdMealItem.text = currentMeal.thirdCourse.name
+        firstCourseServingSizeLabel.text = currentMeal.firstCourse.servingSize
+        secondCourseServingSizeLabel.text = currentMeal.secondCourse.servingSize
+        thirdCourseServingSizeLabel.text = currentMeal.thirdCourse.servingSize
         
         //        self.NextMeal.text = "Next Meal: Breakfast - \(String(describing: (self.MealPlans?[currentMealPlan].Meals?[0].MealCalories)!)) calories"
         //        self.NextMeal.text = "Next Meal: \(String(describing: sender.titleForSegment(at: sender.selectedSegmentIndex)!)) - \(String(describing: (self.currentMeal?.MealCalories)!)) calories"

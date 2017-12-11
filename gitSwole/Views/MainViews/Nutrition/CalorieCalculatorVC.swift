@@ -19,10 +19,15 @@ class CalorieCalculatorVC: UIViewController {
     @IBOutlet weak var goal: UISegmentedControl!
     @IBOutlet weak var activityLevel: UITextField!
     @IBOutlet weak var calculateButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleView.backgroundColor = Config.primaryLightColor
+        titleView.layer.cornerRadius = 15
+        titleLabel.textColor = Config.primaryTextColor
         self.sex.tintColor = Config.buttonBackgroundColor
         self.sex.backgroundColor = Config.backgroundColor
         self.goal.tintColor = Config.buttonBackgroundColor

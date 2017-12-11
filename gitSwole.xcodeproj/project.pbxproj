@@ -43,6 +43,7 @@
 		E12B34221FD0985C003FAB0F /* UserStateFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12B34211FD0985C003FAB0F /* UserStateFormViewController.swift */; };
 		E145A5981FDC74EF00B1ADC3 /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E145A5971FDC74EF00B1ADC3 /* ServiceAPI.swift */; };
 		E145A59E1FDCC8BC00B1ADC3 /* DefaultUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E145A59D1FDCC8BC00B1ADC3 /* DefaultUser.swift */; };
+		E145A5A91FDDE29200B1ADC3 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E145A5A81FDDE29100B1ADC3 /* TitleView.swift */; };
 		E14CD3AF1FC701EA00D89BA1 /* FirebaseConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = E14CD3AE1FC701EA00D89BA1 /* FirebaseConfig.json */; };
 		E14CD3B11FC72BCF00D89BA1 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CD3B01FC72BCF00D89BA1 /* Exercise.swift */; };
 		E14CD3B31FC7331100D89BA1 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CD3B21FC7331100D89BA1 /* StateManager.swift */; };
@@ -106,6 +107,7 @@
 		E12B34211FD0985C003FAB0F /* UserStateFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStateFormViewController.swift; sourceTree = "<group>"; };
 		E145A5971FDC74EF00B1ADC3 /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
 		E145A59D1FDCC8BC00B1ADC3 /* DefaultUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUser.swift; sourceTree = "<group>"; };
+		E145A5A81FDDE29100B1ADC3 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		E14CD3AE1FC701EA00D89BA1 /* FirebaseConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FirebaseConfig.json; sourceTree = "<group>"; };
 		E14CD3B01FC72BCF00D89BA1 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		E14CD3B21FC7331100D89BA1 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				E15FEE821FD06F6700523AD2 /* PopularWorkoutCollectionViewCell.swift */,
 				E15FEE841FD074B300523AD2 /* PopularMealPlanCollectionViewCell.swift */,
 				E15FEE861FD0757000523AD2 /* PopularMealPlansDelegate.swift */,
+				E145A5A81FDDE29100B1ADC3 /* TitleView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				E17AAB1B1FC4D333005247C7 /* PersistanceManager.swift in Sources */,
 				8CDA501E1FA94CFD00CED50D /* SettingsViewController.swift in Sources */,
 				C4142FE61FA94ED400F3173E /* WorkoutDetailViewController.swift in Sources */,
+				E145A5A91FDDE29200B1ADC3 /* TitleView.swift in Sources */,
 				E145A5981FDC74EF00B1ADC3 /* ServiceAPI.swift in Sources */,
 				8C244D9D1FD0CD740002865D /* MediaPlayer.swift in Sources */,
 				E15FEE7B1FCF517600523AD2 /* AppState.swift in Sources */,
@@ -498,7 +502,6 @@
 				8CD4C3CA1FDB58EF00D5A564 /* DummyViewController.swift in Sources */,
 				E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */,
 				8C244DA71FD0DD9B0002865D /* UIColor.swift in Sources */,
-				E15FEE791FCF3CD500523AD2 /* FirebaseMappingService.swift in Sources */,
 				C4647AD21FDB61E40050C3FE /* CreateWorkoutVC.swift in Sources */,
 				C4C0485B1FC4F9E60061473A /* NutritionDetailViewController.swift in Sources */,
 				C4142FEB1FA959D600F3173E /* SignUpViewController.swift in Sources */,

@@ -10,6 +10,8 @@ import UIKit
 
 class ProgressViewController: UIViewController {
     
+    // MARK: - Properties
+    
     @IBOutlet weak var updateGoalButton: UIButton!
     @IBOutlet weak var goalWeight: UITextField!
     @IBOutlet weak var currentWeight: UITextField!
@@ -18,6 +20,24 @@ class ProgressViewController: UIViewController {
     @IBOutlet weak var currentWeightLabel: UILabel!
     @IBOutlet weak var difference: UILabel!
     @IBOutlet weak var lastUpdated: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleView: UIView!
+    
+    // MARK: - UIViewController Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        titleView.backgroundColor = Config.primaryLightColor
+        titleView.layer.cornerRadius = 15
+        titleLabel.textColor = Config.primaryTextColor
+        
+        view.backgroundColor = Config.backgroundColor
+        updateGoalButton.backgroundColor = Config.buttonBackgroundColor
+        updateGoalButton.setTitleColor(Config.buttonTextColor, for: .normal)
+        updateGoalButton.layer.cornerRadius = Config.buttonCornerRadius
+    }
+    
+    // MARK: - Actions
     
     @IBAction func saveGoal(_ sender: Any) {
         
@@ -38,27 +58,19 @@ class ProgressViewController: UIViewController {
         }
         
         difference.text = "\(String(describing: (intGoal! - intCurrent!)))"
-
+        
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd"
         
         lastUpdated.text = formatter.string(from: date)
-        
-        
-        
     }
+
+}
+
+extension ProgressViewController: UITextFieldDelegate {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = Config.backgroundColor
-        self.updateGoalButton.backgroundColor = Config.buttonBackgroundColor
-        self.updateGoalButton.setTitleColor(Config.buttonTextColor, for: .normal)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    // MARK: - UITextFieldDelegate
     
     // This method is called when the user touches the Return key on the
     // keyboard. The 'textField' passed in is a pointer to the textField
@@ -81,16 +93,4 @@ class ProgressViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

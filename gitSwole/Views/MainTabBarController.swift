@@ -56,14 +56,13 @@ class MainTabBarController: UITabBarController {
         
         ProgressVC!.tabBarItem = UITabBarItem(
             title: "Progress",
-            image: #imageLiteral(resourceName: "heartMonitorIcon"),
+            image: #imageLiteral(resourceName: "progress-icon"),
             tag: 4)
         
         MediaPlayerVC!.tabBarItem = UITabBarItem(
             title: "Music",
             image: #imageLiteral(resourceName: "smallPlay"),
             tag: 5)
-        
         
         
         //Wrap view controllers in their own nav controllers

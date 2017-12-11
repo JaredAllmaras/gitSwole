@@ -28,10 +28,23 @@ class NutritionDetailViewController: UIViewController {
     @IBOutlet weak var DinnerSecond: UILabel!
     @IBOutlet weak var DinnerThird: UILabel!
     
+    @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var setCurrentMealPlanButton: UIButton!
+    
     // MARK: - UIViewController Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setCurrentMealPlanButton.backgroundColor = Config.buttonBackgroundColor
+        setCurrentMealPlanButton.setTitleColor(Config.buttonTextColor, for: .normal)
+        setCurrentMealPlanButton.layer.cornerRadius = Config.buttonCornerRadius
+        
+        titleView.backgroundColor = Config.primaryLightColor
+        titleView.layer.cornerRadius = 15
+        titleLabel.textColor = Config.primaryTextColor
+        
         self.view.backgroundColor = Config.backgroundColor
         let selectedMealPlan = ServiceAPI.current.getSelectedMealPlan(at: selectedMealPlanIndex)
         updateLabels(selectedMealPlan)
@@ -46,6 +59,9 @@ class NutritionDetailViewController: UIViewController {
     // MARK: - Update
     
     func updateLabels(_ selectedMealPlan: MealPlan) {
+        
+        titleLabel.text = selectedMealPlan.name
+        
         self.breakfastCaloriesLabel.text = "Breakfast - \(selectedMealPlan.breakfast.calories) calories"
         self.lunchCaloriesLabel.text = "Lunch - \(selectedMealPlan.lunch.calories) calories"
         self.dinnerCaloriesLabel.text = "Dinner - \(selectedMealPlan.dinner.calories) calories"

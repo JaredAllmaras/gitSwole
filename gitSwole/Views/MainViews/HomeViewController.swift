@@ -25,6 +25,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     var popularWorkoutImages = [UIImage(named: "workout1Icon"), UIImage(named: "workout2Icon"), UIImage(named: "workout3Icon"), UIImage(named: "workout1Icon"), UIImage(named: "workout2Icon"), UIImage(named: "workout3Icon")]
     
+    let delegate = PopularMealPlansDelegate()
+    
     var auth = SPTAuth.defaultInstance()!
     var session:SPTSession!
     var player: SPTAudioStreamingController?
@@ -35,7 +37,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         titleLabel.text = "gitSwole"
         
-        let delegate = PopularMealPlansDelegate()
         popularMealPlansCollectionView.delegate = delegate
         popularMealPlansCollectionView.dataSource = delegate
         
@@ -63,24 +64,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         popularWorkoutsLabel.textColor = Config.primaryTextColor
         popularMealPlansLabel.textColor = Config.primaryTextColor
-        
-//        let popularMealPlans = Store.store.getDefaultMealPlans()
-//        let mealPlanView = UIView(frame: CGRect(x: 8, y: 8, width: 180, height: 300))
-//        mealPlanView.backgroundColor = Config.secondaryColor
-//        popularMealPlansScrollView.addSubview(mealPlanView)
-//        popularMealPlansScrollView.backgroundColor = Config.primaryLightColor
-//
-//        let popularWorkouts = Store.store.getDefaultWorkouts()
-//
-//        let width = 5
-//        var startX = 0
-//        for _ in 0...5 {
-//            let workoutView = UIView(frame: CGRect(x: startX + 8, y: 8, width: width, height: 300))
-//            popularWorkoutsScrollView.addSubview(workoutView)
-//            print(startX)
-//            startX += (width + 8)
-//        }
-//        popularWorkoutsScrollView.backgroundColor = Config.primaryLightColor
         
         setup()
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.updateAfterFirstLogin), name: NSNotification.Name(rawValue: "loginSuccessfull"), object: nil)
@@ -157,7 +140,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     @IBAction func logout(_ sender: Any) {
-//        StateManager.current.signOut()
         ServiceAPI.current.signOutOfPersistanceManager()
         enableDisableButtons()
     }
