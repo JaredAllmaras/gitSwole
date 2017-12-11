@@ -36,6 +36,8 @@ class WorkoutDetailViewController: UIViewController {
     @IBOutlet weak var CheckBox4: CheckBox!
     @IBOutlet weak var CheckBox5: CheckBox!
     @IBOutlet weak var CheckBox6: CheckBox!
+    @IBOutlet weak var CheckBox7: CheckBox!
+    @IBOutlet weak var CheckBox8: CheckBox!
     @IBOutlet weak var firstExerciseLabel: UILabel!
     @IBOutlet weak var secondExerciseLabel: UILabel!
     @IBOutlet weak var thirdExerciseLabel: UILabel!
@@ -43,9 +45,10 @@ class WorkoutDetailViewController: UIViewController {
     @IBOutlet weak var fifthExerciseLabel: UILabel!
     @IBOutlet weak var sixthExerciseLabel: UILabel!
     
+    @IBOutlet weak var seventhExerciseLabel: UILabel!
+    @IBOutlet weak var eighthExerciseLabel: UILabel!
     @IBOutlet weak var titleView: UIView!
     
-    @IBOutlet weak var titleLabel: UILabel!
     
     // MARK: - UIViewController Lifecycle
     
@@ -55,7 +58,7 @@ class WorkoutDetailViewController: UIViewController {
         
         titleView.backgroundColor = Config.primaryLightColor
         titleView.layer.cornerRadius = 15
-        titleLabel.textColor = Config.primaryTextColor
+        workoutNameLabel.textColor = Config.primaryTextColor
         
         let workout = ServiceAPI.current.getSelectedWorkout(at: selectedWorkoutIndex)
         
@@ -66,17 +69,16 @@ class WorkoutDetailViewController: UIViewController {
         
         startWorkoutButton.layer.cornerRadius = Config.buttonCornerRadius
         
-        self.Checkboxes = [self.CheckBox1, self.CheckBox2, self.CheckBox3, self.CheckBox4, self.CheckBox5, self.CheckBox6]
+        self.Checkboxes = [self.CheckBox1, self.CheckBox2, self.CheckBox3, self.CheckBox4, self.CheckBox5, self.CheckBox6, self.CheckBox7, self.CheckBox8]
         self.WorkoutTimer.isHidden = true
         self.NumExercises = workout.exercises.count
-        let Labels = [self.firstExerciseLabel, self.secondExerciseLabel, self.thirdExerciseLabel, self.fourthExerciseLabel, self.fifthExerciseLabel, self.sixthExerciseLabel]
+        let Labels = [self.firstExerciseLabel, self.secondExerciseLabel, self.thirdExerciseLabel, self.fourthExerciseLabel, self.fifthExerciseLabel, self.sixthExerciseLabel,
+            self.seventhExerciseLabel,
+            self.eighthExerciseLabel]
         
-        self.firstExerciseLabel?.isHidden = true
-        self.secondExerciseLabel?.isHidden = true
-        self.thirdExerciseLabel?.isHidden = true
-        self.fourthExerciseLabel?.isHidden = true
-        self.fifthExerciseLabel?.isHidden = true
-        self.sixthExerciseLabel?.isHidden = true
+        for label in Labels {
+            label?.isHidden = true
+        }
         
         var i = 0
         for exercise in workout.exercises {
@@ -89,7 +91,7 @@ class WorkoutDetailViewController: UIViewController {
     
     @IBAction func startWorkout(_ sender: Any) {
         
-        if self.WorkoutStatus.text != "Workout Complete!" {
+        if self.WorkoutStatus.text == "Workout Not Yet Started" {
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerIncrement), userInfo: nil, repeats: true)
        
         for i in 0...(self.NumExercises)! - 1 {

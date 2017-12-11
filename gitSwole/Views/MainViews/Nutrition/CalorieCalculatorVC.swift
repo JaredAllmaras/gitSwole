@@ -35,7 +35,7 @@ class CalorieCalculatorVC: UIViewController {
         self.calculateButton.backgroundColor = Config.buttonBackgroundColor
         self.calculateButton.setTitleColor(Config.buttonTextColor, for: .normal)
         
-        self.intake.text = "3107 cal."
+        self.intake.text = "2000 cal."
         // Do any additional setup after loading the view.
     }
 
@@ -84,9 +84,20 @@ class CalorieCalculatorVC: UIViewController {
         } else if caloricGoal == 2{
             caloricIntake -= 500.0
         }
-            self.intake.text = "\(String(describing: caloricIntake)) cal."
+            
+            let userCaloricIntake = Int(round(caloricIntake))
+            let userCaloricGoalIndex = self.goal.selectedSegmentIndex
+            
+            var userCaloricGoal = "Bulk"
+            if userCaloricGoalIndex == 1 {
+                userCaloricGoal = "Maintain"
+            } else if userCaloricGoalIndex == 2 {
+                userCaloricGoal = "Cut"
+            }
         
-        // Save caloric intake to database here
+            self.intake.text = "\(String(describing: userCaloricIntake)) cal."
+        
+        // Save userCaloricIntake and userCaloricGoal to database
     }
     }
     

@@ -23,10 +23,11 @@ class NutritionViewController: UIViewController {
     @IBOutlet weak var secondCourseServingSizeLabel: UILabel!
     @IBOutlet weak var thirdCourseServingSizeLabel: UILabel!
     
-    @IBOutlet weak var CaloricGoal: UILabel!
-    @IBOutlet weak var CaloriesEaten: UILabel!    
-    @IBOutlet weak var CaloriesRemaining: UILabel!
+    @IBOutlet weak var caloricGoal
+    : UILabel!
     
+    @IBOutlet weak var caloricIntake
+    : UILabel!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -37,6 +38,7 @@ class NutritionViewController: UIViewController {
     // TODO: Decide whether to lazy load values from firebase or not
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         titleView.backgroundColor = Config.primaryLightColor
         titleView.layer.cornerRadius = 15
@@ -51,6 +53,15 @@ class NutritionViewController: UIViewController {
         self.viewMealPlansButton.setTitleColor(Config.buttonTextColor, for: .normal)
         self.calorieCounterButton.backgroundColor = Config.buttonBackgroundColor
         self.calorieCounterButton.setTitleColor(Config.buttonTextColor, for: .normal)
+        
+        // TODO: retrieve caloricSetting and caloricGoal from database
+        
+        // let userCaloricGoal =
+        // let userCaloricIntake =
+        // self.caloricGoal.text = userCaloricGoal
+        // self.caloricIntake.text = userCaloricIntake
+        
+        
     }
     
     // TODO: try to utilize the observer pattern to upate labels
