@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,6 +20,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Tj6-XP-bfM"/>
                     </view>
+                    <connections>
+                        <segue destination="4Ip-yp-x0R" kind="show" identifier="isNotLoggedIn" id="VZw-gk-rzh"/>
+                        <segue destination="4Vt-ix-gs5" kind="show" identifier="isLoggedIn" id="HCI-QF-goF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKJ-S7-Dgk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,6 +51,7 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="oXU-Ec-SHJ" id="3j4-tB-ZhE"/>
+                        <segue destination="4Vt-ix-gs5" kind="show" identifier="nowLoggedIn" id="zqA-ZF-qH4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhk-ai-SsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -59,10 +65,60 @@
                     <view key="view" contentMode="scaleToFill" id="5e2-xK-8QH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="viC-pb-W4U">
+                                <rect key="frame" x="0.0" y="297" width="375" height="370"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playlistCell" rowHeight="87" id="jrv-ng-aef" customClass="PlaylistTableViewCell" customModule="gitSwole" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jrv-ng-aef" id="tt2-JS-o2I">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nmM-6f-aeE">
+                                                    <rect key="frame" x="15" y="6" width="69" height="68"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIN-bw-5wj">
+                                                    <rect key="frame" x="106" y="11" width="254" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUt-P2-cfu">
+                                                    <rect key="frame" x="106" y="40" width="254" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WUt-P2-cfu" firstAttribute="top" secondItem="PIN-bw-5wj" secondAttribute="bottom" constant="8" id="jv4-Ms-o3n"/>
+                                                <constraint firstItem="PIN-bw-5wj" firstAttribute="top" secondItem="tt2-JS-o2I" secondAttribute="topMargin" id="kWd-Dc-rq3"/>
+                                                <constraint firstItem="nmM-6f-aeE" firstAttribute="leading" secondItem="tt2-JS-o2I" secondAttribute="leading" constant="15" id="mXW-eF-FEy"/>
+                                                <constraint firstItem="nmM-6f-aeE" firstAttribute="top" secondItem="tt2-JS-o2I" secondAttribute="top" constant="6" id="sG0-54-omi"/>
+                                                <constraint firstItem="WUt-P2-cfu" firstAttribute="leading" secondItem="nmM-6f-aeE" secondAttribute="trailing" constant="22" id="t2q-F5-mod"/>
+                                                <constraint firstItem="PIN-bw-5wj" firstAttribute="leading" secondItem="nmM-6f-aeE" secondAttribute="trailing" constant="22" id="uZn-qN-P4m"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="albumArt" destination="nmM-6f-aeE" id="xGu-oU-D7q"/>
+                                            <outlet property="artistName" destination="WUt-P2-cfu" id="Xm9-fN-Zlc"/>
+                                            <outlet property="trackName" destination="PIN-bw-5wj" id="47f-AZ-PkZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cmh-qJ-d42"/>
                     </view>
                     <navigationItem key="navigationItem" id="xpv-PO-zlm"/>
+                    <connections>
+                        <outlet property="tableView" destination="viC-pb-W4U" id="bc3-U9-S5O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="klJ-9O-hWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,4 +153,7 @@
             <point key="canvasLocation" x="-1146" y="-36"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zqA-ZF-qH4"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -10,5 +10,6 @@ target 'gitSwole' do
   pod 'Firebase/Auth'
   pod 'Hex'
   pod 'Firebase/Database'
+  pod 'SDWebImage'
 
 end

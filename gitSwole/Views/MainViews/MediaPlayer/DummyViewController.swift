@@ -14,6 +14,13 @@ class DummyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if !LoginManager.shared.isLogged {
+            self.performSegue(withIdentifier: "isNotLoggedIn", sender: self)
+        } else {
+            self.performSegue(withIdentifier: "isLoggedIn", sender: self)
+        }
+        
         }
 
     

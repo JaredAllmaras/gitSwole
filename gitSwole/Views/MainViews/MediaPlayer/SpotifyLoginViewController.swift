@@ -76,7 +76,7 @@ class SpotifyLoginViewController: UIViewController {
 
 extension SpotifyLoginViewController: LoginManagerDelegate {
      func loginManagerDidLoginWithSuccess() {
-     UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-     dismiss(animated: true, completion: nil)
+     UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlaylistVC")
+    dismiss(animated: true, completion: nil)
      }
  }

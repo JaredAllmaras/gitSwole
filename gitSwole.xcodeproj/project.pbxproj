@@ -14,6 +14,7 @@
 		8C244DA31FD0DC810002865D /* SpotifyLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244DA21FD0DC810002865D /* SpotifyLoginViewController.swift */; };
 		8C244DA51FD0DCFD0002865D /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244DA41FD0DCFD0002865D /* Playlist.swift */; };
 		8C244DA71FD0DD9B0002865D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C244DA61FD0DD9B0002865D /* UIColor.swift */; };
+		8CA125811FDF5F1B00E66368 /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA125801FDF5F1B00E66368 /* PlaylistTableViewCell.swift */; };
 		8CD4C3CA1FDB58EF00D5A564 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD4C3C91FDB58EF00D5A564 /* DummyViewController.swift */; };
 		8CDA501D1FA94CFD00CED50D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */; };
 		8CDA501E1FA94CFD00CED50D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */; };
@@ -75,6 +76,7 @@
 		8C244DA21FD0DC810002865D /* SpotifyLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyLoginViewController.swift; sourceTree = "<group>"; };
 		8C244DA41FD0DCFD0002865D /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		8C244DA61FD0DD9B0002865D /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		8CA125801FDF5F1B00E66368 /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
 		8CD4C3C91FDB58EF00D5A564 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		8CDA501B1FA94CFD00CED50D /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		8CDA501C1FA94CFD00CED50D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				8C244D9C1FD0CD740002865D /* MediaPlayer.swift */,
+				8CA125801FDF5F1B00E66368 /* PlaylistTableViewCell.swift */,
 				8C244DA01FD0D9960002865D /* PlaylistViewController.swift */,
 				8C244DA41FD0DCFD0002865D /* Playlist.swift */,
 				8CD4C3C91FDB58EF00D5A564 /* DummyViewController.swift */,
@@ -452,6 +455,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Hex/Hex.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -460,6 +464,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hex.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -500,6 +505,7 @@
 				E16264031FC51E4700228C9E /* User.swift in Sources */,
 				C4142FDD1FA94ECD00F3173E /* Meal.swift in Sources */,
 				8CD4C3CA1FDB58EF00D5A564 /* DummyViewController.swift in Sources */,
+				8CA125811FDF5F1B00E66368 /* PlaylistTableViewCell.swift in Sources */,
 				E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */,
 				8C244DA71FD0DD9B0002865D /* UIColor.swift in Sources */,
 				C4647AD21FDB61E40050C3FE /* CreateWorkoutVC.swift in Sources */,

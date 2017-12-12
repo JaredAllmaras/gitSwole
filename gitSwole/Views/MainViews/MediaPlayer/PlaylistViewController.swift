@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import SDWebImage
     
 class PlaylistViewController: UIViewController {
         
+    @IBOutlet weak var tableView: UITableView!
     private var playerView: UIView!
     private var playerButton: UIButton!
-    fileprivate var infoLabel: UILabel!
-    private var tableView: UITableView!
+    fileprivate var songLabel: UILabel!
+    //private var tableView: UITableView!
     fileprivate var progressSlider: UISlider!
     fileprivate var album: SPTAlbum?
     fileprivate var tracks: [SPTPartialTrack]? {
@@ -71,8 +73,8 @@ class PlaylistViewController: UIViewController {
     
     private func configureView() {
         //navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        navigationController?.navigationBar.barTintColor = UIColor.spotifyBackground
-        view.backgroundColor = UIColor.spotifyBackground
+        //navigationController?.navigationBar.barTintColor = UIColor.spotifyBackground
+        //view.backgroundColor = UIColor.spotifyBackground
         configurePlayerView()
         configureTableView()
     }
@@ -84,15 +86,15 @@ class PlaylistViewController: UIViewController {
         
         playerButton = UIButton()
         playerButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
-        playerButton.tintColor = .white
+        playerButton.tintColor = .black
         playerButton.translatesAutoresizingMaskIntoConstraints = false
         playerButton.addTarget(self, action: #selector(playerButtonAction), for: .touchUpInside)
         
-        infoLabel = UILabel()
-        infoLabel.text = "No song loaded"
-        infoLabel.textColor = .white
-        infoLabel.translatesAutoresizingMaskIntoConstraints = false
-        infoLabel.numberOfLines = 0
+        songLabel = UILabel()
+        songLabel.text = "No song loaded"
+        songLabel.textColor = .black
+        songLabel.translatesAutoresizingMaskIntoConstraints = false
+        songLabel.numberOfLines = 0
         
         progressSlider = UISlider()
         progressSlider.translatesAutoresizingMaskIntoConstraints = false
@@ -101,7 +103,7 @@ class PlaylistViewController: UIViewController {
         progressSlider.addTarget(self, action: #selector(progressSliderAction(sender:)), for: .valueChanged)
         
         view.addSubview(playerView)
-        playerView.addSubview(infoLabel)
+        playerView.addSubview(songLabel)
         playerView.addSubview(playerButton)
         playerView.addSubview(progressSlider)
         
@@ -115,18 +117,18 @@ class PlaylistViewController: UIViewController {
         playerButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
         playerButton.centerYAnchor.constraint(equalTo: playerView.centerYAnchor).isActive = true
         
-        infoLabel.leadingAnchor.constraint(equalTo: playerButton.trailingAnchor, constant: 20).isActive = true
-        infoLabel.trailingAnchor.constraint(equalTo: playerView.trailingAnchor, constant: -16).isActive = true
-        infoLabel.centerYAnchor.constraint(equalTo: playerView.centerYAnchor, constant: -15).isActive = true
+        songLabel.leadingAnchor.constraint(equalTo: playerButton.trailingAnchor, constant: 20).isActive = true
+        songLabel.trailingAnchor.constraint(equalTo: playerView.trailingAnchor, constant: -16).isActive = true
+        songLabel.centerYAnchor.constraint(equalTo: playerView.centerYAnchor, constant: -15).isActive = true
         
-        progressSlider.leadingAnchor.constraint(equalTo: infoLabel.leadingAnchor).isActive = true
-        progressSlider.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 5).isActive = true
+        progressSlider.leadingAnchor.constraint(equalTo: songLabel.leadingAnchor).isActive = true
+        progressSlider.topAnchor.constraint(equalTo: songLabel.bottomAnchor, constant: 5).isActive = true
         progressSlider.trailingAnchor.constraint(equalTo: playerView.trailingAnchor, constant: -16).isActive = true
         
     }
     
     private func configureTableView() {
-        tableView = UITableView()
+        //tableView = UITableView()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -159,7 +161,7 @@ class PlaylistViewController: UIViewController {
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
                     MediaPlayer.shared.play(track: first)
-                    infoLabel.text = first.name
+                    songLabel.text = first.name
                 } else {
                     showDefaultError()
                 }
@@ -183,17 +185,33 @@ extension PlaylistViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
+        let cell: PlaylistTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "playlistCell") as! PlaylistTableViewCell
+        
         let track = tracks![indexPath.row]
-        cell.textLabel!.text = track.name
+        let artist = track.artists.first as? SPTPartialArtist
+        let artistName = artist!.name
+    
+        /*
+        if cell.albumArt.sd_setImage(with: track.album.smallestCover.imageURL!) != nil {
+            cell.albumArt.sd_setImage(with: track.album.smallestCover.imageURL!)
+        } else {
+            cell.albumArt.image = UIImage()
+        }
+        */
+        cell.trackName!.text = track.name
+        cell.artistName!.text = artistName
         cell.backgroundColor = .clear
-        cell.textLabel?.textColor = .white
+        cell.textLabel?.textColor = .black
         return cell
     }
 
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        cell?.textLabel?.textColor = .white
+        cell?.textLabel?.textColor = .black
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 86.0
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -204,7 +222,7 @@ extension PlaylistViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.cellForRow(at: indexPath)
         cell!.textLabel?.textColor = .black
         MediaPlayer.shared.play(track: track)
-        infoLabel.text = track.name
+        songLabel.text = track.name
         updatePlayButton(playing: true)
     }
 }
