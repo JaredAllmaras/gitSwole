@@ -81,6 +81,44 @@ extension ServiceAPI {
         stateManager.addWorkout(workout)
     }
     
+    // MARK: - Progress
+    
+    public func getMyCurrentWeight() -> Int {
+        return stateManager.getMyCurrentWeight()
+    }
+    
+    public func setMyCurrentWeight(_ currentWeight: Int) {
+        stateManager.setMyCurrentWeight(currentWeight)
+        persistanceManager.setMyCurrentWeight(currentWeight)
+    }
+    
+    public func getMyGoalWeight() -> Int {
+        return stateManager.getMyGoalWeight()
+    }
+    
+    public func setMyGoalWeight(_ goalWeight: Int) {
+        stateManager.setMyGoalWeight(goalWeight)
+        persistanceManager.setMyGoalWeight(goalWeight)
+    }
+    
+    public func getMyCaloricGoal() -> String {
+        return stateManager.getMyCaloricGoal()
+    }
+    
+    public func setCaloricGoal(_ caloricGoal: String) {
+        stateManager.setMyCaloricGoal(caloricGoal)
+        persistanceManager.setCaloricGoal(caloricGoal)
+    }
+    
+    public func getMyCaloricIntake() -> Int {
+        return stateManager.getMyCaloricIntake()
+    }
+    
+    public func setCaloricIntake(_ caloricIntake: Int) {
+        stateManager.setMyCaloricIntake(caloricIntake)
+        persistanceManager.setCaloricIntake(caloricIntake)
+    }
+    
     // MARK: - UI State
     
     public func getMyCurrentMealPlan() -> MealPlan {

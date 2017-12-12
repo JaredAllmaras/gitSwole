@@ -36,7 +36,6 @@ class NutritionViewController: UIViewController {
     // TODO: Decide whether to lazy load values from firebase or not
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         titleView.backgroundColor = Config.primaryLightColor
         titleView.layer.cornerRadius = 15
@@ -51,15 +50,6 @@ class NutritionViewController: UIViewController {
         self.viewMealPlansButton.setTitleColor(Config.buttonTextColor, for: .normal)
         self.calorieCounterButton.backgroundColor = Config.buttonBackgroundColor
         self.calorieCounterButton.setTitleColor(Config.buttonTextColor, for: .normal)
-        
-        // TODO: retrieve caloricSetting and caloricGoal from database
-        
-        // let userCaloricGoal =
-        // let userCaloricIntake =
-        // self.caloricGoal.text = userCaloricGoal
-        // self.caloricIntake.text = userCaloricIntake
-        
-        
     }
     
     // TODO: try to utilize the observer pattern to upate labels
@@ -77,6 +67,8 @@ class NutritionViewController: UIViewController {
     private func updateLabels() {
         let currentMealPlan = ServiceAPI.current.getMyCurrentMealPlan()
         let currentMeal = ServiceAPI.current.getMyCurrentMeal()!
+        let userCaloricGoal = ServiceAPI.current.getMyCaloricGoal()
+        let userCaloricIntake = ServiceAPI.current.getMyCaloricIntake()
         NextMeal.text = currentMealPlan.name
         FirstMealItem.text = currentMeal.firstCourse.name
         SecondMealItem.text = currentMeal.secondCourse.name
@@ -84,6 +76,8 @@ class NutritionViewController: UIViewController {
         firstCourseServingSizeLabel.text = currentMeal.firstCourse.servingSize
         secondCourseServingSizeLabel.text = currentMeal.secondCourse.servingSize
         thirdCourseServingSizeLabel.text = currentMeal.thirdCourse.servingSize
+        caloricGoal.text = userCaloricGoal
+        caloricIntake.text = "\(userCaloricIntake) cal."
     }
     
 }

@@ -84,6 +84,40 @@ class StateManager: AuthStateDelegate {
         user.workouts.append(workout)
     }
     
+    // MARK: - Progress
+    
+    public func getMyCurrentWeight() -> Int {
+        return user.currentWeight
+    }
+    
+    public func setMyCurrentWeight(_ currentWeight: Int) {
+        user.currentWeight = currentWeight
+    }
+    
+    public func getMyGoalWeight() -> Int {
+        return user.goalWeight
+    }
+    
+    public func setMyGoalWeight(_ goalWeight: Int) {
+        user.goalWeight = goalWeight
+    }
+    
+    public func getMyCaloricGoal() -> String {
+        return user.caloricGoal
+    }
+    
+    public func setMyCaloricGoal(_ caloricGoal: String) {
+        user.caloricGoal = caloricGoal
+    }
+    
+    public func getMyCaloricIntake() -> Int {
+        return user.caloricIntake
+    }
+    
+    public func setMyCaloricIntake(_ caloricIntake: Int) {
+        user.caloricIntake = caloricIntake
+    }
+    
     // MARK: - UI State
     
     public func getMyCurrentMealPlan() -> MealPlan {

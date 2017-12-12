@@ -57,33 +57,33 @@ class CalorieCalculatorVC: UIViewController {
         
         if (ageInput != nil && heightInput != nil && weightInput != nil && activityLevelInput != nil) {
         
-        var caloricIntake:Float = 66.473
-        
-        // adjust for sex differences
-        if self.sex.selectedSegmentIndex == 0 {
-            caloricIntake += 13.7516 / 2.20462 * Float(weightInput!)
-            caloricIntake += 5.0033 * 2.54 * Float(heightInput!)
-            caloricIntake -= 6.7550 * Float(ageInput!)
-        } else {
-            caloricIntake = 655.0955
-            caloricIntake += 9.5634 / 2.20462 * Float(weightInput!)
-            caloricIntake += 1.8496 * 2.54 * Float(heightInput!)
-            caloricIntake -= 4.33 * Float(ageInput!)
-        }
-        // adjust for activity level
-        let activityLevel = Float(activityLevelInput!)
-        if activityLevel > 20 {
-            caloricIntake *= 2.0
-        } else {
-            caloricIntake *= (1 + (0.05 * activityLevel))
-        }
-        // adjust for goal
-        let caloricGoal = self.goal.selectedSegmentIndex
-        if caloricGoal == 0 {
-            caloricIntake += 500.0
-        } else if caloricGoal == 2{
-            caloricIntake -= 500.0
-        }
+            var caloricIntake:Float = 66.473
+            
+            // adjust for sex differences
+            if self.sex.selectedSegmentIndex == 0 {
+                caloricIntake += 13.7516 / 2.20462 * Float(weightInput!)
+                caloricIntake += 5.0033 * 2.54 * Float(heightInput!)
+                caloricIntake -= 6.7550 * Float(ageInput!)
+            } else {
+                caloricIntake = 655.0955
+                caloricIntake += 9.5634 / 2.20462 * Float(weightInput!)
+                caloricIntake += 1.8496 * 2.54 * Float(heightInput!)
+                caloricIntake -= 4.33 * Float(ageInput!)
+            }
+            // adjust for activity level
+            let activityLevel = Float(activityLevelInput!)
+            if activityLevel > 20 {
+                caloricIntake *= 2.0
+            } else {
+                caloricIntake *= (1 + (0.05 * activityLevel))
+            }
+            // adjust for goal
+            let caloricGoal = self.goal.selectedSegmentIndex
+            if caloricGoal == 0 {
+                caloricIntake += 500.0
+            } else if caloricGoal == 2{
+                caloricIntake -= 500.0
+            }
             
             let userCaloricIntake = Int(round(caloricIntake))
             let userCaloricGoalIndex = self.goal.selectedSegmentIndex
@@ -95,10 +95,27 @@ class CalorieCalculatorVC: UIViewController {
                 userCaloricGoal = "Cut"
             }
         
-            self.intake.text = "\(String(describing: userCaloricIntake)) cal."
-        
-        // Save userCaloricIntake and userCaloricGoal to database
-    }
+            self.intake.text = "\(userCaloricIntake) cal."
+            
+            // Save userCaloricIntake and userCaloricGoal to database
+            ServiceAPI.current.setCaloricIntake(userCaloricIntake)
+            ServiceAPI.current.setCaloricGoal(userCaloricGoal)
+            
+            var message: String
+            if ServiceAPI.current.isSignedInToPersistanceManager() {
+                message = "You have successfully set your new caloric intake!"
+            } else {
+                message = "You have successfully set your new caloric intake. Please note that since you are not signed in your new caloric intake will be deleted once you exit gitSwole"
+            }
+            let alert = UIAlertController(title: "Success!", message: message, preferredStyle: .alert)
+            let successAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+                alert.dismiss(animated: true, completion: nil)
+                _ = self.navigationController?.popViewController(animated: true)
+            })
+            
+            alert.addAction(successAction)
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     /*
