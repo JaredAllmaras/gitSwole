@@ -23,14 +23,17 @@ struct User {
     var profileImage: UIImage? // TODO: Complete this
     let username: String
     let currentHeight: Int
-    let currentWeight: Int
-    let goalWeight: Int
+    var currentWeight: Int
+    var goalWeight: Int
     
     var mealplans: [MealPlan]
     var workouts: [Workout]
     
     var currentMealPlanIndex: Int
     var currentMealIndex: Int
+    
+    var caloricGoal: String
+    var caloricIntake: Int
     
     
     // MARK: - Constructors
@@ -50,6 +53,9 @@ struct User {
         
         currentMealPlanIndex = 0
         currentMealIndex = 0
+        
+        caloricGoal = ""
+        caloricIntake = 0
     }
     
     init(username: String,
@@ -60,6 +66,8 @@ struct User {
          workouts: [Workout] = [],
          currentMealPlanIndex: Int = 0,
          currentMealIndex: Int = 0,
+         caloricGoal: String = "Maintain",
+         caloricIntake: Int = 2000,
          key: String = "")
     {
         self.key = key
@@ -76,6 +84,9 @@ struct User {
         
         self.currentMealPlanIndex = currentMealPlanIndex
         self.currentMealIndex = currentMealIndex
+        
+        self.caloricGoal = caloricGoal
+        self.caloricIntake = caloricIntake
     }
     
     // loading user from auth and database
@@ -101,9 +112,11 @@ struct User {
             workouts.append(Workout(snapshot: workoutSnapshot as! DataSnapshot))
         }
         
-//        currentMealPlanIndex = snapshotValue["current-meal-plan-index"] as! Int
-        currentMealPlanIndex = 0
-        currentMealIndex = 0
+        currentMealPlanIndex = snapshotValue["current-meal-plan-index"] as! Int
+        currentMealIndex = snapshotValue["current-meal-index"] as! Int
+        
+        caloricGoal = snapshotValue["caloric-goal"] as! String
+        caloricIntake = snapshotValue["caloric-intake"] as! Int
     }
     
     // MARK - Map
@@ -129,7 +142,9 @@ struct User {
             "meal-plans": mealplanMaps,
             "workouts": workoutMaps,
             "current-meal-plan-index": currentMealPlanIndex,
-            "current-meal-index": currentMealIndex
+            "current-meal-index": currentMealIndex,
+            "caloric-goal": caloricGoal,
+            "caloric-intake": caloricIntake
         ]
     }
 }

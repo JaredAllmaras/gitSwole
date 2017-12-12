@@ -35,7 +35,7 @@ struct Meal {
     }
     
     // send model to Firebase
-    // key is for when you want to specify which database key to updates
+    // key is for when you want to specify which database key to updatesv
     init(calories: Int, first: Course, second: Course, third: Course, key: String = "") {
         self.key = key
         ref = nil

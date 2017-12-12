@@ -54,6 +54,22 @@ class NutritionDetailViewController: UIViewController {
     
     @IBAction func setCurrentMealPlan(_ sender: Any) {
         ServiceAPI.current.setMyCurrentMealPlan(to: selectedMealPlanIndex)
+        
+        let currentMealPlan = ServiceAPI.current.getMyCurrentMealPlan()
+        
+        var message = "You have successfully set \(currentMealPlan.name) as your current meal plan"
+        if !ServiceAPI.current.isSignedInToPersistanceManager() {
+            message += ". Please note that since you are not signed in, gitSwole will not remember your meal plan once you exit the app"
+        }
+        
+        let alert = UIAlertController(title: "Success!", message: message, preferredStyle: .alert)
+        let successAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            _ = self.navigationController?.popViewController(animated: true)
+        })
+        
+        alert.addAction(successAction)
+        present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Update
