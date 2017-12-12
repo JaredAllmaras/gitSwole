@@ -54,10 +54,34 @@ class PersistanceManager {
         fetchUser(state: state, user: Auth.auth().currentUser!, viewController: viewController)
     }
     
-    // MARK: Workouts
+    // MARK: - Meal Plans
+    
+    func addMealPlan(_ mealPlan: MealPlan, numMealPlans: Int) {
+        userDBRef?.child("meal-plans/\(numMealPlans)").setValue(mealPlan.toMap())
+    }
+    
+    // MARK: - Workouts
     
     func addWorkout(_ workout: Workout, numWorkouts: Int) {
         userDBRef?.child("workouts/\(numWorkouts)").setValue(workout.toMap())
+    }
+    
+    // MARK: - Progress
+    
+    func setMyCurrentWeight(_ currentWeight: Int) {
+        userDBRef?.child("current-weight").setValue(currentWeight)
+    }
+    
+    func setMyGoalWeight(_ goalWeight: Int) {
+        userDBRef?.child("goal-weight").setValue(goalWeight)
+    }
+    
+    func setCaloricGoal(_ caloricGoal: String) {
+        userDBRef?.child("caloric-goal").setValue(caloricGoal)
+    }
+    
+    func setCaloricIntake(_ caloricIntake: Int) {
+        userDBRef?.child("caloric-intake").setValue(caloricIntake)
     }
     
     // MARK: - UI State

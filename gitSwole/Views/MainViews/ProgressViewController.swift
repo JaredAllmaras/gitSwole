@@ -43,7 +43,7 @@ class ProgressViewController: UIViewController {
         
         let intGoal = Int(goalWeight.text!)
         if intGoal == nil {
-            print("Invalid goal weight")
+            error("Invalid goal weight")
             return
         } else {
             goalWeightLabel.text = "\(goalWeight.text!)"
@@ -51,21 +51,50 @@ class ProgressViewController: UIViewController {
         
         let intCurrent = Int(currentWeight.text!)
         if intCurrent == nil {
-            print("Invalid weight")
+            error("Invalid weight")
             return
         } else {
             currentWeightLabel.text = "\(currentWeight.text!)"
         }
-        
-        difference.text = "\(String(describing: (intGoal! - intCurrent!)))"
         
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd"
         
         lastUpdated.text = formatter.string(from: date)
+        
+        ServiceAPI.current.setMyCurrentWeight(intCurrent!)
+        ServiceAPI.current.setMyGoalWeight(intGoal!)
+        
+        success("You have successfully updated your weight info", completion: {
+            self.difference.text = String(intGoal! - intCurrent!)
+            self.lastUpdated.text = formatter.string(from: date)
+        })
     }
-
+    
+    // MARK: - Helper Functions
+    
+    private func success(_ message: String, completion: @escaping () -> ()) {
+        let alert = UIAlertController(title: "Success!", message: message, preferredStyle: .alert)
+        let successAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: {
+                completion()
+            })
+        })
+        
+        alert.addAction(successAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func error(_ message: String) {
+        let alert = UIAlertController(title: "Oops!", message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        })
+        
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension ProgressViewController: UITextFieldDelegate {

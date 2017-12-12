@@ -45,13 +45,12 @@
 		E145A5981FDC74EF00B1ADC3 /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E145A5971FDC74EF00B1ADC3 /* ServiceAPI.swift */; };
 		E145A59E1FDCC8BC00B1ADC3 /* DefaultUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E145A59D1FDCC8BC00B1ADC3 /* DefaultUser.swift */; };
 		E145A5A91FDDE29200B1ADC3 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E145A5A81FDDE29100B1ADC3 /* TitleView.swift */; };
+		E145A5AB1FDF593200B1ADC3 /* CreateMealPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E145A5AA1FDF593200B1ADC3 /* CreateMealPlanViewController.swift */; };
 		E14CD3AF1FC701EA00D89BA1 /* FirebaseConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = E14CD3AE1FC701EA00D89BA1 /* FirebaseConfig.json */; };
 		E14CD3B11FC72BCF00D89BA1 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CD3B01FC72BCF00D89BA1 /* Exercise.swift */; };
 		E14CD3B31FC7331100D89BA1 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CD3B21FC7331100D89BA1 /* StateManager.swift */; };
-		E14CD3B51FC7337100D89BA1 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CD3B41FC7337100D89BA1 /* UserState.swift */; };
 		E14CD3B91FC7C39600D89BA1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CD3B81FC7C39600D89BA1 /* HomeViewController.swift */; };
 		E15FEE771FCF36C300523AD2 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FEE761FCF36C300523AD2 /* Course.swift */; };
-		E15FEE7B1FCF517600523AD2 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FEE7A1FCF517600523AD2 /* AppState.swift */; };
 		E15FEE7E1FCF687600523AD2 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FEE7D1FCF687600523AD2 /* Config.swift */; };
 		E15FEE831FD06F6700523AD2 /* PopularWorkoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FEE821FD06F6700523AD2 /* PopularWorkoutCollectionViewCell.swift */; };
 		E15FEE851FD074B300523AD2 /* PopularMealPlanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FEE841FD074B300523AD2 /* PopularMealPlanCollectionViewCell.swift */; };
@@ -110,13 +109,12 @@
 		E145A5971FDC74EF00B1ADC3 /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
 		E145A59D1FDCC8BC00B1ADC3 /* DefaultUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUser.swift; sourceTree = "<group>"; };
 		E145A5A81FDDE29100B1ADC3 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		E145A5AA1FDF593200B1ADC3 /* CreateMealPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMealPlanViewController.swift; sourceTree = "<group>"; };
 		E14CD3AE1FC701EA00D89BA1 /* FirebaseConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FirebaseConfig.json; sourceTree = "<group>"; };
 		E14CD3B01FC72BCF00D89BA1 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		E14CD3B21FC7331100D89BA1 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
-		E14CD3B41FC7337100D89BA1 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
 		E14CD3B81FC7C39600D89BA1 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E15FEE761FCF36C300523AD2 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
-		E15FEE7A1FCF517600523AD2 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E15FEE7D1FCF687600523AD2 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		E15FEE821FD06F6700523AD2 /* PopularWorkoutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularWorkoutCollectionViewCell.swift; sourceTree = "<group>"; };
 		E15FEE841FD074B300523AD2 /* PopularMealPlanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMealPlanCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -208,8 +206,6 @@
 				E15FEE761FCF36C300523AD2 /* Course.swift */,
 				C4142FE31FA94ED300F3173E /* Workout.swift */,
 				E14CD3B01FC72BCF00D89BA1 /* Exercise.swift */,
-				E15FEE7A1FCF517600523AD2 /* AppState.swift */,
-				E14CD3B41FC7337100D89BA1 /* UserState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +280,7 @@
 				C4C0485A1FC4F9E60061473A /* NutritionDetailViewController.swift */,
 				C41A870E1FD0DB2600D20840 /* CalorieCalculatorVC.swift */,
 				C4C121F01FDD37CB0062B1BB /* CreateMealPlanVC.swift */,
+				E145A5AA1FDF593200B1ADC3 /* CreateMealPlanViewController.swift */,
 			);
 			path = Nutrition;
 			sourceTree = "<group>";
@@ -496,13 +493,13 @@
 				E145A5A91FDDE29200B1ADC3 /* TitleView.swift in Sources */,
 				E145A5981FDC74EF00B1ADC3 /* ServiceAPI.swift in Sources */,
 				8C244D9D1FD0CD740002865D /* MediaPlayer.swift in Sources */,
-				E15FEE7B1FCF517600523AD2 /* AppState.swift in Sources */,
 				8C244DA51FD0DCFD0002865D /* Playlist.swift in Sources */,
 				8C244DA11FD0D9960002865D /* PlaylistViewController.swift in Sources */,
 				C4142FE71FA94ED400F3173E /* Workout.swift in Sources */,
 				E15FEE771FCF36C300523AD2 /* Course.swift in Sources */,
 				E16264031FC51E4700228C9E /* User.swift in Sources */,
 				C4142FDD1FA94ECD00F3173E /* Meal.swift in Sources */,
+				E145A5AB1FDF593200B1ADC3 /* CreateMealPlanViewController.swift in Sources */,
 				8CD4C3CA1FDB58EF00D5A564 /* DummyViewController.swift in Sources */,
 				E1C8292C1FA2B0DB00522204 /* AppDelegate.swift in Sources */,
 				8C244DA71FD0DD9B0002865D /* UIColor.swift in Sources */,
@@ -515,7 +512,6 @@
 				E15FEE871FD0757000523AD2 /* PopularMealPlansDelegate.swift in Sources */,
 				E14CD3B91FC7C39600D89BA1 /* HomeViewController.swift in Sources */,
 				8CDF7AD71FC4E3E100FB397C /* WorkoutsViewController.swift in Sources */,
-				E14CD3B51FC7337100D89BA1 /* UserState.swift in Sources */,
 				E15FEE7E1FCF687600523AD2 /* Config.swift in Sources */,
 				C4C048591FC4EF9E0061473A /* MealPlan.swift in Sources */,
 				E14CD3B31FC7331100D89BA1 /* StateManager.swift in Sources */,
