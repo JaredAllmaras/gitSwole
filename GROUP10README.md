@@ -8,7 +8,7 @@ Nathan Mosley - 33%
         workout timer and tracker ability
         create workout screen
         calorie calculator screen
-        
+        create meal plan screen
 
 Jared Allmaras - 33%
 	tab bar controller setup
@@ -23,6 +23,7 @@ Nick Amaya - 33%
 	implemented cocoa pods / firebase
        changed database to allow storage of user variables (track progress)
        aesthetic design of app
+       create meal plan screen
 
 -----------------------------
 Grading Level:
