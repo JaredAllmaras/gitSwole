@@ -33,6 +33,7 @@ class CalorieCalculatorVC: UIViewController {
         self.goal.tintColor = Config.buttonBackgroundColor
         self.goal.backgroundColor = Config.backgroundColor
         self.calculateButton.backgroundColor = Config.buttonBackgroundColor
+    
         self.calculateButton.setTitleColor(Config.buttonTextColor, for: .normal)
         
         self.intake.text = "2000 cal."

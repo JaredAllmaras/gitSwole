@@ -40,6 +40,7 @@
 		C4C048591FC4EF9E0061473A /* MealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C048581FC4EF9E0061473A /* MealPlan.swift */; };
 		C4C0485B1FC4F9E60061473A /* NutritionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0485A1FC4F9E60061473A /* NutritionDetailViewController.swift */; };
 		C4C0485D1FC51BFC0061473A /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0485C1FC51BFC0061473A /* CheckBox.swift */; };
+		C4C121F11FDD37CB0062B1BB /* CreateMealPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C121F01FDD37CB0062B1BB /* CreateMealPlanVC.swift */; };
 		E12B34221FD0985C003FAB0F /* UserStateFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12B34211FD0985C003FAB0F /* UserStateFormViewController.swift */; };
 		E145A5981FDC74EF00B1ADC3 /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E145A5971FDC74EF00B1ADC3 /* ServiceAPI.swift */; };
 		E145A59E1FDCC8BC00B1ADC3 /* DefaultUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E145A59D1FDCC8BC00B1ADC3 /* DefaultUser.swift */; };
@@ -104,6 +105,7 @@
 		C4C048581FC4EF9E0061473A /* MealPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlan.swift; sourceTree = "<group>"; };
 		C4C0485A1FC4F9E60061473A /* NutritionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionDetailViewController.swift; sourceTree = "<group>"; };
 		C4C0485C1FC51BFC0061473A /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		C4C121F01FDD37CB0062B1BB /* CreateMealPlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMealPlanVC.swift; sourceTree = "<group>"; };
 		E12B34211FD0985C003FAB0F /* UserStateFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStateFormViewController.swift; sourceTree = "<group>"; };
 		E145A5971FDC74EF00B1ADC3 /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
 		E145A59D1FDCC8BC00B1ADC3 /* DefaultUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUser.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				C4C048501FC4EA7A0061473A /* NutritionTableViewController.swift */,
 				C4C0485A1FC4F9E60061473A /* NutritionDetailViewController.swift */,
 				C41A870E1FD0DB2600D20840 /* CalorieCalculatorVC.swift */,
+				C4C121F01FDD37CB0062B1BB /* CreateMealPlanVC.swift */,
 			);
 			path = Nutrition;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				8CDA501D1FA94CFD00CED50D /* MainTabBarController.swift in Sources */,
 				C4142FED1FA96A2100F3173E /* ProgressViewController.swift in Sources */,
 				E17AAB1B1FC4D333005247C7 /* PersistanceManager.swift in Sources */,
+				C4C121F11FDD37CB0062B1BB /* CreateMealPlanVC.swift in Sources */,
 				8CDA501E1FA94CFD00CED50D /* SettingsViewController.swift in Sources */,
 				C4142FE61FA94ED400F3173E /* WorkoutDetailViewController.swift in Sources */,
 				E145A5A91FDDE29200B1ADC3 /* TitleView.swift in Sources */,
