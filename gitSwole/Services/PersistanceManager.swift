@@ -54,6 +54,11 @@ class PersistanceManager {
         fetchUser(state: state, user: Auth.auth().currentUser!, viewController: viewController)
     }
     
+    // MARK: Meal Plans
+    func addMealPlan(_ mealPlan: MealPlan, numMealPlans: Int) {
+        userDBRef?.child("meal-plans/\(numMealPlans)").setValue(mealPlan.toMap())
+    }
+    
     // MARK: Workouts
     
     func addWorkout(_ workout: Workout, numWorkouts: Int) {

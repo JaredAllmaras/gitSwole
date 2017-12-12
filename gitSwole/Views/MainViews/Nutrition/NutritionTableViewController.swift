@@ -16,11 +16,18 @@ class NutritionTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.backgroundColor = Config.backgroundColor
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Meal Plan", style: .plain, target: self, action: #selector(addMealPlan))
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
     // MARK: - Table View Data Source
@@ -43,6 +50,14 @@ class NutritionTableViewController: UITableViewController {
         cell.backgroundColor = Config.backgroundColor
 
         return cell
+    }
+    
+    // MARK: - Add Meal Plan
+    
+    @objc func addMealPlan() {
+        let storyboard = UIStoryboard(name: "NathanStoryboard", bundle: nil)
+        let createMealPlanViewController = storyboard.instantiateViewController(withIdentifier: "CreateMealPlanVC")
+        navigationController?.pushViewController(createMealPlanViewController, animated: true)
     }
 
     // MARK: - Navigation

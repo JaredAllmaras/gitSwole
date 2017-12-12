@@ -23,11 +23,9 @@ class NutritionViewController: UIViewController {
     @IBOutlet weak var secondCourseServingSizeLabel: UILabel!
     @IBOutlet weak var thirdCourseServingSizeLabel: UILabel!
     
-    @IBOutlet weak var caloricGoal
-    : UILabel!
+    @IBOutlet weak var caloricGoal: UILabel!
     
-    @IBOutlet weak var caloricIntake
-    : UILabel!
+    @IBOutlet weak var caloricIntake: UILabel!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -86,9 +84,6 @@ class NutritionViewController: UIViewController {
         firstCourseServingSizeLabel.text = currentMeal.firstCourse.servingSize
         secondCourseServingSizeLabel.text = currentMeal.secondCourse.servingSize
         thirdCourseServingSizeLabel.text = currentMeal.thirdCourse.servingSize
-        
-        //        self.NextMeal.text = "Next Meal: Breakfast - \(String(describing: (self.MealPlans?[currentMealPlan].Meals?[0].MealCalories)!)) calories"
-        //        self.NextMeal.text = "Next Meal: \(String(describing: sender.titleForSegment(at: sender.selectedSegmentIndex)!)) - \(String(describing: (self.currentMeal?.MealCalories)!)) calories"
     }
     
 }

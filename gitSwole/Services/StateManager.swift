@@ -62,6 +62,10 @@ class StateManager: AuthStateDelegate {
         return user.mealplans
     }
     
+    public func addMealPlan(_ mealPlan: MealPlan) {
+        user.mealplans.append(mealPlan)
+    }
+    
     // MARK: - Workouts
     
     public func getPopularWorkouts() -> [Workout] {

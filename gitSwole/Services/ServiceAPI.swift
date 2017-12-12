@@ -57,6 +57,11 @@ extension ServiceAPI {
         return stateManager.getMyMealPlans()
     }
     
+    public func addMealPlan(_ mealPlan: MealPlan) {
+        persistanceManager.addMealPlan(mealPlan, numMealPlans: stateManager.getMyMealPlans().count)
+        stateManager.addMealPlan(mealPlan)
+    }
+    
     // MARK: - Workouts
     
     public func getPopularWorkouts() -> [Workout] {
